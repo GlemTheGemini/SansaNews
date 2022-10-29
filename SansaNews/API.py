@@ -1,6 +1,5 @@
 #Importar los modulos a usar y ponemos el contexto.
 import instaloader; import os; from os import path; from os.path import join,isdir ; import json
-
 def actualizar():
     L = instaloader.Instaloader(post_metadata_txt_pattern="",compress_json=False)
     #Descargamos los archivos necesarios de los usuarios que se encuentran en el archivo señalado
@@ -13,16 +12,14 @@ def actualizar():
 
 def contenido(pagina):
     diccionario = {}
-    contador = 0
-    contenido = os.listdir()
     m = ""
-    #A partir de aquí ni yo entiendo qué estoy haciendo.
-    directorio = os.path.dirname("Iniciativas_tester.txt") + "{}/"
+    #Gracias stackoverflow
+    directorio = os.path.dirname(os.path.dirname(os.path.realpath(__file__))) + "\\static\\" + "{}\\"
     lista = []
     lista_multi_imagenes = []
     lista_descripción = []
     contenido_in_carpeta = sorted(os.listdir(directorio.format(pagina)))
-    formato_temp = os.path.dirname(directorio.format(pagina)) + "/{}"
+    formato_temp = os.path.dirname(directorio.format(pagina)) + "\\{}"
     for file in contenido_in_carpeta:
         if m == "":
             m = file[:24]
@@ -72,6 +69,19 @@ def contenido(pagina):
                 #Juaco: oye, yo conozco ese código...
                 #Benja: ehe.
                 #'''
+    #Se añade la lista al diccionario
     if pagina not in diccionario:
         diccionario[pagina] = lista
-    return diccionario
+    #Se transforma el diccionario en una lista con formato especifico y se retorna
+    lista_4 = []
+    lista_5 = []
+    for llave in diccionario:
+        for publicacion in diccionario[llave]:
+            if len(publicacion[0]) != 0:
+                for imagen in publicacion[0]: 
+                    lista_5 += [imagen]
+                lista_5 += publicacion[1]
+                lista_4 += [lista_5]
+                lista_5 = []
+    lista_4.reverse()
+    return lista_4

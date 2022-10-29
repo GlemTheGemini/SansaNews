@@ -9,9 +9,20 @@
 </head>
 <body>
   <main>
-    
-    <img src="{% static 'gbu_usm/2022-04-19_04-58-33_UTC.jpg' %}">
+    {% for lista in key  %}
+      {% for publicacion in lista %}
+        {% if "jpg" in publicacion %}
 
+          <img src="{% static publicacion %}" width="500" height="500">
+          
+
+        {% else %}
+
+          <h1>{{ publicacion }}</h1>
+
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
   </main>
 </body>
 </html>
