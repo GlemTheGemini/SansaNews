@@ -1,9 +1,11 @@
 #Importar los modulos a usar y ponemos el contexto.
-import instaloader; import os; from os import path; import json;
+from instaloader import instaloader, Profile; import os; from os import path; import json;
 def actualizar(pagina):
     L = instaloader.Instaloader(post_metadata_txt_pattern="",compress_json=False,dirname_pattern=(os.path.dirname(os.path.dirname(os.path.realpath(__file__))) + "\\static\\"+ "{}\\").format(pagina))
     #Descargamos los archivos necesarios de los usuarios que se encuentran en el archivo señalado
-    L.download_profile(pagina, fast_update=True, profile_pic=False)
+    perfil = Profile.from_username(L.context, pagina)
+    publicaciones = perfil.get_posts()
+    L.posts_download_loop(publicaciones,pagina,fast_update=True, max_count=21)
     return()
 
 def contenido(pagina):
@@ -80,4 +82,5 @@ def contenido(pagina):
                 lista_4 += [lista_5]
                 lista_5 = []
     lista_4.reverse()
+    del lista_4[-1]
     return lista_4
