@@ -1,5 +1,5 @@
 #Importar los modulos a usar y ponemos el contexto.
-import instaloader; import os; from os import path; from os.path import join,isdir ; import json
+import instaloader; import os; from os import path; import json;
 def actualizar(pagina):
     L = instaloader.Instaloader(post_metadata_txt_pattern="",compress_json=False,dirname_pattern=(os.path.dirname(os.path.dirname(os.path.realpath(__file__))) + "\\static\\"+ "{}\\").format(pagina))
     #Descargamos los archivos necesarios de los usuarios que se encuentran en el archivo señalado
