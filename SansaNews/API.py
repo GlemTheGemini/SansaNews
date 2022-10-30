@@ -1,13 +1,9 @@
 #Importar los modulos a usar y ponemos el contexto.
 import instaloader; import os; from os import path; from os.path import join,isdir ; import json
-def actualizar():
-    L = instaloader.Instaloader(post_metadata_txt_pattern="",compress_json=False)
+def actualizar(pagina):
+    L = instaloader.Instaloader(post_metadata_txt_pattern="",compress_json=False,dirname_pattern=(os.path.dirname(os.path.dirname(os.path.realpath(__file__))) + "\\static\\"+ "{}\\").format(pagina))
     #Descargamos los archivos necesarios de los usuarios que se encuentran en el archivo señalado
-    Archivo_Iniciativas = open("Iniciativas_tester.txt")
-    for linea in Archivo_Iniciativas:
-        profile = linea.strip()
-        L.download_profile(profile, fast_update=True, profile_pic=False)
-    Archivo_Iniciativas.close()
+    L.download_profile(pagina, fast_update=True, profile_pic=False)
     return()
 
 def contenido(pagina):
