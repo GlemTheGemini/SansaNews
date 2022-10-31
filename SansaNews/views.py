@@ -61,3 +61,9 @@ def yotecuido(request):
     API.actualizar(pagina)
     lista = API.contenido(pagina)
     return render(request,"Yo-Te-Cuido.html",{"key": lista})
+
+def sansanews(request):
+    pagina = "sansanews"
+    API.actualizar(pagina)
+    lista = API.contenido(pagina)
+    return render(request,"SansaNews.html",{"key": lista})
