@@ -13,5 +13,6 @@ urlpatterns = [
     path("RocketScience-USM/",views.rocket,name="rocket"),
     path("Yo-Te-Cuido/",views.yotecuido,name="yotecuido"),
     path("Xumbra-UTFSM/",views.xumbra,name="xumbra"),
-    path("SansaNews/",views.sansanews,name="sansanews")
+    path("SansaNews/",views.sansanews,name="sansanews"),
+    path("Home/" ,views.home,name="home"),
 ]

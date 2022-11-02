@@ -67,3 +67,6 @@ def sansanews(request):
     API.actualizar(pagina)
     lista = API.contenido(pagina)
     return render(request,"SansaNews.html",{"key": lista})
+
+def home(request):
+    return render(request,"Home.html")

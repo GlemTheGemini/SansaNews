@@ -82,5 +82,6 @@ def contenido(pagina):
                 lista_4 += [lista_5]
                 lista_5 = []
     lista_4.reverse()
-    del lista_4[-1]
+    if len(lista_4) > 2:
+        del lista_4[-1]
     return lista_4
