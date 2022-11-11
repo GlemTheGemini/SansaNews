@@ -70,3 +70,6 @@ def sansanews(request):
 
 def home(request):
     return render(request,"Home.html")
+
+def molde(request):
+    return render(request,"Molde.html")
