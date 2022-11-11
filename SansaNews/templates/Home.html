@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"
+    <title></title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p class="logo">sansanews</p>
+            <nav>
+                <a href="#">deportes</a>
+                <a href="#">entretencion</a>
+                <a href="#">estudio</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <h1>Noticias más recientes de la semana</h1>
+    
+    </section>
+
+    <div id="slider">
+
+        <figure>
+            <img src="{% static 'sansanews/2022-11-02_00-51-24_UTC.jpg' %}" />
+            <img src="{% static 'sansanews/2022-11-02_01-03-06_UTC.jpg' %}"/>
+            <img src="{% static 'sansanews/2022-11-02_01-44-38_UTC.jpg' %}" />
+            <img src="{% static 'sansanews/2022-11-02_01-03-06_UTC.jpg' %}"/>            
+        </figure>
+
+    </div>
+
+    <section>
+        <section id="Iniciativas-Estudiantiles">
+            <h2>Iniciativas estudiantiles</h2>
+            <div class="fotos">
+                <div class="carta">
+                    <h3>Fablab</h3>
+                    <p>
+    
+                    </p>
+                    <button>Más Informacion</button>
+                </div>
+                <div class="carta">
+                    <h3>GeekUSM</h3>
+                    <p>
+    
+                    </p>
+                    <button>Más Informacion</button>
+                </div>
+                <div class="carta">
+                    <h3>CEEINF</h3>
+                    <p>
+    
+                    </p>
+                    <button>Más Informacion</button>
+                </div>
+
+            </div>
+            
+        </section>
+    </section>
+
+</body>
+</html>
