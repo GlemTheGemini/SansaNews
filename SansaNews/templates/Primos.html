@@ -1,28 +1,62 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>
-    
-  </title>
+	<title>
+		SansaNews	
+	</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'molde/css/bootstrap.min.css' %}">
+	<script type="text/javascript" src="{% static 'molde/js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'molde/js/jquery-3.6.1.min.js' %}"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
-<body>
-  <main>
-    {% for lista in key  %}
-      {% for publicacion in lista %}
-        {% if "jpg" in publicacion %}
+	<body>
+		<nav class="navbar-dark bg-primary" style="height: 10rem;">
+			<center>
+				<div class="container-fluid">
+					<div style="height: 2rem"></div>
+			  		<img src="{% static 'molde/img/Captura de pantalla (449).png' %}" width="300px" height="100px">
+				</div>
+			</center>
+		</nav>
 
-          <img src="{% static publicacion %}" height="400">
-          
+		<center>
+			<div style="width: 50rem; height: 5rem;"></div>
+			<div style="width: 50rem; height: 8rem;">
+				<h1>
+					Primos
+				</h1>
+			</div>
+		</center>
+    
+  {% for lista in key  %}
+    <center>
+      <div class="card mb-3" style="width: 70rem">
+          <center>
+            <div class="card mb-3" style="width: 70rem">
+              <h3 class="card-header" style="height: 3rem;">Publicación</h3>
+        </center>
+        {% for publicacion in lista %}
+          {% if "jpg" in publicacion %}
+            <center>
+              <div style="width: 50rem; height: 3rem;"></div>
+              <img src="{% static publicacion %}" height="400">
+            </center>   
+          {% else %}
+            <center>
+              <div style="width: 50rem; height: 3rem;"></div>
+              <div class="card-body" style="width: 50rem;">
+                <h3 class="card-text">{{ publicacion }}</h3>
+              </div>
+              <div style="width: 50rem; height: 5rem;"></div>
+            </center>
+          {% endif %}
+        {% endfor %}
+      </div>
+    <center>
+  {% endfor %}
 
-        {% else %}
-
-          <h1>{{ publicacion }}</h1>
-
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
-  </main>
-</body>
+	</body>
 </html>
