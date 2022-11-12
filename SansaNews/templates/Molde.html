@@ -1,12 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>
-		Sansanews	
+		SansaNews	
 	</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/jquery-3.6.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'molde/css/bootstrap.min.css' %}">
+	<script type="text/javascript" src="{% static 'molde/js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'molde/js/jquery-3.6.1.min.js' %}"></script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,51 +15,45 @@
 <body>
 	<nav class="navbar-dark bg-primary">
 		<center>
-		<div class="container-fluid">
-		  <img src="img/Captura de pantalla (449).png" width="150px" height="50px">
-		</div>
+			<div class="container-fluid">
+		  		<img src="{% static 'molde/img/Captura de pantalla (449).png' %}" width="150px" height="50px">
+			</div>
 		</center>
-	  </nav>
-<center>
-	<div class="card" style="width: 50rem; height: 15rem;">
-	<h1>
-		*Nombre página de Instagram*
-	</h1>	
-	<div class="card mb-3">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item active">Publicación</li>
-		  </ol>
-		<align="center">
-		<svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="85%" height="500" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
-		  <rect width="100%" height="100%" fill="#868e96"></rect>
-		  <text x="50%" y="50%" fill="#dee2e6" dy=".3em">*Imágen de la publicación*</text>
-		</align>
-		</svg>
-		<div class="card-body">
-		  <p class="card-text">*Descripción de la publicación*</p>
-		</align>
-		</div>
+	</nav>
 
-		<div class="card-body">
-		  <a href="#" class="card-link">*link para la publicación en Instagram*</a>
-
+	<center>
+		<div style="width: 50rem; height: 5rem;"></div>
+		<div style="width: 50rem; height: 8rem;">
+			<h1>
+				*Nombre página de Instagram*
+			</h1>
 		</div>
-		<div class="card-footer text-muted">
-		  *Tiempo de la publicación*
+	</center>
+	<center>
+		<div class="card mb-3" style="width: 70rem">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item active">Publicación</li>
+			</ol>
+
+			<center>
+			<svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="85%" height="500" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+			  <rect width="100%" height="100%" fill="#868e96"></rect>
+			  <text x="50%" y="50%" fill="#dee2e6" dy=".3em">*Imágen de la publicación*</text>
+			</center>
+
+			</svg>
+			<div class="card-body">
+			  <p class="card-text">*Descripción de la publicación*</p>
+			</div>
+
+			<div class="card-body">
+			  <a href="#" class="card-link">*link para la publicación en Instagram*</a>
+			</div>
+
+			<div class="card-footer text-muted">
+			  *Tiempo de la publicación*
 		</div>
 	</center>
 
-		</div>
-
-
-</center>
-<!--
-<div class="card" style="width: 18rem;">
-	<img src="img/Captura de pantalla (449).png" class="card-img-top" alt="...">
-	<div class="card-body">
-	  <h5 class="card-title">Card title</h5>
-	  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-	  <a href="#" class="btn btn-primary">Go somewhere</a>
-	-->
 </body>
 </html>
