@@ -7,6 +7,7 @@
 	</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'molde/css/bootstrap.min.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'molde/css/slider.css' %}">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<script type="text/javascript" src="{% static 'molde/js/bootstrap.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'molde/js/slider.js' %}"></script>
 	<script type="text/javascript" src="{% static 'molde/js/jquery-3.6.1.min.js' %}"></script>
@@ -48,7 +49,7 @@
 				</h1>
 			</div>
 		</center>
-    
+
   {% for lista in key  %}
     <center>
       <div class="card mb-3" style="width: 70rem">
@@ -56,13 +57,12 @@
             <div class="card mb-3" style="width: 70rem">
               <h3 class="card-header" style="height: 3rem;">Publicación</h3>
           </center>
+          
           {% for publicacion in lista %}
             {% if "jpg" in publicacion %}
               <center>
                 <div style="width: 50rem; height: 3rem;"></div>
-                
-                  <img src="{% static publicacion %}" height="400" alt="Sky"/>
-                
+                    <img src="{% static publicacion %}" height="400"/>
               </center>   
             {% else %}
               <center>
@@ -74,6 +74,8 @@
               </center>
             {% endif %}
           {% endfor %}
+          <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+          <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
       </div>
     </center>
   {% endfor %}
