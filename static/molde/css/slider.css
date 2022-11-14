@@ -1,134 +1,98 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
-html,
-body {
-  height: 100%;
-  position: relative;
-  font-family: Roboto;
-  background: #f8f8f8;
-}
-
-.slider-ctr {
-  width: 700px;
-  height: 440px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -220px;
-  margin-left: -350px;
+*{
   box-sizing: border-box;
-  border: 10px solid white;
-  border-radius: 5px;
+}
+.container-slider{
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
   overflow: hidden;
-  box-shadow: 0 10px 15px 3px rgba(0, 0, 0, 0.15), 0 5px 20px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 10px #fff,
+              0 15px 50px;
+  position: relative;
 }
-.slider-ctr:after {
-  content: "";
+.slider_2{
+  display: flex;
+  width: 200%;
+  height: 400px;
+  margin-left: -100%;
+}
+.slider_3{
+  display: flex;
+  width: 300%;
+  height: 400px;
+  margin-left: -100%;
+}
+.slider_4{
+  display: flex;
+  width: 400%;
+  height: 400px;
+  margin-left: -100%;
+}
+.slider_5{
+  display: flex;
+  width: 500%;
+  height: 400px;
+  margin-left: -100%;
+}
+.slider_6{
+  display: flex;
+  width: 600%;
+  height: 400px;
+  margin-left: -100%;
+}
+.slider_7{
+  display: flex;
+  width: 700%;
+  height: 400px;
+  margin-left: -100%;
+}
+.slider_8{
+  display: flex;
+  width: 800%;
+  height: 400px;
+  margin-left: -100%;
+}
+.slider_9{
+  display: flex;
+  width: 900%;
+  height: 400px;
+  margin-left: -100%;
+}
+.slider_10{
+  display: flex;
+  width: 1000%;
+  height: 400px;
+  margin-left: -100%;
+}
+.slider__section{
+  width:100%;
+}
+.slider__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slider__btn{
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, 0.6) 100%);
-  background: -webkit-linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, 0.6) 100%);
-  pointer-events: none;
-  z-index: 9;
-}
-
-.slider-control {
-  position: absolute;
-  right: 30px;
-  bottom: 30px;
-  width: 80px;
-  overflow: hidden;
-  border-radius: 3px;
-  box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.15);
-  z-index: 99;
-}
-.slider-control .control {
-  width: 50%;
+  width: 40px;
   height: 40px;
-  display: block;
-  float: left;
+  background: rgba(255,255,255,0.7);
+  top:50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  font-weight: bold;
+  font-family: monospace;
   text-align: center;
-  line-height: 40px;
-  cursor: pointer;
-  transition: 0.3s all ease;
-  background: white;
+  border-radius: 50%;
+  cursor:pointer;
 }
-.slider-control .control .icon {
-  pointer-events: none;
-  transition: 0.3s all ease;
+.slider__btn:hover{
+  background: #fff;
 }
-.slider-control .control.disabled {
-  pointer-events: none;
-  background: #ddd;
+.slider__btn--left{
+  left:10px;
 }
-.slider-control .control.disabled .icon {
-  opacity: 0.5;
-}
-
-.slide {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: 0.45s all cubic-bezier(0.65, 0.05, 0.36, 1);
-  -webkit-clip-path: inset(0 0 0 0);
-  clip-path: inset(0 0 0 0);
-}
-.slide:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.125);
-}
-.slide.slide-on {
-  -webkit-clip-path: inset(0 100% 0 0);
-  clip-path: inset(0 100% 0 0);
-}
-.slide.text-on .title {
-  transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1) 0.45s;
-  -webkit-clip-path: inset(0 0 0 0);
-  clip-path: inset(0 0 0 0);
-}
-.slide.text-on .author {
-  transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1) 0.6s;
-  -webkit-clip-path: inset(0 0 0 0);
-  clip-path: inset(0 0 0 0);
-}
-.slide img {
-  display: block;
-}
-.slide figcaption {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-}
-.slide .title {
-  font-size: 50px;
-  margin-bottom: 2px;
-  color: white;
-  transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1) 0.45s;
-  -webkit-clip-path: inset(0 0 0 100%);
-  clip-path: inset(0 0 0 100%);
-  font-weight: 400;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-  position: relative;
-}
-.slide .author {
-  font-size: 16px;
-  color: white;
-  opacity: 0.8;
-  transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1) 0.45s;
-  -webkit-clip-path: inset(0 0 0 100%);
-  clip-path: inset(0 0 0 100%);
-  font-weight: 300;
-  letter-spacing: 3px;
-  position: relative;
-  z-index: 9;
+.slider__btn--right{
+  right: 10px;
 }

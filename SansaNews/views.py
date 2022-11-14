@@ -34,7 +34,6 @@ def movimiento(request):
 
 def primos(request):
     pagina = "primos_usmsj"
-    API.actualizar(pagina)
     lista = API.contenido(pagina)
     return render(request,"Primos.html",{"key": lista})
 
