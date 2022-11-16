@@ -8,6 +8,13 @@ def actualizar(pagina):
     L.posts_download_loop(publicaciones,pagina,fast_update=True, max_count=21)
     return()
 
+def actualizar_2():
+    lista_paginas = ["gbu_usm", "fablab_utfsm", "ceeinf_sj", "geekusm", "movimiento.0", "primos_usmsj", "rocketscience_usm", 
+                "usm.cubesat.team", "xumbra_utfsm", "yotecuidousm"]
+    for pagina in lista_paginas:
+        actualizar(pagina)
+    return 0
+
 def contenido(pagina):
     diccionario = {}
     m = ""
@@ -91,7 +98,6 @@ def recientes():
                 "usm.cubesat.team", "xumbra_utfsm", "yotecuidousm"]
     diccionario = {}
     for pagina in lista_paginas:
-        actualizar(pagina)
         diccionario[pagina]= [contenido(pagina)[0][0],contenido(pagina)[0][-1]]
     lista_fechas= []
     for llave in diccionario:
