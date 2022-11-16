@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>
+		SansaNews	
+	</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'molde/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'molde/css/slider.css' %}">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+	<body>
+		<nav class="navbar-dark bg-primary" style="height: 10rem;">
+			<center>
+				<div class="container-fluid">
+					<div style="height: 2rem"></div>
+			  		<img src="{% static 'molde/img/Captura de pantalla (449).png' %}" width="300px" height="100px">
+				</div>
+			</center>
+		</nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="navbar-brand" href="#">Home
+                <span class="visually-hidden">(current)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+		<center>
+			<div style="width: 50rem; height: 5rem;"></div>
+			<div style="width: 50rem; height: 8rem;">
+				<h1>
+					Primos
+				</h1>
+			</div>
+		</center>
+
+  {% for lista in key  %}
+    <center>
+      <div class="card mb-3" style="width: 50rem">
+          <center>
+            <div class="card mb-3" style="width: 50rem">
+              <h3 class="card-header" style="height: 3rem;">Publicación</h3>
+          </center>
+
+          <div id="{{ lista|last|cut:' '|cut:'!'|cut:'?'|cut:'¿'|cut:'¡'|slice:':10' }}" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-inner">
+          {% for publicacion in lista %}
+              {% if forloop.first %}
+                <div class="carousel-item active">
+                  <div style="width: 50rem; height: 3rem;"></div>
+                  <img src="{% static publicacion %}" height="400"/>
+                </div>  
+              {% elif ".jpg" in publicacion %}
+                <div class="carousel-item">
+                  <div style="width: 50rem; height: 3rem;"></div>
+                  <img src="{% static publicacion %}" height="400"/>
+                </div>  
+              {% else %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#{{ lista|last|cut:' '|cut:'!'|cut:'?'|cut:'¿'|cut:'¡'|slice:':10' }}" data-bs-slide="prev" style="background-color:black">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#{{ lista|last|cut:' '|cut:'!'|cut:'?'|cut:'¿'|cut:'¡'|slice:':10' }}" data-bs-slide="next" style="background-color:black">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+              <center>
+                <div style="width: 50rem; height: 3rem;"></div>
+                <div class="card-body" style="width: 50rem;">
+                  <h3 class="card-text">{{ publicacion }}</h3>
+                </div>
+                <div style="width: 50rem; height: 5rem;"></div>
+              </center>
+            {% endif %}
+            
+          {% endfor %}
+      </div>
+    </center>
+  {% endfor %}
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+  <script src="{% static 'molde/js/slider.js' %}"></script>
+	</body>
+</html>

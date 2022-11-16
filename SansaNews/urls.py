@@ -16,4 +16,5 @@ urlpatterns = [
     path("SansaNews/",views.sansanews,name="sansanews"),
     path("Home/" ,views.home,name="home"),
     path("Molde/" ,views.molde,name="molde"),
+    path("Test/" ,views.test,name="test"),
 ]

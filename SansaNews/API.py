@@ -85,3 +85,21 @@ def contenido(pagina):
     if len(lista_4) > 2:
         del lista_4[-1]
     return lista_4
+
+def recientes():
+    lista_paginas = ["gbu_usm", "fablab_utfsm", "ceeinf_sj", "geekusm", "movimiento.0", "primos_usmsj", "rocketscience_usm", 
+                "usm.cubesat.team", "xumbra_utfsm", "yotecuidousm"]
+    diccionario = {}
+    for pagina in lista_paginas:
+        actualizar(pagina)
+        diccionario[pagina]= [contenido(pagina)[0][0],contenido(pagina)[0][-1]]
+    lista_fechas= []
+    for llave in diccionario:
+        lista_fechas+= [[[diccionario[llave][0].split("\\")[-1], diccionario[llave][-1]], llave]]
+    lista_fechas.sort(reverse=True)
+    lista_fechas = lista_fechas[:4] # [[[fecha,descripcion], pagina], [[fecha,descripcion], pagina]]
+    directorio = os.path.dirname(os.path.dirname(os.path.realpath(__file__))) + "\\static\\" + "{}\\{}"
+    lista_nuevas_publicaciones = []
+    for fecha_desc, pagina in lista_fechas:
+        lista_nuevas_publicaciones += [[directorio.format(pagina,fecha_desc[0]),fecha_desc[-1]]] #[[imagen, descripcion], [imagen, descripcion]]
+    return lista_nuevas_publicaciones
