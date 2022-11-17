@@ -10,7 +10,7 @@ def actualizar(pagina):
 
 def actualizar_2(): 
     lista_paginas = ["gbu_usm", "fablab_utfsm", "ceeinf_sj", "geekusm", "movimiento.0", "primos_usmsj", "rocketscience_usm", 
-                "usm.cubesat.team", "xumbra_utfsm", "yotecuidousm"]
+                    "usm.cubesat.team", "xumbra_utfsm", "yotecuidousm"]
     for pagina in lista_paginas:
         actualizar(pagina)
     return 0
