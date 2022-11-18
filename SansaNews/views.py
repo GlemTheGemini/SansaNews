@@ -76,6 +76,7 @@ def subir_avisos(request, id=None):
     if request.method == "POST":
         if imagen.is_valid():
             imagen.save()
+            return redirect(avisos)
     context = {"imagen": imagen}
     return render(request, 'Subir_Avisos.html', context)
 
