@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . import API
+from . import forms
 # Create your views here.
 
 def gbu_usm(request):
@@ -66,3 +67,13 @@ def molde(request):
 def test(request):
     lista = API.recientes()
     return render(request,"Test.html",{"key": lista})
+
+def avisos(request, id=None):
+
+    imagen = forms.avisos_forms(request.POST, request.FILES)
+
+    if request.method == "POST":
+        if imagen.is_valid():
+            imagen.save()
+    context = {"imagen": imagen}
+    return render(request, 'Avisos.html', context)
