@@ -110,10 +110,3 @@ def recientes():
         lista_nuevas_publicaciones += [[directorio.format(pagina,fecha_desc[0]),fecha_desc[-1]]] #[[imagen, descripcion], [imagen, descripcion]]
     return lista_nuevas_publicaciones
 
-def base():
-    diccionario_avisos = models.imagenes_avisos.objects.all()
-    lista_avisos = []
-    for llave in diccionario_avisos:
-        for descripcion,url in diccionario_avisos[llave]:
-            lista_avisos += [[url,descripcion]]
-    return lista_avisos
