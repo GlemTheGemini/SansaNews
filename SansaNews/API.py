@@ -1,5 +1,5 @@
 #Importar los modulos a usar y ponemos el contexto.
-from instaloader import instaloader, Profile; import os; from os import path; import json;
+from instaloader import instaloader, Profile; import os; from os import path; import json; from . import models;
 def actualizar(pagina):
     L = instaloader.Instaloader(post_metadata_txt_pattern="",compress_json=False,dirname_pattern=(os.path.dirname(os.path.dirname(os.path.realpath(__file__))) + "\\static\\"+ "{}\\").format(pagina))
     #Descargamos los archivos necesarios de los usuarios que se encuentran en el archivo señalado
@@ -109,3 +109,11 @@ def recientes():
     for fecha_desc, pagina in lista_fechas:
         lista_nuevas_publicaciones += [[directorio.format(pagina,fecha_desc[0]),fecha_desc[-1]]] #[[imagen, descripcion], [imagen, descripcion]]
     return lista_nuevas_publicaciones
+
+def base():
+    diccionario_avisos = models.imagenes_avisos.objects.all()
+    lista_avisos = []
+    for llave in diccionario_avisos:
+        for descripcion,url in diccionario_avisos[llave]:
+            lista_avisos += [[url,descripcion]]
+    return lista_avisos

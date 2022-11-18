@@ -42,24 +42,13 @@
 			<div style="width: 50rem; height: 5rem;"></div>
 			<div style="width: 50rem; height: 8rem;">
 				<h1>
-					Avisos
+					Subida de Avisos
 				</h1>
 			</div>
 		</center>
 
-  {% for lista in key  %}
-    <center>
-        <div class="card mb-3" style="width: 50rem">
-            <center>
-                <div class="card mb-3" style="width: 50rem">
-                <h3 class="card-header" style="height: 3rem;">Publicación</h3>
-            </center>
-            <div>
-                <img src="{% static lista.url %}" height="400"/>
-            </div>
-            <div>
-                <p>{{ lista.descripcion }}</p>
-            </div>
-        </div>
-    </center>
-  {% endfor %}
+        <form method="POST" enctype="multipart/form-data" action="">
+            {% csrf_token %}
+                {{ imagen.as_p }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>

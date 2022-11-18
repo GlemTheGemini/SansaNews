@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from . import API
 from . import forms
+from . import models
 # Create your views here.
 
 def gbu_usm(request):
@@ -68,7 +69,7 @@ def test(request):
     lista = API.recientes()
     return render(request,"Test.html",{"key": lista})
 
-def avisos(request, id=None):
+def subir_avisos(request, id=None):
 
     imagen = forms.avisos_forms(request.POST, request.FILES)
 
@@ -76,4 +77,8 @@ def avisos(request, id=None):
         if imagen.is_valid():
             imagen.save()
     context = {"imagen": imagen}
-    return render(request, 'Avisos.html', context)
+    return render(request, 'Subir_Avisos.html', context)
+
+def avisos(request):
+    lista = models.imagenes_avisos.objects.all()
+    return render(request,"Avisos.html",{"key": lista})
