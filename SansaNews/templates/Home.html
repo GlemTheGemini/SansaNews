@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'index.css' %}">
     <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
 	<link rel="stylesheet" type="text/css" href="{% static 'engine1/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'molde/css/slider.css' %}" />
 	<script type="text/javascript" src="{% static 'engine1/jquery.js' %}"></script>
 	<!-- End WOWSlider.com HEAD section -->
 </head>
@@ -28,12 +29,11 @@
         <h1>Noticias más recientes de la semana</h1>
 
     </section>
-
     <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
 	<div id="wowslider-container1">
         <div class="ws_images"><ul>
             {% for x in key %}
-                <li><img src="{% static x.imagen %}" height="900px" width="500" alt="pagina" title="{{ x.pagina }}" id="{{ x.id }}"/>{{ x.descripcion }}</li>
+                <li class="image-container"><img src="{% static x.imagen %}" class="image-item" alt="pagina" title="@{{ x.pagina }}" id="{{ x.id }}"/>{{ x.descripcion }}</li>
             {% endfor %}
         </ul></div>
     <div class="ws_bullets"><div>
