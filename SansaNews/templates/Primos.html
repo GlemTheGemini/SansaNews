@@ -47,18 +47,22 @@
 			</div>
 		</center>
   -->
-  
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1>primos_usmsj</h1>
-        <p class="lead text-muted">¡En esta página encontrarás las iniciativas más recientes de primos_usmsj!</p>
-      </div>
-    </div>
-  </section>
-  
 
-  
+<br>
+<br>
+  <center>
+  <div class="card text-white bg-primary mb-3" style="max-width: 30rem; max-height: 30rem;">
+    <div class="card-body">
+      <h4 class="card-title">primos_usmsj</h4>
+      <p class="card-text">¡En esta página encontrarás las iniciativas más recientes de primos_usmsj!</p>
+    </div>
+  </div>
+</center>
+<br>
+<br>
+
+<main>
+<div class="row row-cols-1 row-cols-sm-2 g-2">
   {% for lista in key  %}
     <center>
       <div class="card mb-3" style="width: 50rem">
@@ -107,5 +111,18 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
   <script src="{% static 'molde/js/slider.js' %}"></script>
+
+</main>
+
+<footer class="text-muted py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">Volver arriba</a>
+    </p>
+    <p class="mb-1">SansaNews es un proyecto universitario sin fines de lucro y con mucho esfuerzo, sudor y lagrimas por detrás.</p>
+    <p class="mb-0">¡Siguenos en nuestro <a href="https://www.instagram.com/sansanews/">Instagram</a> oficial!</p>
+  </div>
+</footer>
+
 	</body>
 </html>
