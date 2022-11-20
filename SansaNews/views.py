@@ -60,7 +60,8 @@ def sansanews(request):
     return render(request,"SansaNews.html",{"key": lista})
 
 def home(request):
-    return render(request,"Home.html")
+    lista = API.recientes()
+    return render(request,"Home.html",{"key": lista})
 
 def molde(request):
     return render(request,"Molde.html")

@@ -107,6 +107,6 @@ def recientes():
     directorio = os.path.dirname(os.path.dirname(os.path.realpath(__file__))) + "\\static\\" + "{}\\{}"
     lista_nuevas_publicaciones = []
     for fecha_desc, pagina in lista_fechas:
-        lista_nuevas_publicaciones += [[directorio.format(pagina,fecha_desc[0]),fecha_desc[-1]]] #[[imagen, descripcion], [imagen, descripcion]]
+        lista_nuevas_publicaciones += [{"pagina": pagina, "imagen": directorio.format(pagina,fecha_desc[0]), "descripcion":fecha_desc[-1]}] #[{pagina : pagina,imagen: imagen, descripcion: descripcion}, {pagina : pagina,imagen: imagen, descripcion: descripcion}]
     return lista_nuevas_publicaciones
 
