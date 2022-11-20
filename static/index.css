@@ -8,10 +8,17 @@
     background-color: rgb(255, 255, 255);
     max-width: 40em;
     height: 40em;
-    border-style: dotted;
+    border-style: double;
     text-shadow: 2em rgba(255, 255, 255, 0.981);
+    border-color: #d2d7da
+    
 
 
+}
+
+#Iniciativas-Estudiantiles{
+    font-size: 3.5em;
+    color: #d2d7da;
 }
 .carta:first-child{
 
@@ -62,6 +69,22 @@ header .logo{
     color: #d2d7da ;
     font-size: 4em;
 }
+.columns{
+
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    height:600px;
+    width: 1800px;
+    align-items:center;
+  }
+  
+  .item{
+    height:40px;
+    padding:2em;
+    margin:1em;
+
+  }
 
 header .container{
     display: flex;
