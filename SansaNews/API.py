@@ -112,4 +112,3 @@ def recientes():
         lista_nuevas_publicaciones += [{"pagina": pagina, "imagen": directorio.format(pagina,fecha_desc[0]), "descripcion":fecha_desc[-1], "id": id.format(str(contador))}] #[{pagina : pagina,imagen: imagen, descripcion: descripcion}, {pagina : pagina,imagen: imagen, descripcion: descripcion}]
         contador+=1
     return lista_nuevas_publicaciones
-
