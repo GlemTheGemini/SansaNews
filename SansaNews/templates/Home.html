@@ -7,7 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"
     <title></title>
     <link rel="stylesheet" href="{% static 'index.css' %}">
-    <link rel="stylesheet" href="{% static 'molde/css/slider.css' %}">
+    <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+	<link rel="stylesheet" type="text/css" href="{% static 'engine1/style.css' %}" />
+	<script type="text/javascript" src="{% static 'engine1/jquery.js' %}"></script>
+	<!-- End WOWSlider.com HEAD section -->
 </head>
 <body>
     <header>
@@ -26,24 +29,24 @@
 
     </section>
 
-    <div class="container-slider">
-        <div class ="slider_4" id ="slider_4">
-          <div class="slider__section">
-          <img src="{% static 'sansanews/2022-11-02_00-51-24_UTC.jpg' %}" class="slider__img">
-          </div>
-          <div class="slider__section">
-          <img src="{% static 'sansanews/2022-11-02_00-51-24_UTC.jpg' %}" class="slider__img">
-          </div>
-          <div class="slider__section">
-          <img src="{% static 'sansanews/2022-11-02_01-03-06_UTC.jpg' %}" class="slider__img">
-          </div>
-          <div class="slider__section">
-          <img src="{% static 'sansanews/2022-11-02_00-51-24_UTC.jpg' %}" class="slider__img">
-          </div>
-        </div>
-        <div class="slider__btn slider__btn--right" id ="btn-right">&#62;</div>
-        <div class="slider__btn slider__btn--left"  id ="btn-left">&#60;</div>
-      </div>
+    <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+	<div id="wowslider-container1">
+        <div class="ws_images"><ul>
+            {% for x in key %}
+                <li><img src="{% static x.imagen %}" height="900px" width="500" alt="pagina" title="{{ x.pagina }}" id="{{ x.id }}"/>{{ x.descripcion }}</li>
+            {% endfor %}
+        </ul></div>
+    <div class="ws_bullets"><div>
+        <a href="#" title="pagina"><span>1</span></a>
+        <a href="#" title="pagina"><span>2</span></a>
+        <a href="#" title="pagina"><span>3</span></a>
+        <a href="#" title="pagina"><span>4</span></a>
+    </div></div>
+    <div class="ws_shadow"></div>
+    </div>	
+    <script type="text/javascript" src="{% static 'engine1/wowslider.js' %}"></script>
+    <script type="text/javascript" src="{% static 'engine1/script.js' %}"></script>
+    <!-- End WOWSlider.com BODY section -->
 
     <center>
         <section>
@@ -78,6 +81,5 @@
             </section>
         </section>
     </center>
-    <script src="{% static 'molde/js/slider.js' %}"></script>
 </body>
 </html>

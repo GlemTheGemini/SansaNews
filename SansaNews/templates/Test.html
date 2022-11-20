@@ -9,19 +9,9 @@
 </head>
 <body>
   <main>
-    {% for lista in key  %}
-      {% for publicacion in lista %}
-        {% if "jpg" in publicacion %}
-
-          <img src="{% static publicacion %}" height="400">
-          
-
-        {% else %}
-
-          <h1>{{ publicacion }}</h1>
-
-        {% endif %}
-      {% endfor %}
+    {% for x in key  %}
+      <img src="{% static x.imagen %}" alt="pagina" title="{{ x.pagina }}" id="{{ x.id }}"/>
+      <h1>{{ x.descripcion }}</h1>
     {% endfor %}
   </main>
 </body>

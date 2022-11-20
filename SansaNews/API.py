@@ -104,9 +104,12 @@ def recientes():
         lista_fechas+= [[[diccionario[llave][0].split("\\")[-1], diccionario[llave][-1]], llave]]
     lista_fechas.sort(reverse=True)
     lista_fechas = lista_fechas[:4] # [[[fecha,descripcion], pagina], [[fecha,descripcion], pagina]]
-    directorio = os.path.dirname(os.path.dirname(os.path.realpath(__file__))) + "\\static\\" + "{}\\{}"
+    directorio ="\\{}\\{}"
+    id = "wows1_{}"
+    contador = 0
     lista_nuevas_publicaciones = []
     for fecha_desc, pagina in lista_fechas:
-        lista_nuevas_publicaciones += [{"pagina": pagina, "imagen": directorio.format(pagina,fecha_desc[0]), "descripcion":fecha_desc[-1]}] #[{pagina : pagina,imagen: imagen, descripcion: descripcion}, {pagina : pagina,imagen: imagen, descripcion: descripcion}]
+        lista_nuevas_publicaciones += [{"pagina": pagina, "imagen": directorio.format(pagina,fecha_desc[0]), "descripcion":fecha_desc[-1], "id": id.format(str(contador))}] #[{pagina : pagina,imagen: imagen, descripcion: descripcion}, {pagina : pagina,imagen: imagen, descripcion: descripcion}]
+        contador+=1
     return lista_nuevas_publicaciones
 
