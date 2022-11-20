@@ -70,20 +70,19 @@ header .logo{
     font-size: 4em;
 }
 .columns{
-
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
-    height:600px;
+    height:1000px;
     width: 1800px;
     align-items:center;
-  }
+}
   
-  .item{
-    height:40px;
-    padding:2em;
+.item{
+    height:200px;
+    width:300px;
+    padding:5px;
     margin:1em;
-
   }
 
 header .container{
