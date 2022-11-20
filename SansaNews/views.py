@@ -82,5 +82,6 @@ def subir_avisos(request, id=None):
     return render(request, 'Subir_Avisos.html', context)
 
 def avisos(request):
-    lista = models.imagenes_avisos.objects.all()
+    lista = models.imagenes_avisos.objects.all().order_by("id").reverse()
+    lista.reverse()
     return render(request,"Avisos.html",{"key": lista})
