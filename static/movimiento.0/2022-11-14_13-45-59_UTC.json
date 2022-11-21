@@ -80,7 +80,7 @@
                 "count": 3068
             },
             "edge_followed_by": {
-                "count": 4605
+                "count": 4604
             },
             "edge_mutual_followed_by": {
                 "count": 0,
@@ -144,28 +144,8 @@
                             "id": "50558351000",
                             "is_private": false,
                             "is_verified": false,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/265216503_607315540314943_7850994290067857196_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=107&_nc_ohc=EO3VNPVewVAAX8vHw0E&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfCEjOSvxKUuIy4mx7Q_9LfJkR-kVutie7OG4hXIuhV7-g&oe=637FDC5A&_nc_sid=8fd12b",
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/265216503_607315540314943_7850994290067857196_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=107&_nc_ohc=iIjUrHddHLkAX8kSk5h&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfCc4cXfSD2MkGPTQSe8-6PbOeHR_wJQjaXG13RWy7a8Yw&oe=637FDC5A&_nc_sid=8fd12b",
                             "username": "formacioncontinuausm"
-                        }
-                    },
-                    {
-                        "node": {
-                            "full_name": "RECYLINK",
-                            "id": "8289628912",
-                            "is_private": false,
-                            "is_verified": false,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/53607369_518177501923178_809316858137149440_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=102&_nc_ohc=1WtZzhrNVIoAX8CPc3K&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfApqpzWH-FUSIkMQ0yn1SN32WR60Cp08hnKNg_WGruUFA&oe=637E4475&_nc_sid=8fd12b",
-                            "username": "recylink_com"
-                        }
-                    },
-                    {
-                        "node": {
-                            "full_name": "@postgradospucv",
-                            "id": "33644367752",
-                            "is_private": false,
-                            "is_verified": false,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/93823335_229338264947150_426158225751015424_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=102&_nc_ohc=5n1p3lv2SzQAX8xVWeS&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBTLkyTGumtBq4wQKLkeAPJJpylg6bPMDsyvkTsJKC4jw&oe=637E88FA&_nc_sid=8fd12b",
-                            "username": "postgrados_pucv"
                         }
                     },
                     {
@@ -180,12 +160,32 @@
                     },
                     {
                         "node": {
+                            "full_name": "RECYLINK",
+                            "id": "8289628912",
+                            "is_private": false,
+                            "is_verified": false,
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/53607369_518177501923178_809316858137149440_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=102&_nc_ohc=KpnbQtAvFMQAX_TW4u2&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfAcgHzfOQoAMkmE6E97WBIFIXCeDlpxEkWsRqwvtLNUvQ&oe=63803EB5&_nc_sid=8fd12b",
+                            "username": "recylink_com"
+                        }
+                    },
+                    {
+                        "node": {
                             "full_name": "UMCE",
                             "id": "6035966636",
                             "is_private": false,
                             "is_verified": false,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/310432568_630164755216139_9202398269145720741_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=111&_nc_ohc=RKajsD05Yg0AX_1qYQo&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDvefyOrbXuFewQdLlSGQCoiL2AfsV5Quxu-X1qZkzmrA&oe=637E72C5&_nc_sid=8fd12b",
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/310432568_630164755216139_9202398269145720741_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=111&_nc_ohc=RKajsD05Yg0AX_1qYQo&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfCVfv351pBIWiWECxdb3EESMR3jCEwYiNAnQ630IXU-Rw&oe=63806D05&_nc_sid=8fd12b",
                             "username": "umcecl"
+                        }
+                    },
+                    {
+                        "node": {
+                            "full_name": "@postgradospucv",
+                            "id": "33644367752",
+                            "is_private": false,
+                            "is_verified": false,
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/93823335_229338264947150_426158225751015424_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=102&_nc_ohc=5n1p3lv2SzQAX8xVWeS&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfC0yYluc_qXvz1ZUDgbHlkzTDow2YnxFQdzHPZHxdzqpw&oe=6380833A&_nc_sid=8fd12b",
+                            "username": "postgrados_pucv"
                         }
                     },
                     {
@@ -210,11 +210,21 @@
                     },
                     {
                         "node": {
+                            "full_name": "Bibliotecas UdeC",
+                            "id": "1638411757",
+                            "is_private": false,
+                            "is_verified": false,
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/169976961_382777889378788_3592137903463813317_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=70NQa0iPl9QAX9jN10e&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBu5Gumez-dw9spESsAFra-xA5oaikqFmYg2XOMHw4AJw&oe=63808CDC&_nc_sid=8fd12b",
+                            "username": "bibliotecasudec"
+                        }
+                    },
+                    {
+                        "node": {
                             "full_name": "CEIQB USACH",
                             "id": "5455777066",
                             "is_private": false,
                             "is_verified": false,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/18879561_1915003692048054_4174051047355973632_a.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=106&_nc_ohc=qp4M5swcCpMAX97s4DB&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDGL8rOQiYfwWnzsC7F3pqOv5A-AGIFn9jEfgZyM84gog&oe=637F103C&_nc_sid=8fd12b",
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/18879561_1915003692048054_4174051047355973632_a.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=106&_nc_ohc=nWJGCwQB3LcAX8hKPxe&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDdOkQ4OkxVlBjpSS8EGYlYgyMAPCVWqsHXdSyVDDPLhQ&oe=637F103C&_nc_sid=8fd12b",
                             "username": "ceiqtb_usach"
                         }
                     },
@@ -224,18 +234,8 @@
                             "id": "8047774169",
                             "is_private": false,
                             "is_verified": false,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/281823060_525680455610789_7942366313271964363_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=105&_nc_ohc=1f5R97k5sYsAX_7EP9I&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfA2hRx7D_NWtazTHWXAoIb31fqhOo064D2SmLaK9RhV_w&oe=637E92EF&_nc_sid=8fd12b",
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/281823060_525680455610789_7942366313271964363_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=105&_nc_ohc=1f5R97k5sYsAX_7EP9I&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfAJra1ymkMUJDqLhpH3-DauthIocCS7s8ELVwU7lIDLYg&oe=63808D2F&_nc_sid=8fd12b",
                             "username": "cearq.ubb"
-                        }
-                    },
-                    {
-                        "node": {
-                            "full_name": "Bibliotecas UdeC",
-                            "id": "1638411757",
-                            "is_private": false,
-                            "is_verified": false,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/169976961_382777889378788_3592137903463813317_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=70NQa0iPl9QAX9jN10e&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBF6Jw3SaYTFA60r2nrJ8Di0_8JQFmfxMYk52SxDE6zcA&oe=637E929C&_nc_sid=8fd12b",
-                            "username": "bibliotecasudec"
                         }
                     },
                     {
@@ -264,18 +264,8 @@
                             "id": "336099221",
                             "is_private": false,
                             "is_verified": false,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/312147240_544710130714929_5281573048330104954_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=109&_nc_ohc=UTxzTunbqE0AX-5pJAQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDcoYDSFrZHpT7IGib_Jl7lBH4eGEGwADvSjd2DdRZL3g&oe=637E9E14&_nc_sid=8fd12b",
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/312147240_544710130714929_5281573048330104954_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=109&_nc_ohc=tadMjKLC-54AX8gGi2v&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfA-FI0iGTHRaTlXc8Nr0Qdh5oc_V7gVKN1UjRr8XY03FQ&oe=63809854&_nc_sid=8fd12b",
                             "username": "udp_cl"
-                        }
-                    },
-                    {
-                        "node": {
-                            "full_name": "DER Ediciones",
-                            "id": "7962237127",
-                            "is_private": false,
-                            "is_verified": false,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/209579332_3003547013223196_3153356844448800283_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=VMhtG3-t-1UAX_l7hkT&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDIJfiXy3N1qP4cI-GzVtLAOrXcJi2Id-FGTJU29CPPMg&oe=63800EA2&_nc_sid=8fd12b",
-                            "username": "der_ediciones"
                         }
                     },
                     {
@@ -310,22 +300,22 @@
                     },
                     {
                         "node": {
-                            "full_name": "The Lift - FIN PUCV",
-                            "id": "7308515096",
+                            "full_name": "DER Ediciones",
+                            "id": "7962237127",
                             "is_private": false,
                             "is_verified": false,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/30591796_1805911769718097_2460185540918509568_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=101&_nc_ohc=ZpTwzS8l7GsAX_nQktW&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfCcfhIDdkiRv5tgYZNph3sd-I-8uFfPF3k-XBBLjfBOLg&oe=637FD25C&_nc_sid=8fd12b",
-                            "username": "theliftpucv"
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/209579332_3003547013223196_3153356844448800283_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=VMhtG3-t-1UAX_l7hkT&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDIJfiXy3N1qP4cI-GzVtLAOrXcJi2Id-FGTJU29CPPMg&oe=63800EA2&_nc_sid=8fd12b",
+                            "username": "der_ediciones"
                         }
                     },
                     {
                         "node": {
-                            "full_name": "Facultad de Medicina UDP",
-                            "id": "1820520876",
+                            "full_name": "The Lift - FIN PUCV",
+                            "id": "7308515096",
                             "is_private": false,
                             "is_verified": false,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/312072706_491900386217857_3342926557037997654_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=101&_nc_ohc=0GFctE0B48cAX_f8TUx&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDjdIYddczkEKU_12nTk6bTidTfb2C1hHTGj0TfHdpsIA&oe=637E45A8&_nc_sid=8fd12b",
-                            "username": "medicinaudp"
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/30591796_1805911769718097_2460185540918509568_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=101&_nc_ohc=FzBzzhnWP4cAX_ecMjr&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfC_ewxE7iL2mHmBfmpaUZd_9sXjTaDAAIxDx8ufaCnRNQ&oe=637FD25C&_nc_sid=8fd12b",
+                            "username": "theliftpucv"
                         }
                     },
                     {
@@ -334,18 +324,8 @@
                             "id": "9227897688",
                             "is_private": false,
                             "is_verified": false,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/314918538_805092690795620_3404399617669072118_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=108&_nc_ohc=T_9-gbqclokAX_BG_pX&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfAjLWHH5yNv08VzwmFMeAEh1wReEDALhTu3W78pvmhHGg&oe=637E9FC9&_nc_sid=8fd12b",
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/314918538_805092690795620_3404399617669072118_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=108&_nc_ohc=7cbubnBbCIAAX9RFGia&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfC0ss_3n6gbDfzDVdAfiMaFPS5Ns6xNs-LKCb8SPPBUYw&oe=63809A09&_nc_sid=8fd12b",
                             "username": "fingusach"
-                        }
-                    },
-                    {
-                        "node": {
-                            "full_name": "Alumni UNAB",
-                            "id": "31362395913",
-                            "is_private": false,
-                            "is_verified": true,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/294842602_1259629324573259_6372539087346211289_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=111&_nc_ohc=EhyNZFaPXAEAX-C2Zz8&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfAzfe4BvljQAZ_aH16eI_gGOAcH8-mFiVKqTryKZPzuCQ&oe=637FDCAA&_nc_sid=8fd12b",
-                            "username": "alumniunab"
                         }
                     },
                     {
@@ -360,42 +340,32 @@
                     },
                     {
                         "node": {
+                            "full_name": "Facultad de Medicina UDP",
+                            "id": "1820520876",
+                            "is_private": false,
+                            "is_verified": false,
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/312072706_491900386217857_3342926557037997654_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=101&_nc_ohc=0GFctE0B48cAX_f8TUx&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfCqKwlpaNdbOSNSQauN90S9RwnupXcV0-xPrzX0zpC4Aw&oe=63803FE8&_nc_sid=8fd12b",
+                            "username": "medicinaudp"
+                        }
+                    },
+                    {
+                        "node": {
+                            "full_name": "Alumni UNAB",
+                            "id": "31362395913",
+                            "is_private": false,
+                            "is_verified": true,
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/294842602_1259629324573259_6372539087346211289_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=111&_nc_ohc=EhyNZFaPXAEAX-C2Zz8&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfAzfe4BvljQAZ_aH16eI_gGOAcH8-mFiVKqTryKZPzuCQ&oe=637FDCAA&_nc_sid=8fd12b",
+                            "username": "alumniunab"
+                        }
+                    },
+                    {
+                        "node": {
                             "full_name": "Fundaci\u00f3n El \u00c1rbol",
                             "id": "290729299",
                             "is_private": false,
                             "is_verified": false,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/311822220_649992063428138_4090032082116738104_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=102&_nc_ohc=4HOCYMSuuCsAX_bmyrN&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDd8QHnl1e4jq3xd6Ge80yORAeKbWR-HQ71VgCvM8ytJg&oe=637E68A2&_nc_sid=8fd12b",
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/311822220_649992063428138_4090032082116738104_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=102&_nc_ohc=a4Ou0S-qpsEAX_59e_i&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDmbCQ5g2g6N5rvZumoCRdeDhZiDc3Z3h5bBjO7S2rvWw&oe=638062E2&_nc_sid=8fd12b",
                             "username": "fundacionelarbol"
-                        }
-                    },
-                    {
-                        "node": {
-                            "full_name": "UTEM",
-                            "id": "1392652778",
-                            "is_private": false,
-                            "is_verified": false,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/306798502_1223824994852728_897399075931366918_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=bCthYQFmaJ0AX9-CVj8&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfCb9TUmJrNmCDeX77hPivphTwYO_P1MteYJA6PIKD6b9Q&oe=637E9713&_nc_sid=8fd12b",
-                            "username": "utem.cl"
-                        }
-                    },
-                    {
-                        "node": {
-                            "full_name": "Universidad de Santiago Chile",
-                            "id": "400127539",
-                            "is_private": false,
-                            "is_verified": false,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/199349952_549257092902161_6506967466363738675_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=105&_nc_ohc=_Z-vTWe67skAX9pr2dz&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfAb0c-nmwdUuqtRm1-PlBu6225I21WU1Mu-Hw_Qketl7Q&oe=637EFC78&_nc_sid=8fd12b",
-                            "username": "usachoficial"
-                        }
-                    },
-                    {
-                        "node": {
-                            "full_name": "Universidad de Talca",
-                            "id": "42181266",
-                            "is_private": false,
-                            "is_verified": false,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/302449731_761610351733033_367564682704751218_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=101&_nc_ohc=0sWiy3aR3YsAX91EToI&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDnO3lpyx7RyALXpiQ4J3FFb-gjI8xEKDrmZdZm-pM_mw&oe=637F16E1&_nc_sid=8fd12b",
-                            "username": "utalca"
                         }
                     },
                     {
@@ -410,12 +380,12 @@
                     },
                     {
                         "node": {
-                            "full_name": "OCEC UDP",
-                            "id": "47351020567",
+                            "full_name": "Universidad de Talca",
+                            "id": "42181266",
                             "is_private": false,
                             "is_verified": false,
-                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/172130865_361444341854880_319584045786475456_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=100&_nc_ohc=KnSS_CK0v2IAX_sHBg4&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfAlDuOdRkOaIJLOeODfMgy8zq3KVMEnRD8QLg8Aa6Dv1A&oe=637E67A3&_nc_sid=8fd12b",
-                            "username": "ocec_udp"
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/302449731_761610351733033_367564682704751218_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=101&_nc_ohc=0sWiy3aR3YsAX91EToI&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDnO3lpyx7RyALXpiQ4J3FFb-gjI8xEKDrmZdZm-pM_mw&oe=637F16E1&_nc_sid=8fd12b",
+                            "username": "utalca"
                         }
                     },
                     {
@@ -427,11 +397,41 @@
                             "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/21371954_1917187298520927_8336160084174307328_a.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=103&_nc_ohc=Q8kLg5LkdIIAX8cvSxQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDrkgypxMhNb96_V3SUuR3bPv3MrbOPRTIu8QI-_FgiGw&oe=637F136D&_nc_sid=8fd12b",
                             "username": "i_respublica"
                         }
+                    },
+                    {
+                        "node": {
+                            "full_name": "UTEM",
+                            "id": "1392652778",
+                            "is_private": false,
+                            "is_verified": false,
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/306798502_1223824994852728_897399075931366918_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=bCthYQFmaJ0AX9-CVj8&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfB9M4RMe8VBEkZR69T9hX4cDNShUh9PlCxD71BEEl_QvA&oe=63809153&_nc_sid=8fd12b",
+                            "username": "utem.cl"
+                        }
+                    },
+                    {
+                        "node": {
+                            "full_name": "OCEC UDP",
+                            "id": "47351020567",
+                            "is_private": false,
+                            "is_verified": false,
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/172130865_361444341854880_319584045786475456_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=100&_nc_ohc=KnSS_CK0v2IAX_sHBg4&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBAGMt3Rcv4DwAzztva7-X4TQKl0thKgzTqY6YShAbc0g&oe=638061E3&_nc_sid=8fd12b",
+                            "username": "ocec_udp"
+                        }
+                    },
+                    {
+                        "node": {
+                            "full_name": "Universidad de Santiago Chile",
+                            "id": "400127539",
+                            "is_private": false,
+                            "is_verified": false,
+                            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/199349952_549257092902161_6506967466363738675_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=105&_nc_ohc=_Z-vTWe67skAX9pr2dz&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfAb0c-nmwdUuqtRm1-PlBu6225I21WU1Mu-Hw_Qketl7Q&oe=637EFC78&_nc_sid=8fd12b",
+                            "username": "usachoficial"
+                        }
                     }
                 ]
             },
             "external_url": "https://linktr.ee/Movimiento.0",
-            "external_url_linkshimmed": "https://l.instagram.com/?u=https%3A%2F%2Flinktr.ee%2FMovimiento.0&e=ATO4HhRBFJgIbEHoFnpjRxAy1KTQrO4ykfX1HVibO6gq693A4jtjRZNVBFdM4ZTegh4V1fVlaRDkbuP9&s=1",
+            "external_url_linkshimmed": "https://l.instagram.com/?u=https%3A%2F%2Flinktr.ee%2FMovimiento.0&e=ATM9xq7GuUA5dMEB2mbTBnqSDmCeqA2XanRl1kW4PeyKRGb8NDzFFQTtPEz8jaJ_7TE21uz_EnTkY4Az&s=1",
             "fbid": "17841407487443878",
             "followed_by_viewer": false,
             "follows_viewer": false,
@@ -506,8 +506,8 @@
             }
         ],
         "thumbnail_src": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/315293115_2943305539297930_7223257048304613582_n.jpg?stp=c0.280.720.720a_dst-jpg_e15_s640x640&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=110&_nc_ohc=h-EFLv4fHV8AX9eTnpO&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBdAFIv4EYIEZv46S8fVkqBPxfqGeV9RuwhnPe6UJioLw&oe=637C344C&_nc_sid=8fd12b",
-        "tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiNjFiYzkzNTFmZmNhNDgwNjlkYTQzYThiYzY2MWNhMjUyOTcxMzU4MjE3NjYyODgyNDEyIn0sInNpZ25hdHVyZSI6IiJ9",
-        "video_url": "https://scontent-scl2-1.cdninstagram.com/v/t66.30100-16/10000000_813500439874571_6857910781654276960_n.mp4?_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=111&_nc_ohc=DH8geLUKdn4AX_vg9k2&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDIqXMOWBkLbppNAo6JW82vsNr5I56_fGpGOIVyC_y19A&oe=637BF292&_nc_sid=8fd12b",
-        "video_view_count": 1327
+        "tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYTY0MDFiOTBlM2UzNDgyMjkxYTE1MzQ3YzM4M2MxM2UyOTcxMzU4MjE3NjYyODgyNDEyIn0sInNpZ25hdHVyZSI6IiJ9",
+        "video_url": "https://scontent-scl2-1.cdninstagram.com/v/t66.30100-16/10000000_813500439874571_6857910781654276960_n.mp4?_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=111&_nc_ohc=DH8geLUKdn4AX_vg9k2&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBBK_guXGqwQaVgsWvUdheQD7kENiVouE5GFNLJ7SdaSg&oe=637C9B52&_nc_sid=8fd12b",
+        "video_view_count": 1329
     }
 }

@@ -7,7 +7,8 @@
 	</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'molde/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'molde/css/slider.css' %}">
-	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'molde/css/slider.css' %}" />
+  <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 	<body>
@@ -55,10 +56,10 @@
                 <h3 class="card-header" style="height: 3rem;">Publicación</h3>
             </center>
             <div>
-                <img src="{% static lista.url %}" height="400"/>
+                <img src="{% static lista.url %}" class="image-item"height="400"/>
             </div>
             <div>
-                <p>{{ lista.descripcion }}</p>
+                <h4>{{ lista.descripcion }}</h4>
             </div>
         </div>
     </center>
