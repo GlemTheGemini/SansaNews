@@ -56,6 +56,7 @@ def yotecuido(request):
 
 def sansanews(request):
     pagina = "sansanews"
+    API.actualizar(pagina)
     lista = API.contenido(pagina)
     return render(request,"SansaNews.html",{"key": lista})
 
