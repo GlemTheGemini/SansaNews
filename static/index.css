@@ -6,8 +6,8 @@
     flex-direction: column;
     display: flex;
     background-color: rgb(255, 255, 255);
-    max-width: 40em;
-    height: 40em;
+    max-width: 23em;
+    height: 23em;
     border-style: double;
     text-shadow: 2em rgba(255, 255, 255, 0.981);
     border-color: #d2d7da
@@ -53,7 +53,7 @@ button{
     border: 1px solid rgba(0, 0, 0, 0.952);
     box-shadow: 2px 2px 10px black;
     color:rgb(243, 240, 255);
-    background-color: rgb(24, 104, 196);
+    background-color: #002d40;
 }
 .container{
     max-width: 1400px;
@@ -79,8 +79,8 @@ header .logo{
 }
   
 .item{
-    height:200px;
-    width:300px;
+    height:500px;
+    width:600px;
     padding:5px;
     margin:1em;
   }
