@@ -10,8 +10,8 @@
     height: 23em;
     border-style: double;
     text-shadow: 2em rgba(255, 255, 255, 0.981);
-    border-color: #d2d7da
-    
+    border-color: #d2d7da;
+    image: 3em;
 
 
 }
@@ -83,6 +83,7 @@ header .logo{
     width:600px;
     padding:5px;
     margin:1em;
+
   }
 
 header .container{
@@ -90,3 +91,4 @@ header .container{
     flex-direction: column;
     align-items: center;
 }
+
