@@ -6,12 +6,11 @@
     flex-direction: column;
     display: flex;
     background-color: rgb(255, 255, 255);
-    max-width: 23em;
+    max-width: 20em;
     height: 23em;
     border-style: double;
     text-shadow: 2em rgba(255, 255, 255, 0.981);
     border-color: #d2d7da;
-    image: 3em;
 
 
 }
@@ -74,17 +73,21 @@ header .logo{
     flex-direction:row;
     flex-wrap:wrap;
     height:1000px;
-    width: 1800px;
+    width: 2000px;
     align-items:center;
 }
   
 .item{
     height:500px;
-    width:600px;
+    width:700px;
     padding:5px;
     margin:1em;
 
   }
+
+h3{
+    color: #d2d7da;
+}
 
 header .container{
     display: flex;
