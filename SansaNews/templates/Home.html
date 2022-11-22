@@ -1,23 +1,67 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
-<body bgcolor="#011c27"
-<head>
+
+<body bgcolor="#011c27">
+    <title>SansaNews</title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"
-    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" <title>
+    </title>
     <link rel="stylesheet" href="{% static 'index.css' %}">
-    <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
-	<link rel="stylesheet" type="text/css" href="{% static 'engine1/style.css' %}" />
+    <!-- Start WOWSlider.com HEAD section -->
+    <!-- add to the <head> of your page -->
+    <link rel="stylesheet" type="text/css" href="{% static 'engine1/style.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'molde/css/slider.css' %}" />
-	<script type="text/javascript" src="{% static 'engine1/jquery.js' %}"></script>
-	<!-- End WOWSlider.com HEAD section -->
-</head>
-<body>
-    <header>
-        <div class="container">
-            <p class="logo">sansanews</p>
-            <nav>
+    <link rel="stylesheet" type="text/css" href="{% static 'navstyle.css' %}" />
+    <script type="text/javascript" src="{% static 'engine1/jquery.js' %}"></script>
+    <!-- End WOWSlider.com HEAD section -->
+
+    <style>
+        /* Modify the background color */
+
+        .navbar-custom {
+            background-color: #002d40
+        }
+
+        /* Modify brand and text color */
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-text {
+            color: rgb(255, 255, 255);
+        }
+    </style>
+
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <div></div>
+                <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+                    <div class="container-fluid">
+                        <img src="{% static 'logo.png' %}" alt="Logo" width="407" height="106"
+                            class="d-inline-block align-text-top">
+                    </div>
+                </nav>
+                <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a class="nav-link active" aria-current="page" href="/SansaNews/Home">Home</a>
+                                <a class="nav-link" href="/SansaNews/Home">Iniciativas</a>
+                                <a class="nav-link" href="/SansaNews/Avisos">Avisos</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </nav>
+            </div>
+        </header>
 
             </nav>
         </div>
