@@ -71,7 +71,7 @@
               <h3 class="card-header" style="height: 3rem;">Publicación</h3>
           </center>
 
-          <div id="{{ lista|last|cut:' '|cut:'!'|cut:'?'|cut:'¿'|cut:'¡'|slice:':10' }}" class="carousel slide" data-bs-ride="true">
+          <div id="{{ lista|last|cut:' '|cut:'!'|cut:'?'|cut:'¿'|cut:'¡'|slice:':10' }}" class="carousel slide" data-bs-ride="false">
             <div class="carousel-inner">
           {% for publicacion in lista %}
               {% if forloop.first %}
