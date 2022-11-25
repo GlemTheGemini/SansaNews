@@ -5,49 +5,39 @@
 	<title>
 		SansaNews	
 	</title>
+  <link rel="stylesheet" href="{% static 'index.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'molde/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'molde/css/slider.css' %}">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-	<body>
-		<nav class="navbar-dark bg-primary" style="height: 10rem;">
-			<center>
-				<div class="container-fluid">
-					<div style="height: 2rem"></div>
-            <a href="../Home">
-			  		  <img src="{% static 'molde/img/Captura de pantalla (449).png' %}" width="300px" height="100px">
-            </a>
-				</div>
-			</center>
-		</nav>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarColor01">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="navbar-brand" href="../Home">Home
-                <span class="visually-hidden">(current)</span>
-              </a>
-            </li>
-          </ul>
+<body>
+<header>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container-fluid">
+            <img src="{% static 'logo.png' %}" alt="Logo" width="407" height="106"
+                class="d-inline-block align-text-center">
         </div>
-      </div>
     </nav>
-<!--
-		<center>
-			<div style="width: 50rem; height: 5rem;"></div>
-			<div style="width: 50rem; height: 8rem;">
-				<h1>
-					Primos
-				</h1>
-			</div>
-		</center>
-  -->
-
+          <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+              <div class="container-fluid">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                      aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                      <div class="navbar-nav">
+                          <a class="nav-link active" aria-current="page" href="/SansaNews/Home">Home</a>
+                          <a class="nav-link" href="/SansaNews/Home">Iniciativas</a>
+                          <a class="nav-link" href="/SansaNews/Avisos">Avisos</a>
+                      </div>
+                  </div>
+                </div>
+          </nav>
+  </div>
+</header>
 <br>
 <br>
   <center>
