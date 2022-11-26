@@ -11,7 +11,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
+<body style = "background: #011c27;">
 <header>
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
@@ -41,8 +41,8 @@
 <br>
 <br>
   <center>
-  <div class="card text-white bg-primary mb-3" style="max-width: 30rem; max-height: 30rem;">
-    <div class="card-body">
+  <div class="card text-white mb-3" style="max-width: 30rem; max-height: 30rem; background: #002d40;">
+    <div class="card-body" style="color: #d2d7da">
       <h4 class="card-title">primos_usmsj</h4>
       <p class="card-text">¡En esta página encontrarás las iniciativas más recientes de primos_usmsj!</p>
     </div>
@@ -58,7 +58,7 @@
       <div class="card mb-3" style="width: 50rem">
           <center>
             <div class="card mb-3" style="width: 50rem">
-              <h3 class="card-header" style="height: 3rem;">Publicación</h3>
+              <h3 class="card-header" style="height: 3rem; background: rgba(0,0,0,0.5); color:#d2d7da">Publicación</h3>
           </center>
 
           <div id="{{ lista|last|cut:' '|cut:'!'|cut:'?'|cut:'¿'|cut:'¡'|slice:':10' }}" class="carousel slide" data-bs-ride="false">
@@ -86,11 +86,9 @@
             </button>
           </div>
               <center>
-                <div style="width: 50rem; height: 3rem;"></div>
-                <div class="card-body" style="width: 50rem;">
-                  <h3 class="card-text">{{ publicacion }}</h3>
+                <div class="card-body" style="width: 50rem; background: rgba(0,0,0,0.5);" >
+                  <button>{{ publicacion }}</button>
                 </div>
-                <div style="width: 50rem; height: 5rem;"></div>
               </center>
             {% endif %}
             
@@ -104,15 +102,15 @@
 
 </main>
 
-<footer class="text-muted py-5">
+<footer class="text-muted py-5" style="background: #002d40;">
   <div class="container">
     <p class="float-end mb-1">
       <a href="#">Volver arriba</a>
     </p>
-    <p class="mb-1">SansaNews es un proyecto universitario sin fines de lucro y con mucho esfuerzo, sudor y lagrimas por detrás.</p>
-    <p class="mb-0">¡Siguenos en nuestro <a href="https://www.instagram.com/sansanews/">Instagram</a> oficial!</p>
+    <p class="mb-1" style="color: #d2d7da">SansaNews es un proyecto universitario sin fines de lucro y con mucho esfuerzo, sudor y lagrimas por detrás.</p>
+    <p class="mb-0" style="color: #d2d7da">¡Siguenos en nuestro <a href="https://www.instagram.com/sansanews/">Instagram</a> oficial!</p>
   </div>
 </footer>
 
-	</body>
+</body>
 </html>
