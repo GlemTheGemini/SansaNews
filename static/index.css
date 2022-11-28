@@ -72,15 +72,14 @@ header .logo{
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
-    height:1000px;
-    width: 1700px;
     align-items:center;
+    justify-content: center;
 }
   
 .item{
-    height:500px;
-    width:350px;
-    padding:5px;
+    height:400px;
+    width:280px;
+    padding:3px;
     margin:1em;
 
   }
