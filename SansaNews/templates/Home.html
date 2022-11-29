@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<body bgcolor="#011c27">
+<head>
     <title>SansaNews</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" <title>
@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'navstyle.css' %}" />
     <script type="text/javascript" src="{% static 'engine1/jquery.js' %}"></script>
     <!-- End WOWSlider.com HEAD section -->
+    <link rel="icon" href="{% static 'icons/sansanews.png' %}" type="image/icon type">
 
     <style>
         /* Modify the background color */
@@ -31,7 +32,7 @@
         }
     </style>
 
-    </head>
+</head>
 
     <body>
         <header>
@@ -66,7 +67,8 @@
             </nav>
         </div>
     </header>
-
+    <br>
+    <br>
     <section id="hero">
         <h1>Noticias más recientes de la semana</h1>
 
@@ -89,11 +91,12 @@
     <script type="text/javascript" src="{% static 'engine1/wowslider.js' %}"></script>
     <script type="text/javascript" src="{% static 'engine1/script.js' %}"></script>
     <!-- End WOWSlider.com BODY section -->
-
+    <br>
+    <br>
     <center>
         <section>
             <section id="Iniciativas-Estudiantiles">
-                <h2>Iniciativas estudiantiles </h2>
+                <h2>Iniciativas Estudiantiles </h2>
                 <div class="fotos">
                     <div class="row">
 
@@ -250,6 +253,19 @@
            </a>
         </div>
    </div>
+   <div class="item">
+        <div class="carta">
+        <h3>SANSANEWS</h3>
+        <background>
+           <center>
+               <img src="{%static 'icons/sansanews.png' %}"width="250px" height="250px">
+           </center>
+        </background>
+           <a href="../SansaNews">
+               <button>Más Informacion</button>
+           </a>
+        </div>
+    </div>
     <center/>
 </body>
 </html>
