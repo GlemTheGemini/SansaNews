@@ -1,124 +1,16 @@
+{% extends 'Molde.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>
-		SansaNews	
-	</title>
-  <link rel="stylesheet" href="{% static 'index.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'molde/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'molde/css/slider.css' %}">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body style = "background: #011c27;">
-<header>
-  <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-        <div class="container-fluid">
-            <img src="{% static 'logo.png' %}" alt="Logo" width="407" height="106"
-                class="d-inline-block align-text-center">
-        </div>
-    </nav>
-          <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-              <div class="container-fluid">
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-                      aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                      <div class="navbar-nav">
-                          <a class="nav-link active" aria-current="page" href="/SansaNews/Home">Home</a>
-                          <a class="nav-link" href="/SansaNews/Home">Iniciativas</a>
-                          <a class="nav-link" href="/SansaNews/Avisos">Avisos</a>
-                      </div>
-                  </div>
-                </div>
-          </nav>
-  </div>
-</header>
-<br>
-<br>
+{% block content %}
+<background>
   <center>
-  <div class="card text-white mb-3" style="max-width: 30rem; max-height: 32rem; background: #002d40;">
-    <div class="card-header"></div>
-    <background>
-      <center>
-          <img src="{%static 'icons/urst.jpg' %}"width="300" height="300">
-      </center>
-    </background
-    <div class="card-body" style="color: #d2d7da">
-      <h4 class="card-title"><a href="https://www.instagram.com/rocketscience_usm/" target="_blank">Rocket Science USM</a></h4>
-      <p class="card-text">Iniciativa estudiantil de estudio de las ciencias aeroespaciales
-        Universidad Técnica Federico Santa María
-        Campus Santiago San Joaquín</p>
-    </div>
-  </div>
-</center>
-<br>
-<br>
-
-<main>
-  <div class="d-flex flex-wrap justify-content-around">
-    {% for lista in key  %}
-      <center>
-        <div class="card mb-3 m-2" style="width: 650px;">
-            <center>
-              <div class="card mb-3">
-                <h3 class="card-header" style="background: rgba(0,0,0,0.5); color:#d2d7da">Publicación</h3>
-            </center>
+      <img src="{%static 'icons/urst.jpg' %}"width="300" height="300">
+  </center>
+</background
+<div class="card-body" style="color: #d2d7da">
+  <h4 class="card-title"><a href="https://www.instagram.com/rocketscience_usm/" target="_blank">Rocket Science USM</a></h4>
+  <p class="card-text">Iniciativa estudiantil de estudio de las ciencias aeroespaciales
+    Universidad Técnica Federico Santa María
+    Campus Santiago San Joaquín</p>
+</div>
+{% endblock %}
   
-            <div id="a{{ forloop.counter }}" class="carousel slide" data-bs-ride="false">
-              <div class="carousel-inner">
-            {% for publicacion in lista %}
-                {% if forloop.first %}
-                  <div class="carousel-item active">
-                    
-                    <img src="{% static publicacion %}" height="400"/>
-                  </div>  
-                {% elif ".jpg" in publicacion %}
-                  <div class="carousel-item">
-                    
-                    <img src="{% static publicacion %}" height="400"/>
-                  </div>  
-                {% else %}
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#{{ lista|last|cut:' '|cut:'!'|cut:'?'|cut:'¿'|cut:'¡'|slice:':10' }}" data-bs-slide="prev" style="background-color:black">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#{{ lista|last|cut:' '|cut:'!'|cut:'?'|cut:'¿'|cut:'¡'|slice:':10' }}" data-bs-slide="next" style="background-color:black">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-                <center>
-                  <div class="card-body" style="background: rgba(0,0,0,0.5);" >
-                    <button>{{ publicacion }}</button>
-                  </div>
-                </center>
-              {% endif %}
-              
-            {% endfor %}
-        </div>
-      </center>
-    {% endfor %}
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
-    <script src="{% static 'molde/js/slider.js' %}"></script>
-  </div>
-</main>
-
-<footer class="text-muted py-5" style="background: #002d40;">
-  <div class="container">
-    <p class="float-end mb-1">
-      <a href="#">Volver arriba</a>
-    </p>
-    <p class="mb-1" style="color: #d2d7da">SansaNews es un proyecto universitario sin fines de lucro y con mucho esfuerzo, sudor y lagrimas por detrás.</p>
-    <p class="mb-0" style="color: #d2d7da">¡Siguenos en nuestro <a href="https://www.instagram.com/sansanews/" target="_blank">Instagram</a> oficial!</p>
-  </div>
-</footer>
-
-</body>
-</html>
