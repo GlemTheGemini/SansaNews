@@ -19,4 +19,5 @@ urlpatterns = [
     path("Test/" ,views.test,name="test"),
     path("Subir-Avisos/",views.subir_avisos,name="subir-avisos"),
     path("Avisos/",views.avisos,name="avisos"),
+    path("Ergon/",views.ergon,name="ergon"),
 ]

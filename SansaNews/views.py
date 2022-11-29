@@ -68,8 +68,8 @@ def molde(request):
     return render(request,"Molde.html")
 
 def test(request):
-    lista = API.recientes()
     API.actualizar_2()
+    lista = API.recientes()
     return render(request,"Test.html",{"key": lista})
 
 def subir_avisos(request, id=None):
@@ -87,3 +87,8 @@ def avisos(request):
     lista = models.imagenes_avisos.objects.all().order_by("id").reverse()
     lista.reverse()
     return render(request,"Avisos.html",{"key": lista})
+
+def ergon(request):
+    pagina = "ergon_usm"
+    lista = API.contenido(pagina)
+    return render(request,"ergon.html",{"key": lista})
