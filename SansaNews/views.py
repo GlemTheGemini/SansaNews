@@ -92,3 +92,6 @@ def ergon(request):
     pagina = "ergon_usm"
     lista = API.contenido(pagina)
     return render(request,"ergon.html",{"key": lista})
+
+def about(request):
+    return render(request,"about.html")
