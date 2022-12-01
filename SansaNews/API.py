@@ -94,7 +94,7 @@ def contenido(pagina):
     return lista_4
 
 def recientes():
-    lista_paginas = ["ergon_usm","gbu_usm", "fablab_utfsm", "ceeinf_sj", "geekusm", "movimiento.0", "primos_usmsj", "rocketscience_usm", 
+    lista_paginas = ["sansanews","ergon_usm","gbu_usm", "fablab_utfsm", "ceeinf_sj", "geekusm", "movimiento.0", "primos_usmsj", "rocketscience_usm", 
                 "usm.cubesat.team", "xumbra_utfsm", "yotecuidousm"]
     diccionario = {}
     for pagina in lista_paginas:
