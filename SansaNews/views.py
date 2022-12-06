@@ -70,7 +70,7 @@ def molde(request):
 def test(request):
     API.actualizar_2()
     lista = API.recientes()
-    return render(request,"Test.html",{"key": lista})
+    return render(request,"Home.html",{"key": lista})
 
 def subir_avisos(request, id=None):
 
