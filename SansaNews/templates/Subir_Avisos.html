@@ -18,6 +18,7 @@
 </head>
 <body style="background: #011c27">
   <header>
+    <br>
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="container-fluid">
@@ -66,6 +67,7 @@
                 </ul>
               </li>
               <a class="nav-link" href="/SansaNews/Avisos">Avisos</a>
+              <a class="nav-link disabled">Subir Avisos</a>
               <a class="nav-link" href="/SansaNews/Home/about-us">About us</a>
             </div>
           </div>
@@ -84,7 +86,7 @@
       <div class="mover">
         <form method="POST" enctype="multipart/form-data" action="">
             {% csrf_token %}
-                {{ imagen.as_p }}
+              {{ imagen.as_p }}
               <center>
               <button type="submit">Enviar</button>
               </center>
