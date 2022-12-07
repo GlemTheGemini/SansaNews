@@ -98,3 +98,8 @@ header .container{
 .fuente{
     font-family: 'Georgia', 'Times New Roman', 'Times', 'serif';
 }
+
+.mover{
+    display: flex;
+    justify-content: center;
+}
