@@ -81,13 +81,15 @@
 				</h1>
 			</div>
 		</center>
-    <center>
+      <div class="mover">
         <form method="POST" enctype="multipart/form-data" action="">
             {% csrf_token %}
                 {{ imagen.as_p }}
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <center>
+              <button type="submit">Enviar</button>
+              </center>
         </form>
-    </center>
+      </div>
     <br>
     <br>
 
