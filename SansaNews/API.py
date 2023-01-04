@@ -103,7 +103,7 @@ def recientes():
     for llave in diccionario:
         lista_fechas+= [[[diccionario[llave][0].split("\\")[-1], diccionario[llave][-1]], llave]]
     lista_fechas.sort(reverse=True)
-    lista_fechas = lista_fechas[:4] # [[[fecha,descripcion], pagina], [[fecha,descripcion], pagina]]
+    lista_fechas = lista_fechas[:4] #[[[fecha,descripcion], pagina], [[fecha,descripcion], pagina]]
     directorio ="\\{}\\{}"
     id = "wows1_{}"
     contador = 0
