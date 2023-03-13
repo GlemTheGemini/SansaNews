@@ -101,7 +101,7 @@ def recientes():
         diccionario[pagina]= [contenido(pagina)[0][0],contenido(pagina)[0][-1]]
     lista_fechas= []
     for llave in diccionario:
-        lista_fechas+= [[[diccionario[llave][0].split("\\")[-1], diccionario[llave][-1]], llave]]
+        lista_fechas+= [[[diccionario[llave][0].split("\\")[-1], diccionario[llave][-1][:150] + "..."], llave]]
     lista_fechas.sort(reverse=True)
     lista_fechas = lista_fechas[:4] #[[[fecha,descripcion], pagina], [[fecha,descripcion], pagina]]
     directorio ="\\{}\\{}"
