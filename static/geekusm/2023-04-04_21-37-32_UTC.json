@@ -4,60 +4,45 @@
         "version": "4.9.5"
     },
     "node": {
-        "__typename": "GraphVideo",
+        "__typename": "GraphImage",
         "accessibility_caption": null,
-        "clips_music_attribution_info": {
-            "artist_name": "geekusm",
-            "audio_id": "753285682840280",
-            "should_mute_audio": false,
-            "should_mute_audio_reason": "",
-            "song_name": "Original audio",
-            "uses_original_audio": true
-        },
         "coauthor_producers": [],
         "comments_disabled": false,
-        "dash_info": {
-            "is_dash_eligible": false,
-            "number_of_qualities": 0,
-            "video_dash_manifest": null
-        },
         "dimensions": {
-            "height": 352,
-            "width": 640
+            "height": 1080,
+            "width": 1080
         },
-        "display_url": "https://instagram.fccp1-1.fna.fbcdn.net/v/t51.2885-15/336984590_2617914548348144_4845767650220867518_n.jpg?stp=dst-jpg_e15&_nc_ht=instagram.fccp1-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=JBR5UdV21N8AX_fOUMg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfCjiYVm5f2Cnlp3MTQmd7-P7NgGIxrN-B4OxmzAHgikPg&oe=642E2FDB&_nc_sid=8fd12b",
+        "display_url": "https://instagram.fccp1-1.fna.fbcdn.net/v/t51.2885-15/339648754_935905587824325_3522506332730456174_n.webp?se=7&stp=dst-jpg_e35&_nc_ht=instagram.fccp1-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=kTvwf12ChkoAX9C7KUr&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzA3Mzc4OTIzNjY2MzIzNjMwNg%3D%3D.2-ccb7-5&oh=00_AfB-TRwEA13cwN-P8B_UlfVTz9LhLJDhMIDJA5qaGnkbdw&oe=6431BBCB&_nc_sid=8fd12b",
         "edge_liked_by": {
-            "count": 142
+            "count": 4
         },
         "edge_media_preview_like": {
-            "count": 142
+            "count": 4
         },
         "edge_media_to_caption": {
             "edges": [
                 {
                     "node": {
-                        "text": "Taller kpop Geekusm 2023\n\nRecuerden que si les gustar\u00eda aprender a bailar kpop hay taller regularmente. No necesitas ser experto ni tener conocimientos previos, aqu\u00ed cualquiera puede aprender \ud83d\ude4c.\n\n\u00danete a la comunidad de WhatsApp en el enlace de nuestra biograf\u00eda para seguir de cerca la informaci\u00f3n relativa a kpop.\n\n@defider_usm @vinculacionusm @rreeusm"
+                        "text": "\u00a1Nos vemos ma\u00f1ana en la sala de ocio(sala pasta)!\n\nEstaremos jugando muchas cosas y estan invitados a traer sus propios juegos y consolas <3"
                     }
                 }
             ]
         },
         "edge_media_to_comment": {
-            "count": 4
+            "count": 0
         },
         "edge_media_to_tagged_user": {
             "edges": []
         },
         "fact_check_information": null,
         "fact_check_overall_rating": null,
-        "felix_profile_grid_crop": null,
         "gating_info": null,
-        "has_audio": true,
         "has_upcoming_event": false,
-        "id": "3062567941317006766",
-        "is_video": true,
+        "id": "3073789236663236306",
+        "is_video": false,
         "location": null,
         "media_overlay_info": null,
-        "media_preview": "ACoXpICo4bH4mpwXPcH8j/Os9pDksADyMcZq0JGwSFUjHAx0Pr1/P8KVgLI3egP5f0pefT8j/wDrpikgncgIJGF7DjnnPSk811yAnOB9Ae5GefSgY/I7gj64/wDrU3zE9f8AP51X818DK7iO+KX7TL/c/nQBMsYHQVKFx6UUUCJd1IWNFFAEZ4pMiiigD//Z",
+        "media_preview": "ACoqyTeyEY4HuKctvGVyzndgZG0nk++P881UUgEE9M1peerDIB9OB/n8/wCdbb7stycviZCLaLHLkcn+A+px27jml+zQ/wDPQ/ip/HtUyzqrbjuwM9v/AK/tUxukI5De4wD/AJ4/zml8zKTadkrmM4AJA6A8Z44+lNqaRvNkJH8R4+lTiNR2ppXNoU3PVaFXZnp/SnmA/wB5P++hQMAj0B4qRwG6/hye/wDwGpMyEsw4z09MGrUdk8o3cfNzyf8AAdfb86rHaDjB/M/1FdBppVYl34xgkevU/hn1z9KTdtgMh7drZhu5z0Ip9bRjBzHncCerY4z6YHboKxiMHHpWkHfQ7aL0aIUtS0ZkzwMkD6VCeQCW/X/69acX+pH+7/jWQegqDjBuvXNatnOYlCvyM59wOeBWUvUfWr9Wknub0oKV2y21/s+ZQcgdTjr7AZz9eO3FYxdic561Yk+6aqVmjC76H//Z",
         "nft_asset_info": null,
         "owner": {
             "bio_links": [
@@ -458,44 +443,40 @@
             "username": "geekusm"
         },
         "pinned_for_users": [],
-        "product_type": "clips",
         "sharing_friction_info": {
             "bloks_app_url": null,
             "should_have_sharing_friction": false
         },
-        "shortcode": "CqAbVECsxWu",
-        "taken_at_timestamp": 1679306754,
+        "shortcode": "CqoSwZtuzbS",
+        "taken_at_timestamp": 1680644252,
         "thumbnail_resources": [
             {
                 "config_height": 150,
                 "config_width": 150,
-                "src": "https://instagram.fccp1-1.fna.fbcdn.net/v/t51.2885-15/336984590_2617914548348144_4845767650220867518_n.jpg?stp=c144.0.352.352a_dst-jpg_e15_s150x150&_nc_ht=instagram.fccp1-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=JBR5UdV21N8AX_fOUMg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfCx-tQA9LWFoLaV28K3RxC0mlVK1TClhjlIxlAArSXFcQ&oe=642E2FDB&_nc_sid=8fd12b"
+                "src": "https://instagram.fccp1-1.fna.fbcdn.net/v/t51.2885-15/339648754_935905587824325_3522506332730456174_n.webp?stp=dst-jpg_e35_s150x150&_nc_ht=instagram.fccp1-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=kTvwf12ChkoAX9C7KUr&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzA3Mzc4OTIzNjY2MzIzNjMwNg%3D%3D.2-ccb7-5&oh=00_AfBaLOp9BEmcxcI5P3oA1xYVPGNkYdU7lBLPkX_ebL1t3w&oe=6431BBCB&_nc_sid=8fd12b"
             },
             {
                 "config_height": 240,
                 "config_width": 240,
-                "src": "https://instagram.fccp1-1.fna.fbcdn.net/v/t51.2885-15/336984590_2617914548348144_4845767650220867518_n.jpg?stp=c144.0.352.352a_dst-jpg_e15_s240x240&_nc_ht=instagram.fccp1-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=JBR5UdV21N8AX_fOUMg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBuYxv_C2IU1r7dQwrXjNL_Csq-cX_zlVu7-FF97hiM9A&oe=642E2FDB&_nc_sid=8fd12b"
+                "src": "https://instagram.fccp1-1.fna.fbcdn.net/v/t51.2885-15/339648754_935905587824325_3522506332730456174_n.webp?stp=dst-jpg_e35_s240x240&_nc_ht=instagram.fccp1-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=kTvwf12ChkoAX9C7KUr&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzA3Mzc4OTIzNjY2MzIzNjMwNg%3D%3D.2-ccb7-5&oh=00_AfBNbyYXYRLz0VAaEgsjUEtA-PWfSPH6_-rMovkYpH_5Mw&oe=6431BBCB&_nc_sid=8fd12b"
             },
             {
                 "config_height": 320,
                 "config_width": 320,
-                "src": "https://instagram.fccp1-1.fna.fbcdn.net/v/t51.2885-15/336984590_2617914548348144_4845767650220867518_n.jpg?stp=c144.0.352.352a_dst-jpg_e15_s320x320&_nc_ht=instagram.fccp1-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=JBR5UdV21N8AX_fOUMg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfA9_Ys2JT7yY67xXjTIu3pIdBLTkTjUt8AgF7L4vVYubA&oe=642E2FDB&_nc_sid=8fd12b"
+                "src": "https://instagram.fccp1-1.fna.fbcdn.net/v/t51.2885-15/339648754_935905587824325_3522506332730456174_n.webp?stp=dst-jpg_e35_s320x320&_nc_ht=instagram.fccp1-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=kTvwf12ChkoAX9C7KUr&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzA3Mzc4OTIzNjY2MzIzNjMwNg%3D%3D.2-ccb7-5&oh=00_AfAOU9Kar31C8svu45RDp9SIrkJk8pu48b0NaOSiTV-u7A&oe=6431BBCB&_nc_sid=8fd12b"
             },
             {
                 "config_height": 480,
                 "config_width": 480,
-                "src": "https://instagram.fccp1-1.fna.fbcdn.net/v/t51.2885-15/336984590_2617914548348144_4845767650220867518_n.jpg?stp=c144.0.352.352a_dst-jpg_e15&_nc_ht=instagram.fccp1-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=JBR5UdV21N8AX_fOUMg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBN3pv431f6Mw7-wxl483LWwaUAgtNUmP4ph6xVDGiUQg&oe=642E2FDB&_nc_sid=8fd12b"
+                "src": "https://instagram.fccp1-1.fna.fbcdn.net/v/t51.2885-15/339648754_935905587824325_3522506332730456174_n.webp?stp=dst-jpg_e35_s480x480&_nc_ht=instagram.fccp1-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=kTvwf12ChkoAX9C7KUr&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzA3Mzc4OTIzNjY2MzIzNjMwNg%3D%3D.2-ccb7-5&oh=00_AfCc8quK0p6MIEsJ7N_bTRV2StEb7QHh2GRSoZWtx4Wrew&oe=6431BBCB&_nc_sid=8fd12b"
             },
             {
                 "config_height": 640,
                 "config_width": 640,
-                "src": "https://instagram.fccp1-1.fna.fbcdn.net/v/t51.2885-15/336984590_2617914548348144_4845767650220867518_n.jpg?stp=c144.0.352.352a_dst-jpg_e15&_nc_ht=instagram.fccp1-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=JBR5UdV21N8AX_fOUMg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBN3pv431f6Mw7-wxl483LWwaUAgtNUmP4ph6xVDGiUQg&oe=642E2FDB&_nc_sid=8fd12b"
+                "src": "https://instagram.fccp1-1.fna.fbcdn.net/v/t51.2885-15/339648754_935905587824325_3522506332730456174_n.webp?stp=dst-jpg_e35_s640x640_sh0.08&_nc_ht=instagram.fccp1-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=kTvwf12ChkoAX9C7KUr&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzA3Mzc4OTIzNjY2MzIzNjMwNg%3D%3D.2-ccb7-5&oh=00_AfAWRvpCzPQeIzcF7p2NjJf6htoUfqhLXw06lHTVsSYqlw&oe=6431BBCB&_nc_sid=8fd12b"
             }
         ],
-        "thumbnail_src": "https://instagram.fccp1-1.fna.fbcdn.net/v/t51.2885-15/336984590_2617914548348144_4845767650220867518_n.jpg?stp=c144.0.352.352a_dst-jpg_e15&_nc_ht=instagram.fccp1-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=JBR5UdV21N8AX_fOUMg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBN3pv431f6Mw7-wxl483LWwaUAgtNUmP4ph6xVDGiUQg&oe=642E2FDB&_nc_sid=8fd12b",
-        "tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiMTM3OTk5ZjViOTdhNGYzNTljNzM0YjY2YTZjZGRlNzAzMDYyNTY3OTQxMzE3MDA2NzY2In0sInNpZ25hdHVyZSI6IiJ9",
-        "video_url": "https://instagram.fccp1-1.fna.fbcdn.net/v/t50.2886-16/335940019_719478213298164_6722878876120105497_n.mp4?_nc_ht=instagram.fccp1-1.fna.fbcdn.net&_nc_cat=100&_nc_ohc=-jtVQPOv9rIAX8cF-Qt&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfA50HnVdZfJWWcGUta-2HbogBZpzn-hrEHEYKGDBEYl1w&oe=642E1BE1&_nc_sid=8fd12b",
-        "video_view_count": 1337,
+        "thumbnail_src": "https://instagram.fccp1-1.fna.fbcdn.net/v/t51.2885-15/339648754_935905587824325_3522506332730456174_n.webp?stp=dst-jpg_e35_s640x640_sh0.08&_nc_ht=instagram.fccp1-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=kTvwf12ChkoAX9C7KUr&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzA3Mzc4OTIzNjY2MzIzNjMwNg%3D%3D.2-ccb7-5&oh=00_AfAWRvpCzPQeIzcF7p2NjJf6htoUfqhLXw06lHTVsSYqlw&oe=6431BBCB&_nc_sid=8fd12b",
         "viewer_can_reshare": true
     }
 }
