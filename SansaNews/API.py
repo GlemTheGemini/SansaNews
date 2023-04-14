@@ -1,5 +1,8 @@
 #Importar los modulos a usar y ponemos el contexto.
-from instaloader import instaloader, Profile; import os; from os import path; import json
+from instaloader import instaloader, Profile
+import os
+import json
+
 def actualizar(pagina):
     L = instaloader.Instaloader(post_metadata_txt_pattern="",compress_json=False,dirname_pattern=(os.path.dirname(os.path.dirname(os.path.realpath(__file__))) + "\\static\\"+ "{}\\").format(pagina))
     #Descargamos los archivos necesarios de los usuarios que se encuentran en el archivo señalado
@@ -8,8 +11,8 @@ def actualizar(pagina):
     L.posts_download_loop(publicaciones,pagina,fast_update=True, max_count=21)
     return()
 
-def actualizar_2(): 
-    lista_paginas = ["ergon_usm","gbu_usm", "fablab_utfsm", "ceeinf_sj", "geekusm", "movimiento.0", "primos_usmsj", "rocketscience_usm", 
+def actualizar_2():
+    lista_paginas = ["ergon_usm","gbu_usm", "fablab_utfsm", "ceeinf_sj", "geekusm", "movimiento.0", "primos_usmsj", "rocketscience_usm",
                     "usm.cubesat.team", "xumbra_utfsm", "yotecuidousm"]
     for pagina in lista_paginas:
         actualizar(pagina)
@@ -29,11 +32,11 @@ def leer_archivo_json(ruta_archivo):
             return ""
 
 def contenido(pagina):
-    
+
     #Retorna una lista de hasta 20 publicaciones (como máximo) de la página especificada.
     #Cada publicación es una lista de imágenes (hasta 10 imágenes) y una descripción (opcional).
     #Solo se incluyen las 2 publicaciones más recientes.
-    
+
     lista = []
     # Obtiene la ruta absoluta del directorio "static/pagina"
     directorio = os.path.abspath(os.path.join(__file__, "..", "..", "static", pagina))
@@ -56,7 +59,7 @@ def contenido(pagina):
 
         # Si el archivo es una imagen, agrega su ruta a la lista de imágenes
         if file.endswith(".jpg"):
-            lista_multi_imagenes.append(os.path.join(directorio, file))
+            lista_multi_imagenes.append(f"{pagina}/{file}")
         # Si el archivo es un JSON, lee su descripción y la agrega a la lista de descripciones
         elif file.endswith(".json"):
             descripcion = leer_archivo_json(os.path.join(directorio, file))
@@ -81,19 +84,18 @@ def contenido(pagina):
 def recientes():
     # Lista de nombres de páginas web
     lista_paginas = ["sansanews", "ergon_usm", "gbu_usm", "fablab_utfsm", "ceeinf_sj", "geekusm", "movimiento.0",
-                      "primos_usmsj", "rocketscience_usm", "usm.cubesat.team", "xumbra_utfsm", "yotecuidousm"]
+                    "primos_usmsj", "rocketscience_usm", "usm.cubesat.team", "xumbra_utfsm", "yotecuidousm"]
 
     # Diccionario para almacenar la información de las publicaciones
     diccionario = {}
     for pagina in lista_paginas:
         # Agregar información de primera y última publicación al diccionario
         diccionario[pagina] = [contenido(pagina)[0][0], contenido(pagina)[0][-1]]
-
     # Lista de fechas y descripciones de publicaciones
     lista_fechas = []
     for llave in diccionario:
         # Agregar fecha y descripción de cada publicación a la lista
-        fecha_desc = [diccionario[llave][0].split("\\")[-1], diccionario[llave][-1][:150] + "..."]
+        fecha_desc = [diccionario[llave][0].split("/")[-1], diccionario[llave][-1][:150] + "..."]
         lista_fechas.append([fecha_desc, llave])
 
     # Ordenar la lista por fecha, de más reciente a menos reciente
