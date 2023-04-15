@@ -3,6 +3,13 @@ from . import views
 from django.contrib.auth.views import LoginView,LogoutView
 
 urlpatterns = [
+    path("" ,views.home,name="home"),
+    path("Test/" ,views.test,name="test"),
+    path("about-us/",views.about,name="about-us"),
+    path("Avisos/",views.avisos,name="avisos"),
+    path("Subir-Avisos/",views.subir_avisos,name="subir-avisos"),
+    path("Molde/" ,views.molde,name="molde"),
+    path("SansaNews/",views.sansanews,name="sansanews"),
     path("GBU/",views.gbu_usm,name="gbu"),
     path("FabLab/",views.fablab,name="fablab"),
     path("CEEINF/",views.ceeinf,name="ceeinf"),
@@ -13,12 +20,5 @@ urlpatterns = [
     path("RocketScience-USM/",views.rocket,name="rocket"),
     path("Yo-Te-Cuido/",views.yotecuido,name="yotecuido"),
     path("Xumbra-UTFSM/",views.xumbra,name="xumbra"),
-    path("SansaNews/",views.sansanews,name="sansanews"),
-    path("Home/" ,views.home,name="home"),
-    path("Molde/" ,views.molde,name="molde"),
-    path("Test/" ,views.test,name="test"),
-    path("Subir-Avisos/",views.subir_avisos,name="subir-avisos"),
-    path("Avisos/",views.avisos,name="avisos"),
     path("Ergon/",views.ergon,name="ergon"),
-    path("Home/about-us",views.about,name="about-us"),
 ]
