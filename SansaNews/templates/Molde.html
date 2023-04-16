@@ -4,14 +4,26 @@
 
 {% load static %}
 
-<br />
-<br />
+
+<br>
+<br>
 <center>
   <div
     class="card text-white mb-3"
     style="max-width: 30rem; max-height: 30rem; background: #002d40"
   >
-    <div class="card-header"></div>
+    <div class="card-header">
+      <center>
+          <img src="{%static 'icons/'|add:usuario|add:'.jpg' %}"width="300" height="300">
+      </center>
+      <div class="card-body" style="color: #d2d7da">
+        <h4 class="card-title"><a href="https://www.instagram.com/{{ usuario }}/" target="_blank">{{ nombre }}</a></h4>
+        <p class="card-text">11am - 18:30pm / Lu - Vi
+          Un lugar para avanzar
+          ⬇️Link a nuestras plataformas⬇️
+          linktr.ee/fablab_utfsm</p>
+      </div>
+    </div>
     {% block content %} {% endblock content %}
   </div>
 </center>
@@ -86,5 +98,4 @@
         {% endfor %}
         <script src="{% static 'molde/js/slider.js' %}"></script>
       </div>
-
 {% endblock base %}

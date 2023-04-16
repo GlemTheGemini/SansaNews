@@ -8,5 +8,5 @@ urlpatterns = [
     path("about-us/",views.about,name="about-us"),
     path("Avisos/",views.avisos,name="avisos"),
     path("Subir-Avisos/",views.subir_avisos,name="subir-avisos"),
-    path("<str:nombre>/", views.iniciativa),
+    path("<str:usuario>/", views.iniciativa),
 ]

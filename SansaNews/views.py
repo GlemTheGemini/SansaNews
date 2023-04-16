@@ -10,9 +10,9 @@ def home(request):
     recientes = API.recientes()
     return render(request,"Home.html",{"key": recientes, "iniciativas": INICIATIVAS})
 
-def iniciativa(request, nombre):
-    publicaciones = API.contenido(nombre)
-    return render(request, f"{nombre}.html", {"key": publicaciones, "iniciativas": INICIATIVAS})
+def iniciativa(request, usuario):
+    publicaciones = API.contenido(usuario)
+    return render(request, "Molde.html", {"usuario": usuario, "nombre": INICIATIVAS[usuario], "key": publicaciones, "iniciativas": INICIATIVAS})
 
 def about(request):
     return render(request,"about.html")
