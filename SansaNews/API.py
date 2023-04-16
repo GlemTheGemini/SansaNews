@@ -1,5 +1,6 @@
 #Importar los modulos a usar y ponemos el contexto.
 from instaloader import instaloader, Profile
+from .iniciativas import INICIATIVAS
 import os
 import json
 
@@ -12,9 +13,7 @@ def actualizar(pagina):
     return()
 
 def actualizar_2():
-    lista_paginas = ["ergon_usm","gbu_usm", "fablab_utfsm", "ceeinf_sj", "geekusm", "movimiento.0", "primos_usmsj", "rocketscience_usm",
-                    "usm.cubesat.team", "xumbra_utfsm", "yotecuidousm"]
-    for pagina in lista_paginas:
+    for pagina in INICIATIVAS:
         actualizar(pagina)
     return 0
 
@@ -82,13 +81,9 @@ def contenido(pagina):
 
 
 def recientes():
-    # Lista de nombres de páginas web
-    lista_paginas = ["sansanews", "ergon_usm", "gbu_usm", "fablab_utfsm", "ceeinf_sj", "geekusm", "movimiento.0",
-                    "primos_usmsj", "rocketscience_usm", "usm.cubesat.team", "xumbra_utfsm", "yotecuidousm"]
-
     # Diccionario para almacenar la información de las publicaciones
     diccionario = {}
-    for pagina in lista_paginas:
+    for pagina in INICIATIVAS:
         # Agregar información de primera y última publicación al diccionario
         diccionario[pagina] = [contenido(pagina)[0][0], contenido(pagina)[0][-1]]
     # Lista de fechas y descripciones de publicaciones
