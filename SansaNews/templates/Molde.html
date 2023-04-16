@@ -20,7 +20,7 @@
 
 <main>
   <div class="d-flex flex-wrap justify-content-around">
-    {% for lista in key %}
+    {% for publicaciones in key %}
     <center>
       <div class="card mb-3 m-2" style="width: 650px">
         <center>
@@ -38,7 +38,7 @@
               data-bs-ride="false"
             >
               <div class="carousel-inner">
-                {% for publicacion in lista %} {% if forloop.first %}
+                {% for publicacion in publicaciones %} {% if forloop.first %}
                 <div class="carousel-item active">
                   <img src="{% static publicacion %}" height="400" />
                 </div>
