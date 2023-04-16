@@ -1,393 +1,271 @@
+
+{% extends 'base.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <title>SansaNews</title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="{% static 'index.css' %}" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'engine1/style.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'molde/css/slider.css' %}"
-    />
-    <link rel="stylesheet" type="text/css" href="{% static 'navstyle.css' %}" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script
-      type="text/javascript"
-      src="{% static 'engine1/jquery.js' %}"
-    ></script>
-    <link
-      rel="icon"
-      href="{% static 'icons/sansanews.png' %}"
-      type="image/icon type"
-    />
 
-    <style>
-      /* Modify the background color */
+{% block base %}
 
-      .navbar-custom {
-        background-color: #002d40;
-      }
-
-      /* Modify brand and text color */
-
-      .navbar-custom .navbar-brand,
-      .navbar-custom .navbar-text {
-        color: rgb(255, 255, 255);
-      }
-    </style>
-  </head>
-
-  <body>
-    <header>
-      <br>
-      <div class="container">
-        <div></div>
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-          <div class="container-fluid">
-            <img
-              src="{% static 'logo.png' %}"
-              alt="Logo"
-              width="407"
-              height="106"
-              class="d-inline-block align-text-top"
-            />
-          </div>
-        </nav>
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-          <div class="container-fluid">
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNavAltMarkup"
-              aria-controls="navbarNavAltMarkup"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="/"
-                  >Home</a
-                >
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Iniciativas
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="../FabLab">FabLab</a></li>
-                    <li><a class="dropdown-item" href="../GeekUSM">GeekUSM</a></li>
-                    <li><a class="dropdown-item" href="../Primos">Primos</a></li>
-                    <li><a class="dropdown-item" href="../GBU">GBU</a></li>
-                    <li><a class="dropdown-item" href="../Movimiento-0">Movimiento 0</a></li>
-                    <li><a class="dropdown-item" href="../CEEINF">CEEINF</a></li>
-                    <li><a class="dropdown-item" href="../RocketScience-USM">Rocket Science USM</a></li>
-                    <li><a class="dropdown-item" href="../Usm-CubeSat-Team">CUBESEAT TEAM</a></li>
-                    <li><a class="dropdown-item" href="../Xumbra-UTFSM">Xumbra UTFSM</a></li>
-                    <li><a class="dropdown-item" href="../Yo-Te-Cuido">Yo Te Cuido</a></li>
-                    <li><a class="dropdown-item" href="../Ergon">ERGON</a></li>
-                    <li><a class="dropdown-item" href="../SansaNews">SansaNews</a></li>
-                  </ul>
-                </li>
-                <a class="nav-link" href="Avisos">Avisos</a>
-                <a class="nav-link" href="Subir-Avisos">Subir Avisos</a>
-                <a class="nav-link" href="about-us">About us</a>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <br />
-    <br />
-    <section id="hero">
-      <h1 class="fuente"><b>Noticias más recientes de la semana</b></h1>
-    </section>
-    <br>
-    <div id="wowslider-container1">
-      <div class="ws_images">
-        <ul>
-          {% for x in key %}
-          <li class="image-container">
-            <img
-              src="{% static x.imagen %}"
-              class="image-item"
-              alt="pagina"
-              title="@{{ x.pagina }}"
-              id="{{ x.id }}"
-            />{{ x.descripcion }}
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="ws_bullets">
-        <div>
-          <a href="#" title="pagina"><span>1</span></a>
-          <a href="#" title="pagina"><span>2</span></a>
-          <a href="#" title="pagina"><span>3</span></a>
-          <a href="#" title="pagina"><span>4</span></a>
-        </div>
-      </div>
-      <div class="ws_shadow"></div>
-    </div>
-    <script
-      type="text/javascript"
-      src="{% static 'engine1/wowslider.js' %}"
-    ></script>
-    <script
-      type="text/javascript"
-      src="{% static 'engine1/script.js' %}"
-    ></script>
-    <br />
-    <br />
-    <center>
-      <section>
-        <section id="Iniciativas-Estudiantiles">
-          <h2 class="fuente"><b>Iniciativas Estudiantiles</b></h2>
-          <div class="fotos">
-            <div class="row"></div>
-          </div>
-        </section>
-      </section>
-    </center>
+<br />
+<br />
+<section id="hero">
+  <h1 class="fuente"><b>Noticias más recientes de la semana</b></h1>
+</section>
+<br>
+<div id="wowslider-container1">
+  <div class="ws_images">
+    <ul>
+      {% for x in key %}
+      <li class="image-container">
+        <img
+          src="{% static x.imagen %}"
+          class="image-item"
+          alt="pagina"
+          title="@{{ x.pagina }}"
+          id="{{ x.id }}"
+        />{{ x.descripcion }}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="ws_bullets">
     <div>
-      <center>
-        <div class="columns">
-          <div class="item">
-            <div class="carta">
-              <h3>Fablab</h3>
-              <background>
-                <center>
-                  <img
-                    src="{%static 'icons/fablab.jpg' %}"
-                    width="250px"
-                    height="250px"
-                  />
-                </center>
-              </background>
-              <a href="../FabLab">
-                <button>Más Informacion</button>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="carta">
-              <h3>GeekUSM</h3>
-              <background>
-                <center>
-                  <img
-                    src="{%static 'icons/geekusm.jpg' %}"
-                    width="250px"
-                    height="250px"
-                  />
-                </center>
-              </background>
-              <a href="../GeekUSM">
-                <button>Más Informacion</button>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="carta">
-              <h3>Primos</h3>
-              <background>
-                <center>
-                  <img
-                    src="{%static 'icons/primos.jpg' %}"
-                    width="250px"
-                    height="250px"
-                  />
-                </center>
-              </background>
-              <a href="../Primos">
-                <button>Más Informacion</button>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="carta">
-              <h3>GBU</h3>
-              <background>
-                <center>
-                  <img
-                    src="{%static 'icons/gbu.jpg' %}"
-                    width="250px"
-                    height="250px"
-                  />
-                </center>
-              </background>
-              <a href="../GBU">
-                <button>Más Informacion</button>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="carta">
-              <h3>Movimiento 0</h3>
-              <background>
-                <center>
-                  <img
-                    src="{%static 'icons/movimiento0.jpg' %}"
-                    width="250px"
-                    height="250px"
-                  />
-                </center>
-              </background>
-              <a href="../Movimiento-0">
-                <button>Más Informacion</button>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="carta">
-              <h3>CEEINF</h3>
-              <background>
-                <center>
-                  <img
-                    src="{%static 'icons/ceinf.jpg' %}"
-                    width="250px"
-                    height="250px"
-                  />
-                </center>
-              </background>
-              <a href="../CEEINF">
-                <button>Más Informacion</button>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="carta">
-              <h3>Rocket Science USM</h3>
-              <background>
-                <center>
-                  <img
-                    src="{%static 'icons/urst.jpg' %}"
-                    width="250px"
-                    height="250px"
-                  />
-                </center>
-              </background>
-              <a href="../RocketScience-USM">
-                <button>Más Informacion</button>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="carta">
-              <h3>CUBESEAT TEAM</h3>
-              <background>
-                <center>
-                  <img
-                    src="{%static 'icons/usmcube.jpg' %}"
-                    width="250px"
-                    height="250px"
-                  />
-                </center>
-              </background>
-              <a href="../Usm-CubeSat-Team">
-                <button>Más Informacion</button>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="carta">
-              <h3>XUMBRA UTFSM</h3>
-              <background>
-                <center>
-                  <img
-                    src="{%static 'icons/xumbra.jpg' %}"
-                    width="250px"
-                    height="250px"
-                  />
-                </center>
-              </background>
-              <a href="../Xumbra-UTFSM">
-                <button>Más Informacion</button>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="carta">
-              <h3>YO TE CUIDO</h3>
-              <background>
-                <center>
-                  <img
-                    src="{%static 'icons/yotecuido.jpg' %}"
-                    width="250px"
-                    height="250px"
-                  />
-                </center>
-              </background>
-              <a href="../Yo-Te-Cuido">
-                <button>Más Informacion</button>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="carta">
-              <h3>ERGON</h3>
-              <background>
-                <center>
-                  <img
-                    src="{%static 'icons/ergon.jpg' %}"
-                    width="250px"
-                    height="250px"
-                  />
-                </center>
-              </background>
-              <a href="../Ergon">
-                <button>Más Informacion</button>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="carta">
-              <h3>SANSANEWS</h3>
-              <background>
-                <center>
-                  <img
-                    src="{%static 'icons/sansanews.png' %}"
-                    width="250px"
-                    height="250px"
-                  />
-                </center>
-              </background>
-              <a href="../SansaNews">
-                <button>Más Informacion</button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </center>
+      <a href="#" title="pagina"><span>1</span></a>
+      <a href="#" title="pagina"><span>2</span></a>
+      <a href="#" title="pagina"><span>3</span></a>
+      <a href="#" title="pagina"><span>4</span></a>
     </div>
-    <footer class="text-muted py-5" style="background: #002d40">
-      <div class="container">
-        <p class="float-end mb-1">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p class="mb-1" style="color: #d2d7da">
-          SansaNews es un proyecto universitario sin fines de lucro y con
-          mucho esfuerzo, sudor y lagrimas por detrás.
-        </p>
-        <p class="mb-0" style="color: #d2d7da">
-          ¡Siguenos en nuestro
-          <a href="https://www.instagram.com/sansanews/" target="_blank"
-            >Instagram</a
-          >
-          oficial!
-        </p>
+  </div>
+  <div class="ws_shadow"></div>
+</div>
+<script
+  type="text/javascript"
+  src="{% static 'engine1/wowslider.js' %}"
+></script>
+<script
+  type="text/javascript"
+  src="{% static 'engine1/script.js' %}"
+></script>
+<br />
+<br />
+<center>
+  <section>
+    <section id="Iniciativas-Estudiantiles">
+      <h2 class="fuente"><b>Iniciativas Estudiantiles</b></h2>
+      <div class="fotos">
+        <div class="row"></div>
       </div>
-    </footer>
-  </body>
-</html>
+    </section>
+  </section>
+</center>
+<div>
+  <center>
+    <div class="columns">
+      <div class="item">
+        <div class="carta">
+          <h3>Fablab</h3>
+          <background>
+            <center>
+              <img
+                src="{%static 'icons/fablab.jpg' %}"
+                width="250px"
+                height="250px"
+              />
+            </center>
+          </background>
+          <a href="../FabLab">
+            <button>Más Informacion</button>
+          </a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="carta">
+          <h3>GeekUSM</h3>
+          <background>
+            <center>
+              <img
+                src="{%static 'icons/geekusm.jpg' %}"
+                width="250px"
+                height="250px"
+              />
+            </center>
+          </background>
+          <a href="../GeekUSM">
+            <button>Más Informacion</button>
+          </a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="carta">
+          <h3>Primos</h3>
+          <background>
+            <center>
+              <img
+                src="{%static 'icons/primos.jpg' %}"
+                width="250px"
+                height="250px"
+              />
+            </center>
+          </background>
+          <a href="../Primos">
+            <button>Más Informacion</button>
+          </a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="carta">
+          <h3>GBU</h3>
+          <background>
+            <center>
+              <img
+                src="{%static 'icons/gbu.jpg' %}"
+                width="250px"
+                height="250px"
+              />
+            </center>
+          </background>
+          <a href="../GBU">
+            <button>Más Informacion</button>
+          </a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="carta">
+          <h3>Movimiento 0</h3>
+          <background>
+            <center>
+              <img
+                src="{%static 'icons/movimiento0.jpg' %}"
+                width="250px"
+                height="250px"
+              />
+            </center>
+          </background>
+          <a href="../Movimiento-0">
+            <button>Más Informacion</button>
+          </a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="carta">
+          <h3>CEEINF</h3>
+          <background>
+            <center>
+              <img
+                src="{%static 'icons/ceinf.jpg' %}"
+                width="250px"
+                height="250px"
+              />
+            </center>
+          </background>
+          <a href="../CEEINF">
+            <button>Más Informacion</button>
+          </a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="carta">
+          <h3>Rocket Science USM</h3>
+          <background>
+            <center>
+              <img
+                src="{%static 'icons/urst.jpg' %}"
+                width="250px"
+                height="250px"
+              />
+            </center>
+          </background>
+          <a href="../RocketScience-USM">
+            <button>Más Informacion</button>
+          </a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="carta">
+          <h3>CUBESEAT TEAM</h3>
+          <background>
+            <center>
+              <img
+                src="{%static 'icons/usmcube.jpg' %}"
+                width="250px"
+                height="250px"
+              />
+            </center>
+          </background>
+          <a href="../Usm-CubeSat-Team">
+            <button>Más Informacion</button>
+          </a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="carta">
+          <h3>XUMBRA UTFSM</h3>
+          <background>
+            <center>
+              <img
+                src="{%static 'icons/xumbra.jpg' %}"
+                width="250px"
+                height="250px"
+              />
+            </center>
+          </background>
+          <a href="../Xumbra-UTFSM">
+            <button>Más Informacion</button>
+          </a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="carta">
+          <h3>YO TE CUIDO</h3>
+          <background>
+            <center>
+              <img
+                src="{%static 'icons/yotecuido.jpg' %}"
+                width="250px"
+                height="250px"
+              />
+            </center>
+          </background>
+          <a href="../Yo-Te-Cuido">
+            <button>Más Informacion</button>
+          </a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="carta">
+          <h3>ERGON</h3>
+          <background>
+            <center>
+              <img
+                src="{%static 'icons/ergon.jpg' %}"
+                width="250px"
+                height="250px"
+              />
+            </center>
+          </background>
+          <a href="../Ergon">
+            <button>Más Informacion</button>
+          </a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="carta">
+          <h3>SANSANEWS</h3>
+          <background>
+            <center>
+              <img
+                src="{%static 'icons/sansanews.png' %}"
+                width="250px"
+                height="250px"
+              />
+            </center>
+          </background>
+          <a href="../SansaNews">
+            <button>Más Informacion</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </center>
+</div>
+
+{% endblock base %}
