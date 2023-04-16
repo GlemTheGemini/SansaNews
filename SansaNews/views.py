@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from . import API
+from .iniciativas import INICIATIVAS
 from . import forms
 from . import models
 
@@ -7,11 +8,11 @@ from . import models
 
 def home(request):
     recientes = API.recientes()
-    return render(request,"Home.html",{"key": recientes})
+    return render(request,"Home.html",{"key": recientes, "iniciativas": INICIATIVAS})
 
 def iniciativa(request, nombre):
     publicaciones = API.contenido(nombre)
-    return render(request, f"{nombre}.html", {"key": publicaciones})
+    return render(request, f"{nombre}.html", {"key": publicaciones, "iniciativas": INICIATIVAS})
 
 def about(request):
     return render(request,"about.html")
@@ -19,7 +20,7 @@ def about(request):
 def avisos(request):
     lista = models.imagenes_avisos.objects.all().order_by("id").reverse()
     lista.reverse()
-    return render(request,"Avisos.html",{"key": lista})
+    return render(request,"Avisos.html",{"key": lista, "iniciativas": INICIATIVAS})
 
 def subir_avisos(request, id=None):
     imagen = forms.avisos_forms(request.POST, request.FILES)
@@ -28,7 +29,7 @@ def subir_avisos(request, id=None):
         if imagen.is_valid():
             imagen.save()
             return redirect(avisos)
-    context = {"imagen": imagen}
+    context = {"imagen": imagen, "iniciativas": INICIATIVAS}
     return render(request, 'Subir_Avisos.html', context)
 
 def test(request):
