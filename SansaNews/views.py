@@ -1,8 +1,11 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from . import API
 from .iniciativas import INICIATIVAS
 from . import forms
 from . import models
+import os
+import json
 
 # Create your views here.
 
@@ -11,8 +14,19 @@ def home(request):
     return render(request,"Home.html",{"key": recientes, "iniciativas": INICIATIVAS})
 
 def iniciativa(request, usuario):
-    publicaciones = API.contenido(usuario)
-    return render(request, "Molde.html", {"usuario": usuario, "nombre": INICIATIVAS[usuario], "key": publicaciones, "iniciativas": INICIATIVAS})
+    with open(os.path.dirname(os.path.dirname(__file__)) + f"/static/biografias.json", "r", encoding='utf-8') as archivo:
+        biografias = json.load(archivo)
+        biografia = biografias[usuario]
+
+    publicaciones= API.contenido(usuario)
+
+    return render(request, "Molde.html", {
+        "usuario": usuario,
+        "nombre": INICIATIVAS[usuario],
+        "biografia": biografia,
+        "key": publicaciones,
+        "iniciativas": INICIATIVAS
+    })
 
 def about(request):
     return render(request,"about.html")
@@ -33,7 +47,13 @@ def subir_avisos(request, id=None):
     return render(request, 'Subir_Avisos.html', context)
 
 def test(request):
-    API.actualizar_2()
-    lista = API.recientes()
-    return render(request,"Home.html",{"key": lista})
+    biografias = {}
 
+    for iniciativa in INICIATIVAS:
+        biografias[iniciativa] = API.actualizar_perfil(iniciativa)
+        API.actualizar_publicaciones(iniciativa)
+
+    with open(os.path.dirname(os.path.dirname(__file__)) + f"/static/biografias.json", "w", encoding='utf-8') as archivo:
+        json.dump(biografias, archivo, indent=2)
+
+    return HttpResponse("Iniciativas Actualizadas")
