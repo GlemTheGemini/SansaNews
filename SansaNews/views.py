@@ -14,7 +14,7 @@ def home(request):
     return render(request,"Home.html",{"key": recientes, "iniciativas": INICIATIVAS})
 
 def iniciativa(request, usuario):
-    with open(os.path.dirname(os.path.dirname(__file__)) + f"/static/biografias.json", "r", encoding='utf-8') as archivo:
+    with open(os.path.dirname(os.path.dirname(__file__)) + f"/static/iniciativas/biografias.json", "r", encoding='utf-8') as archivo:
         biografias = json.load(archivo)
         biografia = biografias[usuario]
 
@@ -53,7 +53,7 @@ def test(request):
         biografias[iniciativa] = API.actualizar_perfil(iniciativa)
         API.actualizar_publicaciones(iniciativa)
 
-    with open(os.path.dirname(os.path.dirname(__file__)) + f"/static/biografias.json", "w", encoding='utf-8') as archivo:
+    with open(os.path.dirname(os.path.dirname(__file__)) + f"/static/iniciativas/biografias.json", "w", encoding='utf-8') as archivo:
         json.dump(biografias, archivo, indent=2)
 
     return HttpResponse("Iniciativas Actualizadas")

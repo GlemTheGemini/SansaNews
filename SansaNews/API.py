@@ -6,7 +6,7 @@ import json
 MAX_PUBLICACIONES = 20
 
 def actualizar_publicaciones(iniciativa):
-    LOADER = Instaloader(post_metadata_txt_pattern="", compress_json=False, dirname_pattern=(os.path.dirname(os.path.dirname(__file__)) + f"/static/{iniciativa}"))
+    LOADER = Instaloader(post_metadata_txt_pattern="", compress_json=False, dirname_pattern=(os.path.dirname(os.path.dirname(__file__)) + f"/static/iniciativas/{iniciativa}"))
 
     #Descargamos los archivos necesarios de los usuarios que se encuentran en el archivo señalado
     perfil = Profile.from_username(LOADER.context, iniciativa)
@@ -14,11 +14,11 @@ def actualizar_publicaciones(iniciativa):
     LOADER.posts_download_loop(publicaciones, iniciativa, fast_update=True, max_count=(MAX_PUBLICACIONES + 1))
 
 def actualizar_perfil(iniciativa):
-    LOADER = Instaloader(post_metadata_txt_pattern="", compress_json=False, dirname_pattern=(os.path.dirname(os.path.dirname(__file__)) + f"/static/icons"))
+    LOADER = Instaloader(post_metadata_txt_pattern="", compress_json=False, dirname_pattern=(os.path.dirname(os.path.dirname(__file__)) + f"/static/iniciativas/icons"))
     perfil = Profile.from_username(LOADER.context, iniciativa)
 
     # Descargar foto de perfil de iniciativa
-    LOADER.context.get_and_write_raw(perfil.profile_pic_url, f"static/icons/{iniciativa}.jpg")
+    LOADER.context.get_and_write_raw(perfil.profile_pic_url, f"static/iniciativas/icons/{iniciativa}.jpg")
 
     # Actualizar biografía
     return perfil.biography
@@ -41,7 +41,7 @@ def contenido(iniciativa):
     #Solo se incluyen las 2 publicaciones más recientes.
 
     publicaciones = []
-    directorio = os.path.dirname(os.path.dirname(__file__)) + f"/static/{iniciativa}"
+    directorio = os.path.dirname(os.path.dirname(__file__)) + f"/static/iniciativas/{iniciativa}"
     archivos = sorted(os.listdir(directorio))
     publicacion_actual = None
     imagenes = []
@@ -60,7 +60,7 @@ def contenido(iniciativa):
 
         # Si el archivo es una imagen, agrega su ruta a la lista de imágenes
         if archivo.endswith(".jpg"):
-            imagenes.append(f"{iniciativa}/{archivo}")
+            imagenes.append(f"iniciativas/{iniciativa}/{archivo}")
         # Si el archivo es un JSON, lee su descripción y la agrega a la lista de descripciones
         elif archivo.endswith(".json"):
             descripcion = leer_archivo_json(os.path.join(directorio, archivo))
@@ -109,7 +109,7 @@ def recientes():
         # Agregar la información de la publicación a la lista, incluyendo el ID generado
         publicacion = {
             "pagina": iniciativa,
-            "imagen": directorio.format(iniciativa, fecha[0]),
+            "imagen": directorio.format(f"iniciativas/{iniciativa}", fecha[0]),
             "descripcion": fecha[-1],
             "id": id.format(index)
         }
