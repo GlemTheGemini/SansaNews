@@ -14,8 +14,8 @@
 {% for lista in key %}
 <center>
   <div class="card mb-3" style="width: 50rem">
-    <center>
-      <div class="card mb-3" style="width: 50rem">
+    <div class="card mb-3" style="width: 50rem">
+      <center>
         <h3
           class="card-header"
           style="
@@ -26,18 +26,19 @@
         >
           Publicación
         </h3>
-    </center>
-        <div>
-          <img
-            src="{% static lista.url %}"
-            class="image-item"
-            height="300"
-          />
-        </div>
-        <div>
-          <h4><button>{{ lista.descripcion }}</button></h4>
-        </div>
+      </center>
+      <div>
+        <img
+          src="{% static lista.url %}"
+          class="image-item"
+          height="300"
+        />
       </div>
+      <div>
+        <h4><button>{{ lista.descripcion }}</button></h4>
+      </div>
+    </div>
+  </div>
 </center>
 {% endfor %}
 

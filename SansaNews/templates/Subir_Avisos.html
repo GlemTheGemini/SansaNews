@@ -1,115 +1,28 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>
-		SansaNews
-	</title>
-  <link
-      rel="icon"
-      href="{% static 'icons/sansanews.png' %}"
-      type="image/icon type"
-    />
-  <link rel="stylesheet" href="{% static 'index.css' %}" />
-	<link rel="stylesheet" type="text/css" href="{% static 'molde/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'molde/css/slider.css' %}">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body style="background: #011c27">
-  <header>
-    <br>
-    <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-        <div class="container-fluid">
-          <img
-            src="{% static 'logo.png' %}"
-            alt="Logo"
-            width="407"
-            height="106"
-            class="d-inline-block align-text-center"
-          />
-        </div>
-      </nav>
-      <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-        <div class="container-fluid">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link" href="/">Home</a>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Iniciativas
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="../FabLab">FabLab</a></li>
-                  <li><a class="dropdown-item" href="../GeekUSM">GeekUSM</a></li>
-                  <li><a class="dropdown-item" href="../Primos">Primos</a></li>
-                  <li><a class="dropdown-item" href="../GBU">GBU</a></li>
-                  <li><a class="dropdown-item" href="../Movimiento-0">Movimiento 0</a></li>
-                  <li><a class="dropdown-item" href="../CEEINF">CEEINF</a></li>
-                  <li><a class="dropdown-item" href="../RocketScience-USM">Rocket Science USM</a></li>
-                  <li><a class="dropdown-item" href="../Usm-CubeSat-Team">CUBESEAT TEAM</a></li>
-                  <li><a class="dropdown-item" href="../Xumbra-UTFSM">Xumbra UTFSM</a></li>
-                  <li><a class="dropdown-item" href="../Yo-Te-Cuido">Yo Te Cuido</a></li>
-                  <li><a class="dropdown-item" href="../Ergon">ERGON</a></li>
-                  <li><a class="dropdown-item" href="../SansaNews">SansaNews</a></li>
-                </ul>
-              </li>
-              <a class="nav-link" href="/Avisos">Avisos</a>
-              <a class="nav-link disabled">Subir Avisos</a>
-              <a class="nav-link" href="/about-us">About us</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-		<center>
-			<div style="width: 50rem; height: 5rem;"></div>
-			<div style="width: 50rem; height: 8rem;">
-				<h1 class="fuente" style="color: #d2d7da">
-					<b>Subida de Avisos</b>
-				</h1>
-			</div>
-		</center>
-      <div class="mover">
-        <form method="POST" enctype="multipart/form-data" action="">
-            {% csrf_token %}
-              {{ imagen.as_p }}
-              <center>
-              <button type="submit">Enviar</button>
-              </center>
-        </form>
-      </div>
-    <br>
-    <br>
+{% extends 'base.html' %}
 
-    <footer class="text-muted py-5" style="background: #002d40">
-      <div class="container">
-        <p class="float-end mb-1">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p class="mb-1" style="color: #d2d7da">
-          SansaNews es un proyecto universitario sin fines de lucro y con
-          mucho esfuerzo, sudor y lagrimas por detrás.
-        </p>
-        <p class="mb-0" style="color: #d2d7da">
-          ¡Siguenos en nuestro
-          <a href="https://www.instagram.com/sansanews/" target="_blank"
-            >Instagram</a
-          >
-          oficial!
-        </p>
-      </div>
-    </footer>
+{% load static %}
+
+{% block base %}
+
+<center>
+  <div style="width: 50rem; height: 5rem;"></div>
+  <div style="width: 50rem; height: 8rem;">
+    <h1 class="fuente" style="color: #d2d7da">
+      <b>Subida de Avisos</b>
+    </h1>
+  </div>
+</center>
+  <div class="mover">
+    <form method="POST" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+          {{ imagen.as_p }}
+          <center>
+          <button type="submit">Enviar</button>
+          </center>
+    </form>
+  </div>
+<br>
+<br>
+
+{% endblock base %}
+

@@ -40,59 +40,60 @@
             >
               Publicación
             </h3>
-    </center>
-            <div
-              id="a{{ forloop.counter }}"
-              class="carousel slide"
-              data-bs-ride="false"
-            >
-              <div class="carousel-inner">
-                {% for publicacion in publicaciones %} {% if forloop.first %}
-                <div class="carousel-item active">
-                  <img src="{% static publicacion %}" height="400" />
-                </div>
-                {% elif ".jpg" in publicacion %}
-                <div class="carousel-item">
-                  <img src="{% static publicacion %}" height="400" />
-                </div>
-                {% else %}
-              </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#a{{ forloop.parentloop.counter }}"
-                data-bs-slide="prev"
-                style="background-color: black"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#a{{ forloop.parentloop.counter }}"
-                data-bs-slide="next"
-                style="background-color: black"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+        </center>
+        <div
+          id="a{{ forloop.counter }}"
+          class="carousel slide"
+          data-bs-ride="false"
+        >
+          <div class="carousel-inner">
+            {% for publicacion in publicaciones %} {% if forloop.first %}
+            <div class="carousel-item active">
+              <img src="{% static publicacion %}" height="400" />
             </div>
-            <center>
-              <div class="card-body" style="background: rgba(0, 0, 0, 0.5)">
-                <button>{{ publicacion }}</button>
-              </div>
-            </center>
-            {% endif %} {% endfor %}
+            {% elif ".jpg" in publicacion %}
+            <div class="carousel-item">
+              <img src="{% static publicacion %}" height="400" />
+            </div>
+            {% else %}
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#a{{ forloop.parentloop.counter }}"
+            data-bs-slide="prev"
+            style="background-color: black"
+          >
+            <span
+              class="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#a{{ forloop.parentloop.counter }}"
+            data-bs-slide="next"
+            style="background-color: black"
+          >
+            <span
+              class="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <center>
+          <div class="card-body" style="background: rgba(0, 0, 0, 0.5)">
+            <button>{{ publicacion }}</button>
           </div>
         </center>
-        {% endfor %}
-        <script src="{% static 'molde/js/slider.js' %}"></script>
+        {% endif %} {% endfor %}
       </div>
+    </center>
+    {% endfor %}
+    <script src="{% static 'molde/js/slider.js' %}"></script>
+  </div>
+</main>
 {% endblock base %}
