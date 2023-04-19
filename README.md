@@ -2,6 +2,18 @@
 
 Aquí una pequeña guía de como inicializar el proyecto, y de los principales archivos que hay.
 
+## Tabla de Contenidos
+
+- [Pre-requisitos](#pre-requisitos)
+- [Como Iniciar el Proyecto](#como-iniciar-el-proyecto)
+  - [Configurando Python](#configurando-python)
+  - [Paquetes](#paquetes)
+  - [Iniciar Server](#iniciar-server)
+- [Archivos Importantes](#archivos-importantes)
+  - [Archivos Frontend](#archivos-frontend)
+  - [Archivos Backend](#archivos-backend)
+- [Importante](#importante)
+
 ## Pre-requisitos
 
 - [Python 3](https://www.python.org/downloads/)
