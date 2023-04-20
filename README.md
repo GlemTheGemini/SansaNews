@@ -43,8 +43,8 @@ python3 -m venv ./.venv # Linux
 Para activar el entorno virtual hay que poner en la terminal al inicio de cada sesión este comando:
 
 ``` shell
-.\.venv\bin\Activate.ps1 # Windows
-source .venv/bin/activate
+.\.venv\Scripts\Activate.ps1 # Windows
+source .venv/bin/activate # Linux
 # Activa el entorno virtual
 ```
 
