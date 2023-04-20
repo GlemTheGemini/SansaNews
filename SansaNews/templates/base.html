@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>SansaNews</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="{% static 'iniciativas/icons/sansanews.jpg' %}" type="image/icon type"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'engine1/jquery.js' %}"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'engine1/style.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'molde/css/slider.css' %}"/>
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'navstyle.css' %}" />
+
+    <style>
+      /* Modify the background color */
+
+      .navbar-custom {
+        background-color: #002d40;
+      }
+
+      /* Modify brand and text color */
+
+      .navbar-custom .navbar-brand,
+      .navbar-custom .navbar-text {
+        color: rgb(255, 255, 255);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <br>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+          <div class="container-fluid">
+            <img
+              src="{% static 'logo.png' %}"
+              alt="Logo"
+              width="407"
+              height="106"
+              class="d-inline-block align-text-top"
+            />
+          </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/"
+                  >Home</a
+                >
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Iniciativas
+                  </a>
+                  <ul class="dropdown-menu">
+                    {% for usuario, nombre in iniciativas.items %}
+                      <li><a class="dropdown-item" href="../{{usuario}}">{{nombre}}</a></li>
+                    {% endfor %}
+                  </ul>
+                </li>
+                <a class="nav-link" href="/Avisos">Avisos</a>
+                <a class="nav-link" href="/Subir-Avisos">Subir Avisos</a>
+                <a class="nav-link" href="/about-us">About us</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    {% block base %} {% endblock base %}
+
+    <footer class="text-muted py-5" style="background: #002d40">
+      <div class="container">
+        <p class="float-end mb-1">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p class="mb-1" style="color: #d2d7da">
+          SansaNews es un proyecto universitario sin fines de lucro y con
+          mucho esfuerzo, sudor y lagrimas por detrás.
+        </p>
+        <p class="mb-0" style="color: #d2d7da">
+          ¡Siguenos en nuestro
+          <a href="https://www.instagram.com/sansanews/" target="_blank"
+            >Instagram</a
+          >
+          oficial!
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
