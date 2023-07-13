@@ -5,6 +5,19 @@ import json
 
 MAX_PUBLICACIONES = 20
 
+
+"""
+Resumen Función:
+    La funcion descarga las ultimas 20 publicaciones más recientes de una pagina de instagram.
+    Si ya existen archivos descargados de esta página entonces se descargan las publicaciones más nuevas
+    y se agregan a las ya existentes.
+
+Input: 
+    Recibe como parametro un string con el usuario de instagram
+
+Returns:
+    No retorna valores
+"""
 def actualizar_publicaciones(iniciativa):
     LOADER = Instaloader(post_metadata_txt_pattern="", compress_json=False, dirname_pattern=(os.path.dirname(os.path.dirname(__file__)) + f"/static/iniciativas/{iniciativa}"))
 
@@ -13,6 +26,18 @@ def actualizar_publicaciones(iniciativa):
     publicaciones = perfil.get_posts()
     LOADER.posts_download_loop(publicaciones, iniciativa, fast_update=True, max_count=(MAX_PUBLICACIONES + 1))
 
+
+"""
+Resumen Función:
+    La funcion actualiza la foto de perfil de la pagina que se le entregue dentro de los archivos de iconos, y su biografia. 
+
+Input: 
+    Recibe como parametro un string con el usuario de instagram
+
+Returns:
+    retorna la biografia de una pagina de instagram
+
+"""
 def actualizar_perfil(iniciativa):
     LOADER = Instaloader(post_metadata_txt_pattern="", compress_json=False, dirname_pattern=(os.path.dirname(os.path.dirname(__file__)) + f"/static/iniciativas/icons"))
     perfil = Profile.from_username(LOADER.context, iniciativa)
@@ -24,6 +49,18 @@ def actualizar_perfil(iniciativa):
     return perfil.biography
 
 
+"""
+Resumen Función:
+    La funcion revisa dentro del archivo json que contiene la informacion de un post de instagram
+    del que se desea extraer la descripcion. 
+
+Input: 
+    Recibe como parametro la ruta del archivo json.
+
+Returns:
+    retorna un string que contiene la descripcion del post si es que existe, sino retorna un string vacio 
+
+"""
 def leer_archivo_json(ruta_archivo):
     #Lee un archivo JSON y retorna el texto en el campo "edge_media_to_caption" de la primera publicación.
 
@@ -34,11 +71,16 @@ def leer_archivo_json(ruta_archivo):
         else:
             return ""
 
-def contenido(iniciativa):
 
-    #Retorna una lista de hasta 20 publicaciones (como máximo) de la página especificada.
-    #Cada publicación es una lista de imágenes (hasta 10 imágenes) y una descripción (opcional).
-    #Solo se incluyen las 2 publicaciones más recientes.
+"""
+Input: 
+    Recibe como parametro un string con el usuario de instagram
+
+#Retorna una lista de hasta 20 publicaciones (como máximo) de la página especificada.
+#Cada publicación es una lista de imágenes (hasta 10 imágenes) y una descripción (opcional).
+#Solo se incluyen las 2 publicaciones más recientes.
+"""
+def contenido(iniciativa):
 
     publicaciones = []
     directorio = os.path.dirname(os.path.dirname(__file__)) + f"/static/iniciativas/{iniciativa}"
@@ -80,6 +122,16 @@ def contenido(iniciativa):
     return formatted_publicaciones
 
 
+"""
+Resumen Función:
+    La funcion recorre todas las publicaciones de todas las iniciativas y las ordena por fecha.
+
+Input: 
+    No recibe parametros
+
+Returns:
+    retorna una lista con las 4 publicaciones mas recientes de todas las iniciativas de la pagina
+"""
 def recientes():
     # Diccionario para almacenar la información de las publicaciones
     iniciativas = {}
