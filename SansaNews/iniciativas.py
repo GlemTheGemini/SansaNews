@@ -1,8 +1,9 @@
-# Aquí van las iniciativas que se mostraran sus publicaciones
-# El diccionario consiste en:
-# Llaves: nombre de usuario en instagram de la iniciativa
-# Valores: nombre real de la iniciativa
-
+"""
+ Aquí van las iniciativas que se mostraran sus publicaciones
+ El diccionario consiste en:
+ Llaves: nombre de usuario en instagram de la iniciativa
+ Valores: nombre real de la iniciativa
+"""
 INICIATIVAS = {
     "sansanews": "SansaNews",
     "ergon_usm": "Ergon",
