@@ -18,11 +18,11 @@ body{
 .slider {
   position: relative;
   background: #09806c;
-  width: 1000px;
-  min-height: 500px;
-  margin: 20px;
+  width: 133.7vh;
+  min-height: 66.84vh;
+  margin: 2.67vh;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 1.34vh;
   display: flex;
 }
 
@@ -51,13 +51,13 @@ body{
 
 .slider .slide .info {
   position: absolute;
-  color: #222;
+  color: #ffffff;
   background: rgba(190, 204, 207, 0.511);
   width: 50%;
-  right: 20px;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 5px 25px rgb(1 1 1 / 5%);
+  right: 2.22vh;
+  padding: 2.22vh;
+  border-radius: 0.69vh;
+  box-shadow: 0 0.69vh 3.34vh rgb(1 1 1 / 5%);
   text-align: center;
 }
 
@@ -72,7 +72,7 @@ body{
 }
 
 .navigation{
-  height: 500px;
+  height: 41.67vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -89,7 +89,7 @@ body{
   font-size: 2em;
   color: #222;
   background: rgba(255, 255, 255, 0.8);
-  padding: 10px;
+  padding: 1.34vh;
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -97,21 +97,21 @@ body{
 }
 
 .prev-btn{
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-top-right-radius: 0.4vh;
+  border-bottom-right-radius: 0.4vh;
   left: 0;
 }
 
 .next-btn{
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-top-left-radius: 0.4vh;
+  border-bottom-left-radius: 0.4vh;
   right: 0;
 }
 
 .navigation-visibility{
   z-index: 999;
   position: absolute;
-  bottom: 20px; /* Ajusta la distancia desde abajo según tus preferencias */
+  bottom: 2.67vh; /* Ajusta la distancia desde abajo según tus preferencias */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -121,15 +121,34 @@ body{
 .navigation-visibility .slide-icon{
   z-index: 999;
   background: rgba(255, 255, 255, 0.5);
-  width: 20px;
-  height: 10px;
-  margin: 0 6px;
-  border-radius: 2px;
-  box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+  width: 2.67vh;
+  height: 1.34vh;
+  margin: 0 0.8vh;
+  border-radius: 0.27vh;
+  box-shadow: 0 0.69vh 3.34vh rgb(1 1 1 / 20%);
 }
 
 .navigation-visibility .slide-icon.active{
   background: #4285F4;
+}
+
+
+/* Boton para visitar iniciativas */
+.button{
+  background-color: #0e7262;
+  border: none;
+  color: white;
+  padding: 0.2vh 2vh;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button p{
+  margin-top: 1.5vh;
+  font-size: 1em;
+  font-weight: 400;
 }
 
 @media (max-width: 900px) {
@@ -177,5 +196,3 @@ body{
     font-size: 0.4em;
   }
 }
-
-

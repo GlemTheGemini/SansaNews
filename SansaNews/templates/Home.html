@@ -6,10 +6,6 @@
 {% block base %}
 
 
-
-
-
-
 <!--Slider -->
 <link rel="stylesheet" href="{%static 'slider/style.css'%}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -22,9 +18,9 @@
     <div class="info">
       <h2>@{{ x.pagina }}</h2>
       <p>{{ x.descripcion }}</p>
-      <button>
-        
-      </button>
+      <div class="button">
+          <p>Visitar iniciativa</p>
+      </div>
     </div>
   </div>
   {% endfor %}
@@ -34,6 +30,9 @@
     <div class="info">
       <h2>@{{ x.pagina }}</h2>
       <p>{{ x.descripcion }}</p>
+      <div class="button">
+        <p href="">Visitar iniciativa</p>
+    </div>
     </div>
   </div>
   {% endfor %}
