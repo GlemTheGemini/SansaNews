@@ -24,6 +24,7 @@ body{
   overflow: hidden;
   border-radius: 1.34vh;
   display: flex;
+  border: 0.3vh solid #ffffff;
 }
 
 .slider .slide {
@@ -41,15 +42,15 @@ body{
   transition: 2s;
 }
 
-.slider .slide img {
+.slider .slide img{
   position: absolute;
   width: 50%;
   height: 70%;
   object-fit: contain;
-  left: 0;
+  left: -2vh;
 }
 
-.slider .slide .info {
+.slider .slide .info{
   position: absolute;
   color: #ffffff;
   background: rgba(190, 204, 207, 0.511);
@@ -59,6 +60,7 @@ body{
   border-radius: 0.69vh;
   box-shadow: 0 0.69vh 3.34vh rgb(1 1 1 / 5%);
   text-align: center;
+  border: 0.3vh solid #ffffff;
 }
 
 .slider .slide .info h2{
@@ -136,19 +138,27 @@ body{
 /* Boton para visitar iniciativas */
 .button{
   background-color: #0e7262;
-  border: none;
   color: white;
   padding: 0.2vh 2vh;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  border: 0.3vh solid #ffffff;
 }
 
 .button p{
   margin-top: 1.5vh;
   font-size: 1em;
   font-weight: 400;
+}
+
+.button:hover {
+  background-color: #ffffff; 
+  color: #0e7262;
+}
+.button {
+  transition-duration: 0.4s;
 }
 
 @media (max-width: 900px) {
