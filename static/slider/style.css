@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #05937b;
+}
+
+.slider {
+  position: relative;
+  background: #09806c;
+  width: 1000px;
+  min-height: 500px;
+  margin: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+}
+
+.slider .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(0% at 0 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider .slide.active{
+  clip-path: circle(150% at 0 50%);
+  transition: 2s;
+}
+
+.slider .slide img {
+  position: absolute;
+  width: 50%;
+  height: 70%;
+  object-fit: contain;
+  left: 0;
+}
+
+.slider .slide .info {
+  position: absolute;
+  color: #222;
+  background: rgba(190, 204, 207, 0.511);
+  width: 50%;
+  right: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 25px rgb(1 1 1 / 5%);
+  text-align: center;
+}
+
+.slider .slide .info h2{
+  font-size: 2em;
+  font-weight: 800;
+}
+
+.slider .slide .info p{
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.navigation{
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.slider:hover .navigation{
+  opacity: 1;
+}
+
+.prev-btn, .next-btn{
+  z-index: 999;
+  font-size: 2em;
+  color: #222;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prev-btn{
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  left: 0;
+}
+
+.next-btn{
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  right: 0;
+}
+
+.navigation-visibility{
+  z-index: 999;
+  position: absolute;
+  bottom: 20px; /* Ajusta la distancia desde abajo según tus preferencias */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.navigation-visibility .slide-icon{
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.5);
+  width: 20px;
+  height: 10px;
+  margin: 0 6px;
+  border-radius: 2px;
+  box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+}
+
+.navigation-visibility .slide-icon.active{
+  background: #4285F4;
+}
+
+@media (max-width: 900px) {
+  .slider{
+    height: 40%;
+  }
+  .slider .slide {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .slider .slide .info h2{
+    font-size: 1em;
+    line-height: 17px;
+  }
+
+  .slider .slide .info p{
+    justify-content: center;
+    font-size: 0.8em;
+  }
+  .slider .slide img {
+    position: relative;
+    width: 50%;
+    align-items: center;
+    height: 50%;
+    margin-bottom: 20px;
+  }
+
+  .slider .slide .info {
+    position: relative;
+    width: 40%;
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 540px){
+  .slider .slide .info h2{
+    font-size: 0.7em;
+    line-height: 10px;
+  }
+
+  .slider .slide .info p{
+    font-size: 0.4em;
+  }
+}
+
+

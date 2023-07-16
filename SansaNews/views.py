@@ -11,7 +11,7 @@ import json
 
 def home(request):
     recientes = API.recientes()
-    return render(request,"Home.html",{"key": recientes, "iniciativas": INICIATIVAS})
+    return render(request,"Home.html",{"primera": [recientes[0]],"publicaciones": recientes[1:], "iniciativas": INICIATIVAS})
 
 def iniciativa(request, usuario):
     with open(os.path.dirname(os.path.dirname(__file__)) + f"/static/iniciativas/biografias.json", "r", encoding='utf-8') as archivo:

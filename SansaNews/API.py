@@ -151,7 +151,7 @@ def recientes():
     # Seleccionar las últimas 4 publicaciones de la lista
     fechas = fechas[:4]
 
-    # Variables para generar el ID de cada publicación
+    # Variables para generar el ID de cada publicación (Codigo residual)
     directorio = "\\{}\\{}"
     id = "wows1_{}"
 
