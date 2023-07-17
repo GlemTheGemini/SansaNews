@@ -160,10 +160,10 @@ def recientes():
     for index, (fecha, iniciativa) in enumerate(fechas):
         # Agregar la información de la publicación a la lista, incluyendo el ID generado
         publicacion = {
+            "id": iniciativa,
             "pagina": iniciativa.upper(),
             "imagen": directorio.format(f"iniciativas/{iniciativa}", fecha[0]),
-            "descripcion": fecha[-1],
-            "id": id.format(index)
+            "descripcion": fecha[-1]
         }
         publicaciones_recientes.append(publicacion)
 
