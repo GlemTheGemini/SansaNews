@@ -18,9 +18,11 @@
     <div class="info">
       <h2>@{{ x.pagina }}</h2>
       <p>{{ x.descripcion }}</p>
-      <div class="button">
+      <a href="../{{x.pagina}}">
+        <div class="button">
           <p>Visitar iniciativa</p>
-      </div>
+        </div>
+      </a>
     </div>
   </div>
   {% endfor %}
@@ -30,9 +32,11 @@
     <div class="info">
       <h2>@{{ x.pagina }}</h2>
       <p>{{ x.descripcion }}</p>
-      <div class="button" href="../{{usuario}}">
-        <p>Visitar iniciativa</p>
-    </div>
+      <a href="../{{x.pagina}}">
+        <div class="button">
+          <p>Visitar iniciativa</p>
+        </div>
+      </a>
     </div>
   </div>
   {% endfor %}
