@@ -8,30 +8,38 @@
 
 <div class="slider">
   {% for x in primera %}
+  <div class="column-slider">
+    <img src="{% static 'slider/columna.png' %}" alt="">
+  </div>
+  <div class="wave-slider">
+    <img src="{% static 'slider/esquina.png' %}" alt="">
+  </div>
   <div class="slide active">
     <img src="{% static x.imagen %}" alt="">
-    <div class="info">
-      <h2>@{{ x.pagina }}</h2>
-      <p>{{ x.descripcion }}</p>
+    <div class = "data">
       <a href="../{{x.id}}">
         <div class="button">
-          <p>Visitar iniciativa</p>
+          <h2>@{{ x.pagina }}</h2>
         </div>
-      </a>
+        </a>
+        <div class="info">
+          <p>{{ x.descripcion }}</p>
+        </div>
     </div>
   </div>
   {% endfor %}
   {% for x in publicaciones %}
   <div class="slide">
     <img src="{% static x.imagen %}" alt="">
-    <div class="info">
-      <h2>@{{ x.pagina }}</h2>
-      <p>{{ x.descripcion }}</p>
+    <div class = "data">
       <a href="../{{x.id}}">
         <div class="button">
-          <p>Visitar iniciativa</p>
+          <h2>@{{ x.pagina }}</h2>
         </div>
-      </a>
+        </a>
+        <div class="info">
+          <p>{{ x.descripcion }}</p>
+        </div>
     </div>
   </div>
   {% endfor %}

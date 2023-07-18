@@ -45,8 +45,8 @@ const slider = document.querySelector(".slider");
     });
 
     //image slider autoplay
-    var playSlider;
-
+    //var playSlider;
+    /*
     var repeater = () => {
       playSlider = setInterval(function(){
         slides.forEach((slide) => {
@@ -66,8 +66,8 @@ const slider = document.querySelector(".slider");
         slideIcons[slideNumber].classList.add("active");
       }, 10000);
     }
-    repeater();
-
+    repeater();*/
+    /*
     //stop the image slider autoplay on mouseover
     slider.addEventListener("mouseover", () => {
       clearInterval(playSlider);
@@ -76,4 +76,4 @@ const slider = document.querySelector(".slider");
     //start the image slider autoplay again on mouseout
     slider.addEventListener("mouseout", () => {
       repeater();
-    });
+    });*/

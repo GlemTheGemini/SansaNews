@@ -12,20 +12,42 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #0e7262;
+  background: #19989D;
 }
 
 .slider {
   position: relative;
-  background: #0e7262;
-  width: 133.7vh;
-  min-height: 66.84vh;
-  margin: 2.67vh;
+  background: #000000;
+  top: 5vh;
+  width: -webkit-fill-available;
+  min-height: 88.84vh;
   overflow: hidden;
-  border-radius: 1.34vh;
   display: flex;
-  border: 0.3vh solid #ffffff;
 }
+
+.column-slider{
+  position: absolute;
+}
+
+.column-slider img {
+  position: absolute;
+    display: block;
+    z-index: 0;
+    width: 22vh;
+}
+/*QUE PASO CHAPOOOO PIPIPIPIPIPI*/
+.wave-slider{
+  position: absolute;
+}
+
+.wave-slider img{
+  display: block;
+  position: absolute;
+  top: 29vh;
+  left: 16vh;
+  width: 162vh;
+}
+
 
 .slider .slide {
   position: absolute;
@@ -44,29 +66,30 @@ body{
 
 .slider .slide img{
   position: absolute;
-  width: 50%;
-  height: 70%;
-  object-fit: contain;
-  left: -2vh;
+    width: 102.4%;
+    height: 134%;
+    filter: blur(0.3vh);
+    opacity: 42.7%;
+    object-fit: cover;
 }
+
 
 .slider .slide .info{
   position: absolute;
-  color: #ffffff;
-  background: rgba(190, 204, 207, 0.511);
-  width: 50%;
-  right: 2.22vh;
-  padding: 2.22vh;
+  color: #071013;
+  background: #EDF4ED;
+  width: 57.7vh;
+  z-index: 20;
+  right: 87.62vh;
+  top: 1.3vh;
+  padding-top: 10.72vh;
+  padding-right: 3.22vh;
+  padding-bottom: 2.22vh;
+  padding-left: 3.22vh;
   border-radius: 0.69vh;
-  box-shadow: 0 0.69vh 3.34vh rgb(1 1 1 / 5%);
-  text-align: center;
-  border: 0.3vh solid #ffffff;
+  text-align: left;
 }
 
-.slider .slide .info h2{
-  font-size: 3.6vh;
-  font-weight: 800;
-}
 
 .slider .slide .info p{
   font-size: 1.8vh;
@@ -134,18 +157,27 @@ body{
   background: #4285F4;
 }
 
-
 /* Boton para visitar iniciativas */
 .button{
-  background-color: #0e7262;
-  color: white;
-  padding: 0.2vh 2vh;
-  text-align: center;
+  color: #d96c06;
+  text-align: left;
+  left: -142.7vh;
+  z-index: 21;
+  position: absolute;
+  top: 4.1vh;
   text-decoration: none;
   display: inline-block;
-  font-size: 1.7vh;
-  border: 0.3vh solid #ffffff;
-  margin-top: 3vh;
+  font-size: 2.8vh;
+}
+
+.data{
+  position: absolute;
+  display: block;
+  top: 3vh;
+  left: 157.7vh;
+  height: auto;
+  width: auto;
+  border: white;
 }
 
 .button p{
@@ -154,13 +186,6 @@ body{
   font-weight: 400;
 }
 
-.button:hover {
-  background-color: #ffffff; 
-  color: #0e7262;
-}
-.button {
-  transition-duration: 0.4s;
-}
 
 @media (max-width: 94vh) {
   .slider{
@@ -171,10 +196,7 @@ body{
     align-items: center;
     flex-direction: column;
   }
-  .slider .slide .info h2{
-    font-size: 1.8vh;
-    line-height: 1.8vh;
-  }
+
 
   .slider .slide .info p{
     justify-content: center;
@@ -198,10 +220,6 @@ body{
 }
 
 @media (max-width: 56vh){
-  .slider .slide .info h2{
-    font-size: 1.5vh;
-    line-height: 1vh;
-  }
 
   .slider .slide .info p{
     font-size: 1.4vh;

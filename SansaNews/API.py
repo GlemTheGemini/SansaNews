@@ -142,7 +142,7 @@ def recientes():
     fechas = []
     for iniciativa in iniciativas:
         # Agregar fecha y descripción de cada publicación a la lista
-        fecha = [iniciativas[iniciativa][0].split("/")[-1], iniciativas[iniciativa][-1][:150] + "..."]
+        fecha = [iniciativas[iniciativa][0].split("/")[-1], iniciativas[iniciativa][-1]]
         fechas.append([fecha, iniciativa])
 
     # Ordenar la lista por fecha, de más reciente a menos reciente
