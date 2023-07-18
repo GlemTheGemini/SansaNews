@@ -15,12 +15,25 @@ body{
   background: #19989D;
 }
 
+.special-char {
+  color: #d96c06;
+}
+
+
+.recientes{
+  position: absolute;
+  color: #d96c06;
+  margin-bottom: 50vh;
+  background-color: #EDF4ED; 
+  font-size: 3.6vh;
+}
 .slider {
   position: relative;
+  margin-top: 34vh;
   background: #000000;
   top: 5vh;
-  width: 110vh;
-  min-height: 88.84vh;
+  width: 90vh;
+  height: 80vh;
   overflow: hidden;
   display: flex;
   clip-path: circle(150% at 0 50%);
