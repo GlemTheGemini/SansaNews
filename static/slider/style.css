@@ -17,7 +17,7 @@ body{
 
 .slider {
   position: relative;
-  background: #09806c;
+  background: #b5fff1;
   width: 133.7vh;
   min-height: 66.84vh;
   margin: 2.67vh;
@@ -44,21 +44,24 @@ body{
 
 .slider .slide img{
   position: absolute;
-  width: 50%;
-  height: 70%;
-  object-fit: contain;
-  left: -2vh;
+    object-fit: contain;
+    /* transform: rotateZ(-14deg); */
+    border: 2vh solid #18937c70;
+    border-radius: 0 0 1vh 0;
+    box-shadow: 0 0 0 3vh #18937c1f;
+    left: -2vh;
 }
 
 .slider .slide .info{
   position: absolute;
   color: #ffffff;
-  background: rgba(190, 204, 207, 0.511);
-  width: 50%;
-  right: 2.22vh;
+  background: rgb(74 79 80 / 91%);
+  width: 36%;
+  right: 12.22vh;
+  top: 24vh;
   padding: 2.22vh;
   border-radius: 0.69vh;
-  box-shadow: 0 0.69vh 3.34vh rgb(1 1 1 / 5%);
+  box-shadow: 1vh 1.1vh 0vh 0px rgb(23 114 99 / 35%);
   text-align: center;
   border: 0.3vh solid #ffffff;
 }
@@ -112,39 +115,45 @@ body{
 
 .navigation-visibility{
   z-index: 999;
-  position: absolute;
-  bottom: 2.67vh; /* Ajusta la distancia desde abajo según tus preferencias */
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
+    position: absolute;
+    bottom: 2.67vh;
+    left: 92%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
 }
 
 .navigation-visibility .slide-icon{
   z-index: 999;
-  background: rgba(255, 255, 255, 0.5);
-  width: 2.67vh;
-  height: 1.34vh;
-  margin: 0 0.8vh;
-  border-radius: 0.27vh;
-  box-shadow: 0 0.69vh 3.34vh rgb(1 1 1 / 20%);
+    background: rgb(5 28 23 / 56%);
+    width: 2.67vh;
+    height: 1.34vh;
+    margin: 0 0.8vh;
+    border-radius: 0.27vh;
+    box-shadow: 0 0.69vh 3.34vh rgb(1 1 1 / 20%);
 }
 
 .navigation-visibility .slide-icon.active{
-  background: #4285F4;
+  background: #ffffff;
+  box-shadow: 0vh 0vh 1.4vh 0.2vh #036856ad;
 }
 
 
 /* Boton para visitar iniciativas */
 .button{
   background-color: #0e7262;
-  color: white;
-  padding: 0.2vh 2vh;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border: 0.3vh solid #ffffff;
+    color: white;
+    padding: 0.2vh 2vh;
+    text-align: center;
+    border-radius: 0.69vh;
+    text-decoration: none;
+    position: absolute;
+    width: 19vh;
+    top: 15.3vh;
+    left: 32.4vh;
+    height: 6vh;
+    font-size: 16px;
+    border: 0.3vh solid #ffffff;
 }
 
 .button p{
