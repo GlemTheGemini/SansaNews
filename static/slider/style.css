@@ -12,12 +12,12 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #05937b;
+  background: #0e7262;
 }
 
 .slider {
   position: relative;
-  background: #b5fff1;
+  background: #0e7262;
   width: 133.7vh;
   min-height: 66.84vh;
   margin: 2.67vh;
@@ -115,12 +115,12 @@ body{
 
 .navigation-visibility{
   z-index: 999;
-    position: absolute;
-    bottom: 2.67vh;
-    left: 92%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
+  position: absolute;
+  bottom: 2.67vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
 }
 
 .navigation-visibility .slide-icon{
@@ -142,23 +142,19 @@ body{
 /* Boton para visitar iniciativas */
 .button{
   background-color: #0e7262;
-    color: white;
-    padding: 0.2vh 2vh;
-    text-align: center;
-    border-radius: 0.69vh;
-    text-decoration: none;
-    position: absolute;
-    width: 19vh;
-    top: 15.3vh;
-    left: 32.4vh;
-    height: 6vh;
-    font-size: 16px;
-    border: 0.3vh solid #ffffff;
+  color: white;
+  padding: 0.2vh 2vh;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: 0.3vh solid #ffffff;
+  margin-top: 3vh;
 }
 
 .button p{
-  margin-top: 1.5vh;
   font-size: 1em;
+  padding: 1vh 0.2vh;
   font-weight: 400;
 }
 

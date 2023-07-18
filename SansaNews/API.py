@@ -151,9 +151,8 @@ def recientes():
     # Seleccionar las últimas 4 publicaciones de la lista
     fechas = fechas[:4]
 
-    # Variables para generar el ID de cada publicación (Codigo residual)
+    # Directorio de enlace
     directorio = "\\{}\\{}"
-    id = "wows1_{}"
 
     # Lista para almacenar la información de las nuevas publicaciones
     publicaciones_recientes = []
