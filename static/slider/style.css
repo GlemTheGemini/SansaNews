@@ -19,10 +19,11 @@ body{
   position: relative;
   background: #000000;
   top: 5vh;
-  width: -webkit-fill-available;
+  width: 110vh;
   min-height: 88.84vh;
   overflow: hidden;
   display: flex;
+  clip-path: circle(150% at 0 50%);
 }
 
 .column-slider{
@@ -31,11 +32,16 @@ body{
 
 .column-slider img {
   position: absolute;
-    display: block;
-    z-index: 0;
-    width: 22vh;
+  display: block;
+  width: 22vh;
+  top: -0.1vh;
+  left: -4.2vh;
+  height: unset;
+  filter: unset;
+  opacity: unset;
+  object-fit: unset;
 }
-/*QUE PASO CHAPOOOO PIPIPIPIPIPI*/
+
 .wave-slider{
   position: absolute;
 }
@@ -43,11 +49,24 @@ body{
 .wave-slider img{
   display: block;
   position: absolute;
-  top: 29vh;
-  left: 16vh;
-  width: 162vh;
+  top: 47.6vh;
+  left: 12.8vh;
+  width: 111vh;
+  height: unset;
+  filter: unset;
+  opacity: unset;
+  object-fit: unset;
 }
 
+.data{
+  position: absolute;
+  display: block;
+  top: 3vh;
+  left: 157.7vh;
+  height: auto;
+  width: auto;
+  border: white;
+}
 
 .slider .slide {
   position: absolute;
@@ -64,22 +83,21 @@ body{
   transition: 2s;
 }
 
+
 .slider .slide img{
   position: absolute;
-    width: 102.4%;
-    height: 134%;
-    filter: blur(0.3vh);
-    opacity: 42.7%;
-    object-fit: cover;
+  width: 102.4%;
+  height: 134%;
+  filter: blur(0.3vh);
+  opacity: 42.7%;
+  object-fit: cover;
 }
-
 
 .slider .slide .info{
   position: absolute;
   color: #071013;
   background: #EDF4ED;
   width: 57.7vh;
-  z-index: 20;
   right: 87.62vh;
   top: 1.3vh;
   padding-top: 10.72vh;
@@ -170,15 +188,6 @@ body{
   font-size: 2.8vh;
 }
 
-.data{
-  position: absolute;
-  display: block;
-  top: 3vh;
-  left: 157.7vh;
-  height: auto;
-  width: auto;
-  border: white;
-}
 
 .button p{
   font-size: 1.8vh;

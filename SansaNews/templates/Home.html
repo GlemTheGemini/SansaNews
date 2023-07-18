@@ -5,15 +5,8 @@
 
 {% block base %}
 
-
 <div class="slider">
   {% for x in primera %}
-  <div class="column-slider">
-    <img src="{% static 'slider/columna.png' %}" alt="">
-  </div>
-  <div class="wave-slider">
-    <img src="{% static 'slider/esquina.png' %}" alt="">
-  </div>
   <div class="slide active">
     <img src="{% static x.imagen %}" alt="">
     <div class = "data">
