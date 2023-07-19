@@ -5,6 +5,11 @@ const slides = document.querySelectorAll(".slide");
 const slideIcons = document.querySelectorAll(".slide-icon");
 const numberOfSlides = slides.length;
 var slideNumber = 0;
+var playSlider;
+const caracteres = document.addEventListener('DOMContentLoaded', function() {
+  separateParagraphs();
+  formatSpecialChars();
+});
 //image slider next button
 nextBtn.addEventListener("click", () => {
   slides.forEach((slide) => {
@@ -34,10 +39,6 @@ prevBtn.addEventListener("click", () => {
   }
   slides[slideNumber].classList.add("active");
   slideIcons[slideNumber].classList.add("active");
-});
-const caracteres = document.addEventListener('DOMContentLoaded', function() {
-  separateParagraphs();
-  formatSpecialChars();
 });
 function separateParagraphs() {
   const descripciones = document.querySelectorAll('#descripcion');
@@ -69,8 +70,6 @@ function formatSpecialChars() {
 
 
 //image slider autoplay
-//var playSlider;
-/*
 var repeater = () => {
   playSlider = setInterval(function(){
     slides.forEach((slide) => {
@@ -85,10 +84,10 @@ var repeater = () => {
     }
     slides[slideNumber].classList.add("active");
     slideIcons[slideNumber].classList.add("active");
-  }, 10000);
+  }, 6000);
 }
-repeater();*/
-/*
+repeater();
+
 //stop the image slider autoplay on mouseover
 slider.addEventListener("mouseover", () => {
   clearInterval(playSlider);
@@ -96,4 +95,4 @@ slider.addEventListener("mouseover", () => {
 //start the image slider autoplay again on mouseout
 slider.addEventListener("mouseout", () => {
   repeater();
-});*/
+});
