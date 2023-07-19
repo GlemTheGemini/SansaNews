@@ -45,58 +45,39 @@
     });
 
     document.addEventListener('DOMContentLoaded', function() {
-      formatAllTextAndColor();
+      separateParagraphs();
+      formatSpecialChars();
     });
     
-    function formatAllTextAndColor() {
+    function separateParagraphs() {
       const descripciones = document.querySelectorAll('#descripcion');
     
       descripciones.forEach(descripcion => {
         const texto = descripcion.textContent.trim();
-        const bloquesTexto = texto.split(/(?<=\.\s|\uD800[\uDC00-\uDFFF]|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF]|\uD83E[\uDD00-\uDDFF])/);
+        const parrafos = texto.split('. ');
     
         descripcion.innerHTML = '';
     
-        let parrafoActual = null;
-        bloquesTexto.forEach(bloque => {
-          if (bloque !== '') {
-            if (bloque.match(/[\uD800-\uDFFF]|[\uD83C-\uD83E][\uDC00-\uDFFF]/)) {
-              if (parrafoActual) {
-                descripcion.appendChild(parrafoActual);
-              }
-              parrafoActual = document.createElement('p');
-              parrafoActual.innerHTML = bloque;
-              descripcion.appendChild(parrafoActual);
-            } else if (bloque.startsWith('. ')) {
-              parrafoActual.innerHTML += bloque;
-            } else {
-              const updatedBloque = bloque.replace(/(@\w+|#\w+)/g, '<span class="special-char">$1</span>');
-              const ocurrencias = updatedBloque.match(/(@\w+|#\w+)/g);
-              if (ocurrencias) {
-                if (parrafoActual) {
-                  descripcion.appendChild(parrafoActual);
-                }
-                parrafoActual = document.createElement('p');
-                ocurrencias.forEach(ocurrencia => {
-                  updatedBloque = updatedBloque.replace(ocurrencia, `<span class="special-char">${ocurrencia}</span>`);
-                });
-                parrafoActual.innerHTML = updatedBloque;
-                descripcion.appendChild(parrafoActual);
-              } else {
-                if (!parrafoActual) {
-                  parrafoActual = document.createElement('p');
-                  descripcion.appendChild(parrafoActual);
-                }
-                parrafoActual.innerHTML += bloque;
-              }
-            }
-          }
+        parrafos.forEach(parrafo => {
+          const p = document.createElement('p');
+          p.innerHTML = parrafo;
+          descripcion.appendChild(p);
         });
-        if (parrafoActual) {
-          descripcion.appendChild(parrafoActual);
-        }
       });
     }
+    
+    function formatSpecialChars() {
+      const parrafos = document.querySelectorAll('#descripcion p');
+    
+      parrafos.forEach(parrafo => {
+        const texto = parrafo.innerHTML;
+        const updatedTexto = texto.replace(/(@[\w\u00C0-\u017F._]+)/g, '<span class="special-char">$1</span>')
+                                  .replace(/(#[\w\u00C0-\u017F]+)/g, '<span class="special-char">$1</span>');
+        parrafo.innerHTML = updatedTexto;
+      });
+    }
+    
+    
     //image slider autoplay
     //var playSlider;
     /*
