@@ -19,66 +19,28 @@ body{
   color: #d96c06;
 }
 
-
-.recientes{
+.home-a{
   position: absolute;
-  color: #d96c06;
-  margin-bottom: 50vh;
-  background-color: #EDF4ED; 
-  font-size: 3.6vh;
+  display: block;
+  width: -webkit-fill-available;
 }
+
 .slider {
   position: relative;
-  margin-top: 34vh;
-  background: #000000;
-  top: 5vh;
-  width: 90vh;
-  height: 80vh;
-  overflow: hidden;
-  display: flex;
-  clip-path: circle(150% at 0 50%);
-}
-
-.column-slider{
-  position: absolute;
-}
-
-.column-slider img {
-  position: absolute;
-  display: block;
-  width: 22vh;
-  top: -0.1vh;
-  left: -4.2vh;
-  height: unset;
-  filter: unset;
-  opacity: unset;
-  object-fit: unset;
-}
-
-.wave-slider{
-  position: absolute;
-}
-
-.wave-slider img{
-  display: block;
-  position: absolute;
-  top: 47.6vh;
-  left: 12.8vh;
-  width: 111vh;
-  height: unset;
-  filter: unset;
-  opacity: unset;
-  object-fit: unset;
+    background: #00666a;
+    top: 1vh;
+    height: 80vh;
+    overflow: hidden;
+    box-shadow: 0vh 1vh 0vh 0vh #edf4ed;
+    display: flex;
+    clip-path: circle(150% at 0 50%);
 }
 
 .data{
   position: absolute;
-  display: block;
-  top: 3vh;
-  left: 157.7vh;
+  display: contents;
   height: auto;
   width: auto;
-  border: white;
 }
 
 .slider .slide {
@@ -88,7 +50,7 @@ body{
   clip-path: circle(0% at 0 50%);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .slider .slide.active{
@@ -96,14 +58,24 @@ body{
   transition: 2s;
 }
 
+.slider .slide .imagen{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 72vh;
+  left: 78vh;
+  top: 3.8vh;
+  height: 72vh;
+}
 
 .slider .slide img{
   position: absolute;
-  width: 102.4%;
-  height: 134%;
-  filter: blur(0.3vh);
-  opacity: 42.7%;
-  object-fit: cover;
+    max-height: 100%;
+    max-width: 100%;
+    box-shadow: 3vh 0vh 0vh -1.9vh #edf4ed;
+    border: 1vh solid #19989D;
+    object-fit: cover;
 }
 
 .slider .slide .info{
@@ -111,12 +83,12 @@ body{
   color: #071013;
   background: #EDF4ED;
   width: 57.7vh;
-  right: 87.62vh;
-  top: 1.3vh;
+  box-shadow: -62vh 0vh 0vh 32.1vh #25989c, -61.8vh 0vh 0vh 33vh #edf4ed, -60vh 0vh 0vh 33vh #d76d20;
   padding-top: 10.72vh;
   padding-right: 3.22vh;
   padding-bottom: 2.22vh;
   padding-left: 3.22vh;
+  left: 8vh;
   border-radius: 0.69vh;
   text-align: left;
 }
@@ -142,14 +114,18 @@ body{
 
 .prev-btn, .next-btn{
   z-index: 999;
-  font-size: 3.6vh;
-  color: #222;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 1.34vh;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+    font-size: 6.6vh;
+    border-radius: 2.7vh;
+    color: #edf4ed;
+    background: rgb(37 152 156);
+    padding: 1.34vh;
+    cursor: pointer;
+    position: absolute;
+    left: 156vh;
+    padding-left: 2.7vh;
+    top: 41%;
+    width: 8.9vh;
+    box-shadow: 1.6vh 0vh 0vh -0.6vh #2e989ba1, 3.1vh 0vh 0vh -1.1vh #2e989b54;
 }
 
 .prev-btn{
@@ -158,47 +134,39 @@ body{
   left: 0;
 }
 
-.next-btn{
-  border-top-left-radius: 0.4vh;
-  border-bottom-left-radius: 0.4vh;
-  right: 0;
-}
 
 .navigation-visibility{
   z-index: 999;
   position: absolute;
   bottom: 2.67vh;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 88%;
   display: flex;
   justify-content: center;
 }
 
 .navigation-visibility .slide-icon{
   z-index: 999;
-  background: rgba(255, 255, 255, 0.5);
-  width: 2.67vh;
-  height: 1.34vh;
-  margin: 0 0.8vh;
-  border-radius: 0.27vh;
-  box-shadow: 0 0.69vh 3.34vh rgb(1 1 1 / 20%);
+    background: rgb(237 244 237);
+    width: 2.67vh;
+    height: 1.34vh;
+    margin: 0 0.8vh;
+    border-radius: 0.27vh;
+    box-shadow: 0 0.69vh 3.34vh rgb(1 1 1 / 20%);
 }
 
 .navigation-visibility .slide-icon.active{
-  background: #4285F4;
+  background: #d76d20;
 }
 
 /* Boton para visitar iniciativas */
-.button{
-  color: #d96c06;
+.slider .slide .button{
+  color: #ff7b00;
   text-align: left;
-  left: -142.7vh;
   z-index: 21;
   position: absolute;
-  top: 4.1vh;
   text-decoration: none;
-  display: inline-block;
   font-size: 2.8vh;
+  top: 3vh;
 }
 
 

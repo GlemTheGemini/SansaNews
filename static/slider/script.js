@@ -1,113 +1,99 @@
-    const slider = document.querySelector(".slider");
-    const nextBtn = document.querySelector(".next-btn");
-    const prevBtn = document.querySelector(".prev-btn");
-    const slides = document.querySelectorAll(".slide");
-    const slideIcons = document.querySelectorAll(".slide-icon");
-    const numberOfSlides = slides.length;
-    var slideNumber = 0;
+const slider = document.querySelector(".slider");
+const nextBtn = document.querySelector(".next-btn");
+const prevBtn = document.querySelector(".prev-btn");
+const slides = document.querySelectorAll(".slide");
+const slideIcons = document.querySelectorAll(".slide-icon");
+const numberOfSlides = slides.length;
+var slideNumber = 0;
+//image slider next button
+nextBtn.addEventListener("click", () => {
+  slides.forEach((slide) => {
+    slide.classList.remove("active");
+  });
+  slideIcons.forEach((slideIcon) => {
+    slideIcon.classList.remove("active");
+  });
+  slideNumber++;
+  if(slideNumber > (numberOfSlides - 1)){
+    slideNumber = 0;
+  }
+  slides[slideNumber].classList.add("active");
+  slideIcons[slideNumber].classList.add("active");
+});
+//image slider previous button
+prevBtn.addEventListener("click", () => {
+  slides.forEach((slide) => {
+    slide.classList.remove("active");
+  });
+  slideIcons.forEach((slideIcon) => {
+    slideIcon.classList.remove("active");
+  });
+  slideNumber--;
+  if(slideNumber < 0){
+    slideNumber = numberOfSlides - 1;
+  }
+  slides[slideNumber].classList.add("active");
+  slideIcons[slideNumber].classList.add("active");
+});
+const caracteres = document.addEventListener('DOMContentLoaded', function() {
+  separateParagraphs();
+  formatSpecialChars();
+});
+function separateParagraphs() {
+  const descripciones = document.querySelectorAll('#descripcion');
 
-    //image slider next button
-    nextBtn.addEventListener("click", () => {
-      slides.forEach((slide) => {
-        slide.classList.remove("active");
-      });
-      slideIcons.forEach((slideIcon) => {
-        slideIcon.classList.remove("active");
-      });
+  descripciones.forEach(descripcion => {
+    const texto = descripcion.textContent.trim();
+    const parrafos = texto.split('. ');
 
-      slideNumber++;
+    descripcion.innerHTML = '';
 
-      if(slideNumber > (numberOfSlides - 1)){
-        slideNumber = 0;
-      }
-
-      slides[slideNumber].classList.add("active");
-      slideIcons[slideNumber].classList.add("active");
+    parrafos.forEach(parrafo => {
+      const p = document.createElement('p');
+      p.innerHTML = parrafo;
+      descripcion.appendChild(p);
     });
+  });
+}
 
-    //image slider previous button
-    prevBtn.addEventListener("click", () => {
-      slides.forEach((slide) => {
-        slide.classList.remove("active");
-      });
-      slideIcons.forEach((slideIcon) => {
-        slideIcon.classList.remove("active");
-      });
+function formatSpecialChars() {
+  const parrafos = document.querySelectorAll('#descripcion p');
 
-      slideNumber--;
+  parrafos.forEach(parrafo => {
+    const texto = parrafo.innerHTML;
+    const updatedTexto = texto.replace(/(@[\w\u00C0-\u017F._]+)/g, '<span class="special-char">$1</span>')
+                              .replace(/(#[\w\u00C0-\u017F]+)/g, '<span class="special-char">$1</span>');
+    parrafo.innerHTML = updatedTexto;
+  });
+}
 
-      if(slideNumber < 0){
-        slideNumber = numberOfSlides - 1;
-      }
 
-      slides[slideNumber].classList.add("active");
-      slideIcons[slideNumber].classList.add("active");
+//image slider autoplay
+//var playSlider;
+/*
+var repeater = () => {
+  playSlider = setInterval(function(){
+    slides.forEach((slide) => {
+      slide.classList.remove("active");
     });
-
-    document.addEventListener('DOMContentLoaded', function() {
-      separateParagraphs();
-      formatSpecialChars();
+    slideIcons.forEach((slideIcon) => {
+      slideIcon.classList.remove("active");
     });
-    
-    function separateParagraphs() {
-      const descripciones = document.querySelectorAll('#descripcion');
-    
-      descripciones.forEach(descripcion => {
-        const texto = descripcion.textContent.trim();
-        const parrafos = texto.split('. ');
-    
-        descripcion.innerHTML = '';
-    
-        parrafos.forEach(parrafo => {
-          const p = document.createElement('p');
-          p.innerHTML = parrafo;
-          descripcion.appendChild(p);
-        });
-      });
+    slideNumber++;
+    if(slideNumber > (numberOfSlides - 1)){
+      slideNumber = 0;
     }
-    
-    function formatSpecialChars() {
-      const parrafos = document.querySelectorAll('#descripcion p');
-    
-      parrafos.forEach(parrafo => {
-        const texto = parrafo.innerHTML;
-        const updatedTexto = texto.replace(/(@[\w\u00C0-\u017F._]+)/g, '<span class="special-char">$1</span>')
-                                  .replace(/(#[\w\u00C0-\u017F]+)/g, '<span class="special-char">$1</span>');
-        parrafo.innerHTML = updatedTexto;
-      });
-    }
-    
-    
-    //image slider autoplay
-    //var playSlider;
-    /*
-    var repeater = () => {
-      playSlider = setInterval(function(){
-        slides.forEach((slide) => {
-          slide.classList.remove("active");
-        });
-        slideIcons.forEach((slideIcon) => {
-          slideIcon.classList.remove("active");
-        });
-
-        slideNumber++;
-
-        if(slideNumber > (numberOfSlides - 1)){
-          slideNumber = 0;
-        }
-
-        slides[slideNumber].classList.add("active");
-        slideIcons[slideNumber].classList.add("active");
-      }, 10000);
-    }
-    repeater();*/
-    /*
-    //stop the image slider autoplay on mouseover
-    slider.addEventListener("mouseover", () => {
-      clearInterval(playSlider);
-    });
-
-    //start the image slider autoplay again on mouseout
-    slider.addEventListener("mouseout", () => {
-      repeater();
-    });*/
+    slides[slideNumber].classList.add("active");
+    slideIcons[slideNumber].classList.add("active");
+  }, 10000);
+}
+repeater();*/
+/*
+//stop the image slider autoplay on mouseover
+slider.addEventListener("mouseover", () => {
+  clearInterval(playSlider);
+});
+//start the image slider autoplay again on mouseout
+slider.addEventListener("mouseout", () => {
+  repeater();
+});*/

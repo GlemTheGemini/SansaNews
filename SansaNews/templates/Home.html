@@ -4,49 +4,52 @@
 {% load static %}
 
 {% block base %}
-
-<dev class = "recientes"><h2>Noticias más Recientes</h2></dev>
-<div class="slider">
-  {% for x in primera %}
-  <div class="slide active">
-    <img src="{% static x.imagen %}" alt="">
-    <div class = "data">
-      <a href="../{{x.id}}">
-        <div class="button">
-          <h2>@{{ x.pagina }}</h2>
-        </div>
-        </a>
-        <div class="info">
-          <p id="descripcion">{{ x.descripcion }}</p>
-        </div>
+<div class ="home-a">
+  <div class="slider">
+    {% for x in primera %}
+    <div class="slide active">
+      <div class="imagen">
+        <img src="{% static x.imagen %}" alt="">
+      </div>
+      <div class = "data">
+          <div class="info">
+            <a href="../{{x.id}}">
+              <div class="button">
+                <h2>@{{ x.pagina }}</h2>
+              </div>
+            </a>
+            <p id="descripcion">{{ x.descripcion }}</p>
+          </div>
+      </div>
     </div>
-  </div>
-  {% endfor %}
-  {% for x in publicaciones %}
-  <div class="slide">
-    <img src="{% static x.imagen %}" alt="">
-    <div class = "data">
-      <a href="../{{x.id}}">
-        <div class="button">
-          <h2>@{{ x.pagina }}</h2>
-        </div>
-        </a>
-        <div class="info">
-          <p id="descripcion">{{ x.descripcion }}</p>
-        </div>
+    {% endfor %}
+    {% for x in publicaciones %}
+    <div class="slide">
+      <div class="imagen">
+        <img src="{% static x.imagen %}" alt="">
+      </div>
+      <div class = "data">
+          <div class="info">
+            <a href="../{{x.id}}">
+              <div class="button">
+                <h2>@{{ x.pagina }}</h2>
+              </div>
+            </a>
+            <p id="descripcion">{{ x.descripcion }}</p>
+          </div>
+      </div>
     </div>
-  </div>
-  {% endfor %}
-
-  <div class="navigation">
-    <i class="fas fa-chevron-left prev-btn"></i>
-    <i class="fas fa-chevron-right next-btn"></i>
-  </div>
-  <div class="navigation-visibility">
-    <div class="slide-icon active"></div>
-    <div class="slide-icon"></div>
-    <div class="slide-icon"></div>
-    <div class="slide-icon"></div>
+    {% endfor %}
+  
+    <div class="navigation">
+      <i class="fas fa-chevron-right next-btn"></i>
+    </div>
+    <div class="navigation-visibility">
+      <div class="slide-icon active"></div>
+      <div class="slide-icon"></div>
+      <div class="slide-icon"></div>
+      <div class="slide-icon"></div>
+    </div>
   </div>
 </div>
 <script type="text/javascript" src="{% static 'slider/script.js' %}"></script>
