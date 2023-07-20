@@ -18,6 +18,7 @@ section{
 
 
 header{
+  box-shadow: 0vh 1vh 0vh 0vh #edf4ed;
   z-index: 999;
   position: fixed;
   top: 0;
