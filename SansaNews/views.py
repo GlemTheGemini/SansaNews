@@ -1,5 +1,7 @@
 from django.http import HttpResponse
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
 from . import API
 from .iniciativas import INICIATIVAS
 from . import forms
@@ -7,7 +9,6 @@ from . import models
 import os
 import json
 
-# Create your views here.
 
 def home(request):
     recientes = API.recientes()
@@ -57,3 +58,22 @@ def test(request):
         json.dump(biografias, archivo, indent=2)
 
     return HttpResponse("Iniciativas Actualizadas")
+def publicaciones(request):
+    recientes = API.recientes()
+    return render(request, 'Publicaciones.html',{"primera": [recientes[0]],"publicaciones": recientes[1:], "iniciativas": INICIATIVAS})
+
+
+def actualizar_fecha_view(request):
+    if request.method == 'POST':
+        data = json.loads(request.body) 
+        fecha_limite = data.get('fechaFormateada') + ".jpg"
+        publicaciones = API.recientes_publicaciones(fecha_limite)
+        
+        # Aquí puedes realizar los procesos necesarios en el backend utilizando fecha_formateada
+        # Por ejemplo, guardarla en la base de datos, realizar cálculos, etc.
+
+
+        # Devolver una respuesta JSON al frontend para indicar que se ha procesado la fecha de ingreso
+        return JsonResponse({'message': 'Fecha de ingreso recibida y procesada correctamente.',"fecha":fecha_limite,'test':publicaciones})
+    else:
+        return JsonResponse({'status': 'error', 'message': 'Metodo no permitido'})

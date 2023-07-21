@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block base %}
+
+<!-- Agregar un botón para actualizar la fecha de ingreso en localStorage y enviarla al backend -->
+<button id="actualizarFechaBtn">Actualizar Fecha de Ingreso</button>
+
+<!-- Contenedor para mostrar la respuesta del servidor -->
+<div id="respuestaServidor"></div>
+
+<script type="text/javascript" src="{% static 'publicaciones/script.js' %}"></script>
+
+{% endblock base %}
