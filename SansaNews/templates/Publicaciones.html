@@ -9,8 +9,9 @@
         <div class="text"><p>Tu ultima fecha registrada es: {{ fecha }}</p></div>
         <div class="btn"><a id="actualizarFechaBtn"><p>Actualizar Fecha de Ingreso</p></a></div>
     </div>
-    <!-- Contenedor para mostrar la respuesta del servidor -->
-    <div id="respuestaServidor"></div>
+    {% for x in lista_30 %}
+        <p>{{x}}</p>
+    {% endfor %}
 
     <script type="text/javascript" src="{% static 'publicaciones/script.js' %}"></script>
 

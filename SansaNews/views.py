@@ -65,7 +65,7 @@ def test(request):
 def redireccion(request):
     if request.method == 'POST':
         data = json.loads(request.body) 
-        fecha_limite = data.get('fechaFormateada') + ".jpg"
+        fecha_limite = data.get('fechaFormateada')
         request.session['fecha_limite'] = fecha_limite
         return JsonResponse({'success': True})
     else:
@@ -81,7 +81,7 @@ def publicaciones(request):
     fecha_hace_30_dias = fecha_actual - datetime.timedelta(days=30)
 
     # Formatear la fecha como una cadena personalizada
-    formato_fecha = fecha_hace_30_dias.strftime('%Y-%m-%d_%H-%M-%S') + ".jpg"
+    formato_fecha = fecha_hace_30_dias.strftime('%Y-%m-%d_%H-%M-%S')
 
     # Obtener las publicaciones que se han hecho desde hace 30 días
     lista_30 = API.recientes_publicaciones(formato_fecha)
