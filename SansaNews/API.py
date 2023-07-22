@@ -132,7 +132,7 @@ Input:
 Returns:
     retorna una lista con las 4 publicaciones mas recientes de todas las iniciativas de la pagina
 """
-def recientes():
+def recientes(cantidad):
     # Diccionario para almacenar la información de las publicaciones
     iniciativas = {}
     for iniciativa in INICIATIVAS:
@@ -149,8 +149,8 @@ def recientes():
     # Ordenar la lista por fecha, de más reciente a menos reciente
     fechas.sort(reverse=True)
 
-    # Seleccionar las últimas 4 publicaciones de la lista
-    fechas = fechas[:4]
+    # Seleccionar las últimas publicaciones de la lista segun la cantidad que se indique
+    fechas = fechas[:cantidad]
 
     # Directorio de enlace
     directorio = "\\{}\\{}"

@@ -4,7 +4,7 @@ from django.contrib.auth.views import LoginView,LogoutView
 
 urlpatterns = [
     path("" ,views.home,name="home"),
-    path('actualizar_fecha/', views.actualizar_fecha_view, name='actualizar_fecha'),
+    path('redireccion/', views.redireccion, name='redireccion'),
     path('publicaciones/', views.publicaciones, name='publicaciones'),
     path("Test/" ,views.test,name="test"),
     path("about-us/",views.about,name="about-us"),

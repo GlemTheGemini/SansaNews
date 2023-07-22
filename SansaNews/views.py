@@ -1,5 +1,6 @@
 from django.http import HttpResponse
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
+from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from . import API
@@ -8,10 +9,11 @@ from . import forms
 from . import models
 import os
 import json
+import datetime
 
 
 def home(request):
-    recientes = API.recientes()
+    recientes = API.recientes(4)
     return render(request,"Home.html",{"primera": [recientes[0]],"publicaciones": recientes[1:], "iniciativas": INICIATIVAS})
 
 def iniciativa(request, usuario):
@@ -58,22 +60,37 @@ def test(request):
         json.dump(biografias, archivo, indent=2)
 
     return HttpResponse("Iniciativas Actualizadas")
-def publicaciones(request):
-    recientes = API.recientes()
-    return render(request, 'Publicaciones.html',{"primera": [recientes[0]],"publicaciones": recientes[1:], "iniciativas": INICIATIVAS})
 
 
-def actualizar_fecha_view(request):
+def redireccion(request):
     if request.method == 'POST':
         data = json.loads(request.body) 
         fecha_limite = data.get('fechaFormateada') + ".jpg"
-        publicaciones = API.recientes_publicaciones(fecha_limite)
-        
-        # Aquí puedes realizar los procesos necesarios en el backend utilizando fecha_formateada
-        # Por ejemplo, guardarla en la base de datos, realizar cálculos, etc.
-
-
-        # Devolver una respuesta JSON al frontend para indicar que se ha procesado la fecha de ingreso
-        return JsonResponse({'message': 'Fecha de ingreso recibida y procesada correctamente.',"fecha":fecha_limite,'test':publicaciones})
+        return JsonResponse({'fecha': fecha_limite})
     else:
-        return JsonResponse({'status': 'error', 'message': 'Metodo no permitido'})
+        return render(request, 'Redireccion.html',{"iniciativas": INICIATIVAS})
+
+
+def publicaciones(request):
+    #Se deben otener siempre las ultimas publicaciones del mes.
+
+    # Obtener la fecha actual
+    fecha_actual = datetime.datetime.now()
+
+    # Calcular la fecha hace 30 días atrás
+    fecha_hace_30_dias = fecha_actual - datetime.timedelta(days=30)
+
+    # Formatear la fecha como una cadena personalizada
+    formato_fecha = fecha_hace_30_dias.strftime('%Y-%m-%d_%H-%M-%S') + ".jpg"
+
+    # Obtener las publicaciones que se han hecho desde hace 30 días
+    lista_30 = API.recientes_publicaciones(formato_fecha)
+
+    # Verificar si se ha proporcionado una fecha límite
+    fecha_limite = request.GET.get('fecha')
+    if fecha_limite is not None:
+        lista_custom = API.recientes_publicaciones(fecha_limite)
+    else:
+        lista_custom = []
+
+    return render(request, 'Publicaciones.html', {"fecha": fecha_limite, "lista_30": lista_30, "lista_custom": lista_custom, "iniciativas": INICIATIVAS})

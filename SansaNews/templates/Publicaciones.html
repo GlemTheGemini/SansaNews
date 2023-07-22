@@ -4,14 +4,15 @@
 
 {% block base %}
 
-<!-- Agregar un botón para actualizar la fecha de ingreso en localStorage y enviarla al backend -->
-<div class="informacion">
-    <div class="text"><p>Tu ultima fecha registrada es:</p></div>
-    <div class="btn"><a id="actualizarFechaBtn"><p>Actualizar Fecha de Ingreso</p></a></div>
-</div>
-<!-- Contenedor para mostrar la respuesta del servidor -->
-<div id="respuestaServidor"></div>
+    <!-- Agregar un botón para actualizar la fecha de ingreso en localStorage y enviarla al backend -->
+    <div class="informacion">
+        <div class="text"><p>Tu ultima fecha registrada es: {{ fecha }}</p></div>
+        <div class="btn"><a id="actualizarFechaBtn"><p>Actualizar Fecha de Ingreso</p></a></div>
+    </div>
+    <!-- Contenedor para mostrar la respuesta del servidor -->
+    <div id="respuestaServidor"></div>
 
-<script type="text/javascript" src="{% static 'publicaciones/script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'publicaciones/script.js' %}"></script>
+
 
 {% endblock base %}
