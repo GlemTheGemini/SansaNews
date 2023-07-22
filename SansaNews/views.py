@@ -66,10 +66,10 @@ def redireccion(request):
     if request.method == 'POST':
         data = json.loads(request.body) 
         fecha_limite = data.get('fechaFormateada') + ".jpg"
-        return JsonResponse({'fecha': fecha_limite})
+        request.session['fecha_limite'] = fecha_limite
+        return JsonResponse({'success': True})
     else:
-        return render(request, 'Redireccion.html',{"iniciativas": INICIATIVAS})
-
+        return render(request, 'Redireccion.html')
 
 def publicaciones(request):
     #Se deben otener siempre las ultimas publicaciones del mes.
@@ -87,7 +87,8 @@ def publicaciones(request):
     lista_30 = API.recientes_publicaciones(formato_fecha)
 
     # Verificar si se ha proporcionado una fecha límite
-    fecha_limite = request.GET.get('fecha')
+    fecha_limite = request.session.get('fecha_limite')
+    request.session.pop('fecha_limite', None)
     if fecha_limite is not None:
         lista_custom = API.recientes_publicaciones(fecha_limite)
     else:

@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     var fechaAlmacenada = localStorage.getItem('fechaIngreso');
-    console.log(fechaAlmacenada)
-    if (fechaAlmacenada !== null) {
+    if(fechaAlmacenada !== null){
 
         // Obtener el token CSRF desde la cookie
         var csrftoken = getCookie('csrftoken');
@@ -15,16 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
               if (xhr.status === 200) {
-                // La solicitud fue exitosa, obtener la respuesta del servidor
-                var respuestaServidor = JSON.parse(xhr.responseText);
-        
-                // Redirigir al usuario a la página de publicaciones con la fecha recibida en la respuesta
-                var fechaLimite = respuestaServidor.fecha;
-                var encodedFechaLimite = encodeURIComponent(fechaLimite);
-                window.location.href = '/publicaciones/?fecha=' + encodedFechaLimite; // Reemplaza '/publicaciones/' por la URL de la vista donde deseas redirigir al usuario
+
+                window.location.href = '/publicaciones/';
               } else {
                 // Ocurrió un error en la solicitud
-                alert('Error al procesar la fecha de ingreso en el backend.');
+                alert('Error al procesar la fecha de ingreso');
             }
         }};
     }
@@ -59,15 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
               if (xhr.status === 200) {
-                // La solicitud fue exitosa, obtener la respuesta del servidor
-                var respuestaServidor = JSON.parse(xhr.responseText);
-        
                 // Redirigir al usuario a la página de publicaciones con la fecha recibida en la respuesta
-                var fechaLimite = respuestaServidor.fecha;
-                window.location.href = '/publicaciones/' // Reemplaza '/publicaciones/' por la URL de la vista donde deseas redirigir al usuario
+                window.location.href = '/publicaciones/'; // Reemplaza '/publicaciones/' por la URL de la vista donde deseas redirigir al usuario
               } else {
                 // Ocurrió un error en la solicitud
-                alert('Error al procesar la fecha de ingreso en el backend.');
+                alert('Error al procesar la fecha de ingreso.');
             }
         }};
     }    
