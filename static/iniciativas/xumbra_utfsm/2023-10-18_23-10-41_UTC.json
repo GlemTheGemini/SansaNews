@@ -1,0 +1,303 @@
+{
+    "instaloader": {
+        "node_type": "Post",
+        "version": "4.10.1"
+    },
+    "node": {
+        "__typename": "GraphSidecar",
+        "accessibility_caption": null,
+        "coauthor_producers": [],
+        "comments_disabled": false,
+        "dimensions": {
+            "height": 720,
+            "width": 1080
+        },
+        "display_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/393290688_1060002808365976_3696781992349774146_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=M2YWf2bI3d4AX-wHNuG&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzIxNjYxNjkzNTQ5NDQ1OTIxOQ%3D%3D.2-ccb7-5&oh=00_AfCVpZcUGhKQ7nl7Mb_jdA4Mstn1rqaENcaF9hi4hnm5kA&oe=6578E777&_nc_sid=8b3546",
+        "edge_liked_by": {
+            "count": 245
+        },
+        "edge_media_preview_like": {
+            "count": 245
+        },
+        "edge_media_to_caption": {
+            "edges": [
+                {
+                    "node": {
+                        "text": "\ud83c\udf1f \u00a1Hola a todos! \ud83c\udf1f\nCon gran entusiasmo, queremos presentarles a una parte del talentoso equipo de X-umbra en los campus de San Joaqu\u00edn y Campus Vitacura.\n\nEn San Joaqu\u00edn y Campus Vitacura, contamos con un equipo diverso que representa una variedad de disciplinas, incluyendo Ingenier\u00eda Civil Inform\u00e1tica, Ingenier\u00eda Civil Industrial, Ingenier\u00eda Civil Mec\u00e1nica, Ingenier\u00eda Comercial, Ingenier\u00eda Civil El\u00e9ctrica, Ingenier\u00eda en Aviaci\u00f3n Comercial, Ingenier\u00eda Civil Plan Com\u00fan e Ingenier\u00eda en Dise\u00f1o de Productos. Juntos, estamos enfocados en un objetivo apasionante: construir un monoplaza que competir\u00e1 en la F\u00f3rmula SAE, siendo el primero en su categor\u00eda a nivel nacional.\n\nNuestra diversidad de carreras y habilidades es una parte fundamental de lo que hace que X-umbra sea especial. Cada uno de nuestros miembros aporta su pasi\u00f3n y experiencia para lograr esta emocionante meta.\nAgradecemos a todos nuestros miembros por su arduo trabajo y dedicaci\u00f3n en ambos campus. Estamos forjando el camino hacia la F\u00f3rmula SAE y estamos emocionados por la oportunidad de competir a nivel internacional.\n\n\u00a1Acomp\u00e1\u00f1anos en este emocionante proyecto!\n\n#Xumbra #EquipoXumbra #Innovaci\u00f3n #Diversidad #TrabajoEnEquipo #F\u00f3rmulaSAE #Ingenier\u00eda #sansanos #USM"
+                    }
+                }
+            ]
+        },
+        "edge_media_to_comment": {
+            "count": 11
+        },
+        "edge_media_to_tagged_user": {
+            "edges": []
+        },
+        "edge_sidecar_to_children": {
+            "edges": [
+                {
+                    "node": {
+                        "__typename": "GraphImage",
+                        "accessibility_caption": null,
+                        "dimensions": {
+                            "height": 720,
+                            "width": 1080
+                        },
+                        "display_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/393290688_1060002808365976_3696781992349774146_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=M2YWf2bI3d4AX-wHNuG&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzIxNjYxNjkzNTQ5NDQ1OTIxOQ%3D%3D.2-ccb7-5&oh=00_AfCVpZcUGhKQ7nl7Mb_jdA4Mstn1rqaENcaF9hi4hnm5kA&oe=6578E777&_nc_sid=8b3546",
+                        "edge_media_to_tagged_user": {
+                            "edges": []
+                        },
+                        "fact_check_information": null,
+                        "fact_check_overall_rating": null,
+                        "gating_info": null,
+                        "has_upcoming_event": false,
+                        "id": "3216616935494459219",
+                        "is_video": false,
+                        "media_overlay_info": null,
+                        "media_preview": "ACoctlgTx0qG7lMS5XqTgVTa+CZBJGOMdaS5JIVWyCfu9Px/mOtAF2x1BlIR8tkgdRx9PWp7jVTFI0e0ELx1xzWK1uYxub16/wCfr+FJ5JfDZzuz+lAGi9+JyM5HHT39j1q0HHqP0rDkj+zkFz1HGMHp/XpV4SbhnHXnotIZn3EW5y3OD/gP/r08qZBlySV+7z/n0q0AKdgdazUiSlLufPLc8/z7/lTxwOc4AIAHbNWSBSYFPmApzIz4OTkcDvxg/wD1hWnG+EAwOAO3tUe0UUm2xn//2Q==",
+                        "owner": {
+                            "id": "53400929116",
+                            "username": "xumbra_utfsm"
+                        },
+                        "sharing_friction_info": {
+                            "bloks_app_url": null,
+                            "should_have_sharing_friction": false
+                        },
+                        "shortcode": "CyjuA96px9T"
+                    }
+                },
+                {
+                    "node": {
+                        "__typename": "GraphImage",
+                        "accessibility_caption": null,
+                        "dimensions": {
+                            "height": 720,
+                            "width": 1080
+                        },
+                        "display_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/393106216_883290546057358_5742513242990692852_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=110&_nc_ohc=Hlr_oXWoOqYAX8gN6Ks&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzIxNjYxNjkzNTQ4NjA3MTI3Mw%3D%3D.2-ccb7-5&oh=00_AfAM_NkHxmPZQU5p9uFXOiTGWxItlDJttmKFwr-AOoCIZA&oe=6578E042&_nc_sid=8b3546",
+                        "edge_media_to_tagged_user": {
+                            "edges": []
+                        },
+                        "fact_check_information": null,
+                        "fact_check_overall_rating": null,
+                        "gating_info": null,
+                        "has_upcoming_event": false,
+                        "id": "3216616935486071273",
+                        "is_video": false,
+                        "media_overlay_info": null,
+                        "media_preview": "ACocqIxVd3y+meO/r+VTI/IXv2HU0+KSIQbWHBBXoPvdc+vpz2qu0iLgEnHUDOT04HHQZz70lcCTz1Kls8ZwTjuacJN3OePU8cU9MLFyg2spzjkfN/Uce9VPNUEHbwAOBn0OPp61QDrhyPlHOcf5zVfyz61KJwVIIzxnvwc9akDIRnH600k9xDEXzAsAyCrEk446Y/TvTjaBvmJ4UDIH/wBfp61AhKyZBOfm7/zqzH91jz0Ufp/OhAH2X92CpyflI49T1/DGalW0SQ4YkAZzjjJA69/fjoKhyfKx/sDuf79ER/eD/f8A5jFAEV1GIHIjGVZRyTnGRnPb0yO1OEUmPun9KjuOQn+4B+RIpufr+Z/xovYZ/9k=",
+                        "owner": {
+                            "id": "53400929116",
+                            "username": "xumbra_utfsm"
+                        },
+                        "sharing_friction_info": {
+                            "bloks_app_url": null,
+                            "should_have_sharing_friction": false
+                        },
+                        "shortcode": "CyjuA96JyHp"
+                    }
+                },
+                {
+                    "node": {
+                        "__typename": "GraphImage",
+                        "accessibility_caption": null,
+                        "dimensions": {
+                            "height": 720,
+                            "width": 1080
+                        },
+                        "display_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/392941165_171850272584384_93512857263804569_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=108&_nc_ohc=FFC8-aH2l5gAX8iTf0c&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzIxNjYxNjkzNTQ4NTk5MTAzNw%3D%3D.2-ccb7-5&oh=00_AfDINsAurRXkwvV242LqBzyrmq19pBcBi-Wpp0Afn-59EQ&oe=6578E80F&_nc_sid=8b3546",
+                        "edge_media_to_tagged_user": {
+                            "edges": []
+                        },
+                        "fact_check_information": null,
+                        "fact_check_overall_rating": null,
+                        "gating_info": null,
+                        "has_upcoming_event": false,
+                        "id": "3216616935485991037",
+                        "is_video": false,
+                        "media_overlay_info": null,
+                        "media_preview": "ACocsP04qvJcSA7QxCgcD8BT5WYD5RnANUgUK5ySxycc9+319+n0oGTWecEjdkAY2/j6/wCetWhJ5bKz7jlRnd0/D/69Z4JOdjbRt5474+7+J/AU5xIyCUkjcQATztXOMn1yelAjaiYSfMvAz/Sp6x7S8VPkY/xY3Y65zz7D6561s4pDMKZzuK8Y2kn6YP8AXFZ8Ry6grhSVyRnjoDjt/hV/PJPc8E+1SRnHI4wOKYiBmAjGFAPmNx14OAT7H0/SnyyfuTGBwEDA56/Njb+X40M2RggEZz07nvTRgcgAHr+NXcVitCwJ2soxz79RxyTzg9+2TXUxsNowew/lWAG429h2qYFvU1Fij//Z",
+                        "owner": {
+                            "id": "53400929116",
+                            "username": "xumbra_utfsm"
+                        },
+                        "sharing_friction_info": {
+                            "bloks_app_url": null,
+                            "should_have_sharing_friction": false
+                        },
+                        "shortcode": "CyjuA96Jeh9"
+                    }
+                },
+                {
+                    "node": {
+                        "__typename": "GraphImage",
+                        "accessibility_caption": null,
+                        "dimensions": {
+                            "height": 719,
+                            "width": 1080
+                        },
+                        "display_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/393552862_1866686433785454_4032134976052988885_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=106&_nc_ohc=WITnBxInmOUAX8X80R_&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzIxNjYxNjkzNTQ4NTk1Nzg0MQ%3D%3D.2-ccb7-5&oh=00_AfB9HGIpO3af75rGeI3BbghxVrFvni-Ckl8HIxQTizUCaQ&oe=65787EA9&_nc_sid=8b3546",
+                        "edge_media_to_tagged_user": {
+                            "edges": []
+                        },
+                        "fact_check_information": null,
+                        "fact_check_overall_rating": null,
+                        "gating_info": null,
+                        "has_upcoming_event": false,
+                        "id": "3216616935485957841",
+                        "is_video": false,
+                        "media_overlay_info": null,
+                        "media_preview": "ACocyUwQARjOOw//AF1OI4gQAM+ufX29aWzhMuCxwo68ZP4fy9qneIJNgc7+cY6evft2qQI/IT+6P1o8mP8AuirH2NWQt5mPm98gAYwfrwelJJDG0YKsQEAwSevGSD79cenSmMrmJAPujj2rLfG44Hc1rK6uTuOFx9emMDjufasuTZvOCcZOPpmmIn3Mqgg9OnPTipYZn3YUAnB7ZJHGc/l1pHVcjAA4Xj/gJ/rzT7QhZWOBwGx145+vpxTAsyB3ABATLZxg46Yyepxj/PNVEt5JX2L/AAjknpyfTrzV6a4IdVwuCPftj3p0cxHzADOCO/rn1oAyGDxFo2yCOozVU9a07t98oYgcg/yPP15/QVQJ9hSA/9k=",
+                        "owner": {
+                            "id": "53400929116",
+                            "username": "xumbra_utfsm"
+                        },
+                        "sharing_friction_info": {
+                            "bloks_app_url": null,
+                            "should_have_sharing_friction": false
+                        },
+                        "shortcode": "CyjuA96JWbR"
+                    }
+                }
+            ]
+        },
+        "fact_check_information": null,
+        "fact_check_overall_rating": null,
+        "gating_info": null,
+        "has_upcoming_event": false,
+        "id": "3216616940611440133",
+        "is_video": false,
+        "location": null,
+        "media_overlay_info": null,
+        "media_preview": null,
+        "nft_asset_info": null,
+        "owner": {
+            "ai_agent_type": null,
+            "bio_links": [
+                {
+                    "link_type": "external",
+                    "lynx_url": "https://l.instagram.com/?u=https%3A%2F%2Fwww.xumbrausm.com%2F&e=AT1O3SlaOscaZbG9qpuIMq29c55i9LU39Dj9eyXi6Ba5_CEtKzvQ1nihgJmL8ve1G4pDucrid4Op3Ofpj5VV8DUrolmtlA7N",
+                    "title": "P\u00e1gina web",
+                    "url": "https://www.xumbrausm.com/"
+                }
+            ],
+            "biography": "Somos un equipo con el objetivo de crear el primer veh\u00edculo Formula SAE en la @usantamaria \ud83c\udfce\ufe0f\n\ud83d\udccd\ud83c\udde8\ud83c\uddf1",
+            "biography_with_entities": {
+                "entities": [
+                    {
+                        "hashtag": null,
+                        "user": {
+                            "username": "usantamaria"
+                        }
+                    }
+                ],
+                "raw_text": "Somos un equipo con el objetivo de crear el primer veh\u00edculo Formula SAE en la @usantamaria \ud83c\udfce\ufe0f\n\ud83d\udccd\ud83c\udde8\ud83c\uddf1"
+            },
+            "blocked_by_viewer": false,
+            "business_address_json": "{\"city_name\": null, \"city_id\": null, \"latitude\": null, \"longitude\": null, \"street_address\": null, \"zip_code\": null}",
+            "business_category_name": "None",
+            "business_contact_method": "UNKNOWN",
+            "business_email": null,
+            "business_phone_number": null,
+            "category_enum": null,
+            "category_name": "Education",
+            "connected_fb_page": null,
+            "country_block": false,
+            "edge_follow": {
+                "count": 66
+            },
+            "edge_followed_by": {
+                "count": 750
+            },
+            "edge_mutual_followed_by": {
+                "count": 0,
+                "edges": []
+            },
+            "edge_related_profiles": {
+                "edges": []
+            },
+            "eimu_id": "17847510281777117",
+            "external_url": "https://www.xumbrausm.com/",
+            "external_url_linkshimmed": "https://l.instagram.com/?u=https%3A%2F%2Fwww.xumbrausm.com%2F&e=AT3Y3niiA412QcEU_lXSSHzYq7seHH6Xg-zCEpuXTP6kVjbtRR5Kvhn6o85ZMSGqfcYxmdoqBS-6ewKik9FQ8zuDYPisfWDd",
+            "fb_profile_biolink": null,
+            "fbid": "17841453313495116",
+            "followed_by_viewer": false,
+            "follows_viewer": false,
+            "full_name": "X-UMBRA Formula SAE Team \ud83c\udfce",
+            "group_metadata": null,
+            "guardian_id": null,
+            "has_ar_effects": false,
+            "has_blocked_viewer": false,
+            "has_channel": false,
+            "has_clips": true,
+            "has_guides": false,
+            "has_requested_viewer": false,
+            "hide_like_and_view_counts": false,
+            "highlight_reel_count": 2,
+            "id": "53400929116",
+            "is_business_account": true,
+            "is_embeds_disabled": false,
+            "is_guardian_of_viewer": false,
+            "is_joined_recently": false,
+            "is_private": false,
+            "is_professional_account": true,
+            "is_regulated_c18": false,
+            "is_supervised_by_viewer": false,
+            "is_supervised_user": false,
+            "is_supervision_enabled": false,
+            "is_verified": false,
+            "is_verified_by_mv4b": false,
+            "overall_category_name": null,
+            "pinned_channels_list_count": 0,
+            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/286343347_724220269032981_3007481155732664622_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=109&_nc_ohc=Uifl4yWc9yoAX8rNl4B&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBWfV0sPfeRKWj2-n0zTcejuAStdasF7JeRK-6UYBZ3Ag&oe=6579999E&_nc_sid=8b3546",
+            "profile_pic_url_hd": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/286343347_724220269032981_3007481155732664622_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=109&_nc_ohc=Uifl4yWc9yoAX8rNl4B&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfCgiSbgCAMt9FoY79x2FSRHjFs3nt2A_6LPTKmHKPa5TA&oe=6579999E&_nc_sid=8b3546",
+            "pronouns": [],
+            "remove_message_entrypoint": false,
+            "requested_by_viewer": false,
+            "restricted_by_viewer": null,
+            "should_show_category": false,
+            "should_show_public_contacts": true,
+            "show_account_transparency_details": true,
+            "transparency_label": null,
+            "transparency_product": null,
+            "username": "xumbra_utfsm"
+        },
+        "pinned_for_users": [],
+        "sharing_friction_info": {
+            "bloks_app_url": null,
+            "should_have_sharing_friction": false
+        },
+        "shortcode": "CyjuBCrpg4F",
+        "taken_at_timestamp": 1697670641,
+        "thumbnail_resources": [
+            {
+                "config_height": 150,
+                "config_width": 150,
+                "src": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/393290688_1060002808365976_3696781992349774146_n.jpg?stp=c240.0.960.960a_dst-jpg_e35_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=M2YWf2bI3d4AX-wHNuG&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzIxNjYxNjkzNTQ5NDQ1OTIxOQ%3D%3D.2.c-ccb7-5&oh=00_AfBX2ZsIozhhbsFihZszz6sCbvKdGoTmsYUE3BrbftqczQ&oe=6578E777&_nc_sid=8b3546"
+            },
+            {
+                "config_height": 240,
+                "config_width": 240,
+                "src": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/393290688_1060002808365976_3696781992349774146_n.jpg?stp=c240.0.960.960a_dst-jpg_e35_s240x240&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=M2YWf2bI3d4AX-wHNuG&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzIxNjYxNjkzNTQ5NDQ1OTIxOQ%3D%3D.2.c-ccb7-5&oh=00_AfBfKnoOOSi1H8YcDxdI1Rv_5L-fcGnBRVr5NScO9cmlKg&oe=6578E777&_nc_sid=8b3546"
+            },
+            {
+                "config_height": 320,
+                "config_width": 320,
+                "src": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/393290688_1060002808365976_3696781992349774146_n.jpg?stp=c240.0.960.960a_dst-jpg_e35_s320x320&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=M2YWf2bI3d4AX-wHNuG&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzIxNjYxNjkzNTQ5NDQ1OTIxOQ%3D%3D.2.c-ccb7-5&oh=00_AfBdWES-9VeAmfktsuD7bAF3oqZHs0goaddQHsWCf9vxYA&oe=6578E777&_nc_sid=8b3546"
+            },
+            {
+                "config_height": 480,
+                "config_width": 480,
+                "src": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/393290688_1060002808365976_3696781992349774146_n.jpg?stp=c240.0.960.960a_dst-jpg_e35_s480x480&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=M2YWf2bI3d4AX-wHNuG&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzIxNjYxNjkzNTQ5NDQ1OTIxOQ%3D%3D.2.c-ccb7-5&oh=00_AfBPMZYXGsxcy-m6EH99jvonj7nibo2dc8aOtHZUT_PfRg&oe=6578E777&_nc_sid=8b3546"
+            },
+            {
+                "config_height": 640,
+                "config_width": 640,
+                "src": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/393290688_1060002808365976_3696781992349774146_n.jpg?stp=c240.0.960.960a_dst-jpg_e35_s640x640_sh0.08&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=M2YWf2bI3d4AX-wHNuG&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzIxNjYxNjkzNTQ5NDQ1OTIxOQ%3D%3D.2.c-ccb7-5&oh=00_AfDiBzgLDwsZxORP6vefs73mTxMTHmVe64SIXpe3JiITnA&oe=6578E777&_nc_sid=8b3546"
+            }
+        ],
+        "thumbnail_src": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/393290688_1060002808365976_3696781992349774146_n.jpg?stp=c240.0.960.960a_dst-jpg_e35_s640x640_sh0.08&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=M2YWf2bI3d4AX-wHNuG&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzIxNjYxNjkzNTQ5NDQ1OTIxOQ%3D%3D.2.c-ccb7-5&oh=00_AfDiBzgLDwsZxORP6vefs73mTxMTHmVe64SIXpe3JiITnA&oe=6578E777&_nc_sid=8b3546",
+        "viewer_can_reshare": true
+    }
+}

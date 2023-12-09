@@ -1,0 +1,271 @@
+{
+    "instaloader": {
+        "node_type": "Post",
+        "version": "4.10.1"
+    },
+    "node": {
+        "__typename": "GraphSidecar",
+        "accessibility_caption": null,
+        "coauthor_producers": [],
+        "comments_disabled": false,
+        "dimensions": {
+            "height": 1349,
+            "width": 1080
+        },
+        "display_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/407742952_662740209273544_4066251240009732269_n.heic?stp=dst-jpg_e35&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=r4t-qWR4XnUAX9uGUuE&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzI1MTg2ODY1ODUyNjk5NjgzMQ%3D%3D.2-ccb7-5&oh=00_AfBv6gcy8OAXvZxDbbUb51QzTVReCoDoMZa-hQBhHzXHIA&oe=6577FDCB&_nc_sid=8b3546",
+        "edge_liked_by": {
+            "count": 93
+        },
+        "edge_media_preview_like": {
+            "count": 93
+        },
+        "edge_media_to_caption": {
+            "edges": [
+                {
+                    "node": {
+                        "text": "\ud83c\udf1f \u00a1Momento destacado para USM CubeSat Team! \ud83c\udf1f\n\nHoy compartimos con orgullo una entrevista exclusiva realizada por el diario 'El Trabajo' a nuestra capitana y l\u00edder, Paula Navia @paulanaviac25 . \ud83d\ude80\ud83d\udc69\u200d\ud83d\ude80 En esta entrevista de p\u00e1gina completa, Paula profundiza en los desaf\u00edos y metas que enfrentamos como equipo. Desde los intrincados detalles t\u00e9cnicos hasta nuestra visi\u00f3n colectiva, cada palabra refleja nuestra pasi\u00f3n y determinaci\u00f3n.\n\n\"La ciencia es divertida. La ciencia es curiosidad. Se trata de creer en lo imposible y preguntar '\u00bfpor qu\u00e9 no?'\" Sally Ride, la primera astronauta estadounidense\n\n\ud83c\udf0d Mirando hacia el futuro, estamos emocionados de representar en la competencia internacional desarrollada en INPE, Brasil. Este evento no es solo una competici\u00f3n, sino una plataforma para mostrar nuestra innovaci\u00f3n y el talento de nuestro equipo en el escenario global. \ud83d\udef0\ufe0f\ud83c\udf10\n\n\u00a1No te pierdas esta incre\u00edble entrevista! sum\u00e9rgete en nuestro viaje hacia la exploraci\u00f3n espacial.\n\n#USMCubeSat #Innovaci\u00f3nEspacial #LiderazgoFemenino #INPEBrasil #CompetenciaInternacional #Tecnolog\u00edaAeroespacial #FuturoEspacial #CienciaChilena #MujeresEnSTEM #ElTrabajoDiario"
+                    }
+                }
+            ]
+        },
+        "edge_media_to_comment": {
+            "count": 3
+        },
+        "edge_media_to_tagged_user": {
+            "edges": []
+        },
+        "edge_sidecar_to_children": {
+            "edges": [
+                {
+                    "node": {
+                        "__typename": "GraphImage",
+                        "accessibility_caption": null,
+                        "dimensions": {
+                            "height": 1349,
+                            "width": 1080
+                        },
+                        "display_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/407742952_662740209273544_4066251240009732269_n.heic?stp=dst-jpg_e35&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=r4t-qWR4XnUAX9uGUuE&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzI1MTg2ODY1ODUyNjk5NjgzMQ%3D%3D.2-ccb7-5&oh=00_AfBv6gcy8OAXvZxDbbUb51QzTVReCoDoMZa-hQBhHzXHIA&oe=6577FDCB&_nc_sid=8b3546",
+                        "edge_media_to_tagged_user": {
+                            "edges": []
+                        },
+                        "fact_check_information": null,
+                        "fact_check_overall_rating": null,
+                        "gating_info": null,
+                        "has_upcoming_event": false,
+                        "id": "3251868658526996831",
+                        "is_video": false,
+                        "media_overlay_info": null,
+                        "media_preview": "ACIq3WxuNNPbFOPU/jSUARTZCMeAcetUI3eSZWPyZyNuev0/zxWowDZBqFbdVcSclh6nj+VA1bqXx0ooByKKBFc9T+NJ2pT94/jSGgBe9JTJZBGrOeigmqceoxsdpwPx6/n2/rQBrr0FFIpyAR0xRQBRmuo4mIbP/wCukW7jb15/z/8AXqncKGm5APznr+FUJOMEcfO38qAN1J45mKfeB4OelUJBIsh2qnlqTt+UZ9+f85p9txMfc/8AspqVhgk98jnv0FITfKrmjESUUngkDP5UUsf3R9B/KimM/9k=",
+                        "owner": {
+                            "id": "26457009886",
+                            "username": "usm.cubesat.team"
+                        },
+                        "sharing_friction_info": {
+                            "bloks_app_url": null,
+                            "should_have_sharing_friction": false
+                        },
+                        "shortcode": "C0g9VDXuklf"
+                    }
+                },
+                {
+                    "node": {
+                        "__typename": "GraphImage",
+                        "accessibility_caption": null,
+                        "dimensions": {
+                            "height": 1349,
+                            "width": 1080
+                        },
+                        "display_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/407972684_364618129359329_8674035087658244_n.heic?stp=dst-jpg_e35&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=105&_nc_ohc=f9o2T3llSzYAX_SyX8i&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzI1MTg2ODY1ODQ1MTYwMzgyMw%3D%3D.2-ccb7-5&oh=00_AfA4cNIu5QxsSaeUL3lp04hWvizCOmA9Jm_oOWa9jS6SSA&oe=6578186E&_nc_sid=8b3546",
+                        "edge_media_to_tagged_user": {
+                            "edges": []
+                        },
+                        "fact_check_information": null,
+                        "fact_check_overall_rating": null,
+                        "gating_info": null,
+                        "has_upcoming_event": false,
+                        "id": "3251868658451603823",
+                        "is_video": false,
+                        "media_overlay_info": null,
+                        "media_preview": "ACIqvXc/74xD0Gfr6evSq5nMQwmCWDcehHfB7Yz+Iqnqjn7SRnGMfyFVljkuHB3DdggDPPAP86VupS2sbsE5Vd0h3H2xnp6VZjl3EcEAr+VcvveFxG56Y6cdehz6Y9fetaCSfByrY7EDPB+n9KA0OgFFA6UUyTHu9LW4lMhYjOOAAegxTYtKVH3bmOBjGAKjvLq5SZkjYBRjA2gnkD29aaL6cDls4B/hA6fhSuOxe/s/P3juGeMqvH45qT7J2BI/L/GoYLl5EJLDIA6AegP4H1HrVZtTkSUq3CDvjnp29aYdbI3aKBzRQIzpEkSZiq7g+Mk9sDGP8ar/ACrlJQFxzgHv6Hr1rUkNZF91H0P86RnOTj7y6f16lOWMknyfl5w3/wBc9M//AK804oocO2S54xxzxjJ6c49KltwCh/3j/SqjcysTzg0r9DpjFS17o6mN9yg4xkA4/Cinr0FFUZH/2Q==",
+                        "owner": {
+                            "id": "26457009886",
+                            "username": "usm.cubesat.team"
+                        },
+                        "sharing_friction_info": {
+                            "bloks_app_url": null,
+                            "should_have_sharing_friction": false
+                        },
+                        "shortcode": "C0g9VDTO-Fv"
+                    }
+                },
+                {
+                    "node": {
+                        "__typename": "GraphImage",
+                        "accessibility_caption": null,
+                        "dimensions": {
+                            "height": 1349,
+                            "width": 1080
+                        },
+                        "display_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/407975603_285779297755288_5363653865877016696_n.heic?stp=dst-jpg_e35&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=1Ma29UPAgGkAX_6koIo&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzI1MTg2ODY1ODQ1MTQ5NzgxNQ%3D%3D.2-ccb7-5&oh=00_AfCWGwnoGR3fsWDLBrcwU8_yf-G9Z_OpPxh_E2tRUJAM1w&oe=6578434F&_nc_sid=8b3546",
+                        "edge_media_to_tagged_user": {
+                            "edges": []
+                        },
+                        "fact_check_information": null,
+                        "fact_check_overall_rating": null,
+                        "gating_info": null,
+                        "has_upcoming_event": false,
+                        "id": "3251868658451497815",
+                        "is_video": false,
+                        "media_overlay_info": null,
+                        "media_preview": "ACIq1AYy24Nzntn1qxnj1z9appDhuMdf61DlW4Hl5z0y3bpRdlQgnf8Ar9TRLAd8fj+PpTgc85P69/w//VWapXAH7v5unLdTx/n3poCKRkRg9Ry/r/nFFzT2S8/u/wCCbtFJRQYlFMZ9fzqvHco6ljhdpxz/AEqwh5/z/jWDAqeZgncN2B+vbv8A/qpsImwJxnsABnd2/X3/AFpouVChmGAc/Xj/AB/rWV5oUtE5+X73TrznFQPKw2qTuU8j1HPcHkHPX2qblWtudnRRRTJKCde3+fwrL3QI5YKAVbb15znAPt61rp1/GuYQAzHPPzn/ANCpsUTeaziZt5HzeuT/AI0w2EDHcV5+p/xq3Q5+U/Q1JRcoqCD/AFa/7o/kKKYj/9k=",
+                        "owner": {
+                            "id": "26457009886",
+                            "username": "usm.cubesat.team"
+                        },
+                        "sharing_friction_info": {
+                            "bloks_app_url": null,
+                            "should_have_sharing_friction": false
+                        },
+                        "shortcode": "C0g9VDTOkNX"
+                    }
+                }
+            ]
+        },
+        "fact_check_information": null,
+        "fact_check_overall_rating": null,
+        "gating_info": null,
+        "has_upcoming_event": false,
+        "id": "3251868661496450108",
+        "is_video": false,
+        "location": null,
+        "media_overlay_info": null,
+        "media_preview": null,
+        "nft_asset_info": null,
+        "owner": {
+            "ai_agent_type": null,
+            "bio_links": [
+                {
+                    "link_type": "external",
+                    "lynx_url": "https://l.instagram.com/?u=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fusmcubesatteam%2F&e=AT21oxhcxlMr_iNxKxfFUTi-ExPv7KqMrAUOnBhp1fLVarVd1XJ1TSAYikU6yIH4ixoZFzl24tBV-fk-YoT_4HZHlGfrllR-",
+                    "title": "",
+                    "url": "https://www.linkedin.com/company/usmcubesatteam/"
+                },
+                {
+                    "link_type": "external",
+                    "lynx_url": "https://l.instagram.com/?u=https%3A%2F%2Fusm.cl%2Fnoticias%2Fusm-cubesat-team-obtiene-tercer-lugar-en-competencia-virtual-internacional%2F&e=AT0ZJkb_bisjsisq-tXqy6U_A-Ja72O8Vd_BpD5PUjpEKdq8NafqKV39sCv3J2Ee450NsRjsVxmxmAtoTmeH7ZSHfOlLyN24",
+                    "title": "CubeDesign 2022",
+                    "url": "https://usm.cl/noticias/usm-cubesat-team-obtiene-tercer-lugar-en-competencia-virtual-internacional/"
+                }
+            ],
+            "biography": "\ud83d\udef0\ufe0f Luchamos por la visi\u00f3n, el descubrimiento, y por sobre todo, el conocimiento. \u00a1S\u00fabete a nuestra Aventura! \ud83d\udcab\ud83c\udde8\ud83c\uddf1\n\ud83c\udfc55\u00b0 CDV 2020\n\ud83c\udfc53\u00b0 CDV 2022",
+            "biography_with_entities": {
+                "entities": [],
+                "raw_text": "\ud83d\udef0\ufe0f Luchamos por la visi\u00f3n, el descubrimiento, y por sobre todo, el conocimiento. \u00a1S\u00fabete a nuestra Aventura! \ud83d\udcab\ud83c\udde8\ud83c\uddf1\n\ud83c\udfc55\u00b0 CDV 2020\n\ud83c\udfc53\u00b0 CDV 2022"
+            },
+            "blocked_by_viewer": false,
+            "business_address_json": null,
+            "business_category_name": null,
+            "business_contact_method": "UNKNOWN",
+            "business_email": null,
+            "business_phone_number": null,
+            "category_enum": null,
+            "category_name": null,
+            "connected_fb_page": null,
+            "country_block": false,
+            "edge_follow": {
+                "count": 170
+            },
+            "edge_followed_by": {
+                "count": 923
+            },
+            "edge_mutual_followed_by": {
+                "count": 0,
+                "edges": []
+            },
+            "edge_related_profiles": {
+                "edges": []
+            },
+            "eimu_id": "100405111466304",
+            "external_url": "https://www.linkedin.com/company/usmcubesatteam/",
+            "external_url_linkshimmed": "https://l.instagram.com/?u=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fusmcubesatteam%2F&e=AT0XgWaQU3_mIp7jMgUZG9lvaxxlGp7Ic_BsM8TwIgPGA_U6IpSPSQkLR4DvF4I4qGOdPRqwbcGT2GIbl29DZWTUT1UrsiLJ",
+            "fb_profile_biolink": null,
+            "fbid": "17841426456587126",
+            "followed_by_viewer": false,
+            "follows_viewer": false,
+            "full_name": "USM CUBESAT TEAM",
+            "group_metadata": null,
+            "guardian_id": null,
+            "has_ar_effects": false,
+            "has_blocked_viewer": false,
+            "has_channel": false,
+            "has_clips": true,
+            "has_guides": true,
+            "has_requested_viewer": false,
+            "hide_like_and_view_counts": false,
+            "highlight_reel_count": 3,
+            "id": "26457009886",
+            "is_business_account": false,
+            "is_embeds_disabled": false,
+            "is_guardian_of_viewer": false,
+            "is_joined_recently": false,
+            "is_private": false,
+            "is_professional_account": false,
+            "is_regulated_c18": false,
+            "is_supervised_by_viewer": false,
+            "is_supervised_user": false,
+            "is_supervision_enabled": false,
+            "is_verified": false,
+            "is_verified_by_mv4b": false,
+            "overall_category_name": null,
+            "pinned_channels_list_count": 0,
+            "profile_pic_url": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/287318495_373889488057843_8579718519983502323_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=107&_nc_ohc=jhQPrysDvfgAX9osYb8&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfB_ZTUC_qhtMm1A2ZEGJeaw8DSk9uRGP9Ko3j6AgVn-jQ&oe=6578A30A&_nc_sid=8b3546",
+            "profile_pic_url_hd": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/287318495_373889488057843_8579718519983502323_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=107&_nc_ohc=jhQPrysDvfgAX9osYb8&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBqBwekiHqiluxrdZa8WXdfbmwYvXn5i6nuNmXonZc5RQ&oe=6578A30A&_nc_sid=8b3546",
+            "pronouns": [],
+            "remove_message_entrypoint": false,
+            "requested_by_viewer": false,
+            "restricted_by_viewer": null,
+            "should_show_category": false,
+            "should_show_public_contacts": false,
+            "show_account_transparency_details": true,
+            "transparency_label": null,
+            "transparency_product": null,
+            "username": "usm.cubesat.team"
+        },
+        "pinned_for_users": [],
+        "sharing_friction_info": {
+            "bloks_app_url": null,
+            "should_have_sharing_friction": false
+        },
+        "shortcode": "C0g9VGIuIw8",
+        "taken_at_timestamp": 1701872974,
+        "thumbnail_resources": [
+            {
+                "config_height": 150,
+                "config_width": 150,
+                "src": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/407742952_662740209273544_4066251240009732269_n.heic?stp=c0.112.903.903a_dst-jpg_e35_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=r4t-qWR4XnUAX9uGUuE&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzI1MTg2ODY1ODUyNjk5NjgzMQ%3D%3D.2.c-ccb7-5&oh=00_AfBqE0E2kMvvuICwcXnEDscPFtnycuD3jYtL17oHQANsPQ&oe=6577FDCB&_nc_sid=8b3546"
+            },
+            {
+                "config_height": 240,
+                "config_width": 240,
+                "src": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/407742952_662740209273544_4066251240009732269_n.heic?stp=c0.112.903.903a_dst-jpg_e35_s240x240&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=r4t-qWR4XnUAX9uGUuE&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzI1MTg2ODY1ODUyNjk5NjgzMQ%3D%3D.2.c-ccb7-5&oh=00_AfDQMCoy-vQQcpWuwwFE6ZIk5dkBuJbXiZ_-3GPBAGWHNQ&oe=6577FDCB&_nc_sid=8b3546"
+            },
+            {
+                "config_height": 320,
+                "config_width": 320,
+                "src": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/407742952_662740209273544_4066251240009732269_n.heic?stp=c0.112.903.903a_dst-jpg_e35_s320x320&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=r4t-qWR4XnUAX9uGUuE&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzI1MTg2ODY1ODUyNjk5NjgzMQ%3D%3D.2.c-ccb7-5&oh=00_AfCMyulK79nUSwqawfhTuwbvd6lF5K5d_zBkLMIkGL0-Iw&oe=6577FDCB&_nc_sid=8b3546"
+            },
+            {
+                "config_height": 480,
+                "config_width": 480,
+                "src": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/407742952_662740209273544_4066251240009732269_n.heic?stp=c0.112.903.903a_dst-jpg_e35_s480x480&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=r4t-qWR4XnUAX9uGUuE&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzI1MTg2ODY1ODUyNjk5NjgzMQ%3D%3D.2.c-ccb7-5&oh=00_AfDfb6cp5vMcKnoSNQ1GHbZHkxinxiAs_98y7WC5yi5TSg&oe=6577FDCB&_nc_sid=8b3546"
+            },
+            {
+                "config_height": 640,
+                "config_width": 640,
+                "src": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/407742952_662740209273544_4066251240009732269_n.heic?stp=c0.112.903.903a_dst-jpg_e35_s640x640_sh0.08&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=r4t-qWR4XnUAX9uGUuE&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzI1MTg2ODY1ODUyNjk5NjgzMQ%3D%3D.2.c-ccb7-5&oh=00_AfDmuPlcq_VfL6MufYEPebRFKtEMa8XctQhpbV2S_czSXw&oe=6577FDCB&_nc_sid=8b3546"
+            }
+        ],
+        "thumbnail_src": "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-15/407742952_662740209273544_4066251240009732269_n.heic?stp=c0.112.903.903a_dst-jpg_e35_s640x640_sh0.08&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=r4t-qWR4XnUAX9uGUuE&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzI1MTg2ODY1ODUyNjk5NjgzMQ%3D%3D.2.c-ccb7-5&oh=00_AfDmuPlcq_VfL6MufYEPebRFKtEMa8XctQhpbV2S_czSXw&oe=6577FDCB&_nc_sid=8b3546",
+        "viewer_can_reshare": true
+    }
+}

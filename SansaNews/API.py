@@ -3,16 +3,16 @@ from .iniciativas import INICIATIVAS
 import os
 import json
 
-MAX_PUBLICACIONES = 20
+MAX_PUBLICACIONES = 10
 
 
 """
 Resumen Función:
-    La funcion descarga las ultimas 20 publicaciones más recientes de una pagina de instagram.
+    La funcion descarga las ultimas 10 publicaciones más recientes de una pagina de instagram.
     Si ya existen archivos descargados de esta página entonces se descargan las publicaciones más nuevas
     y se agregan a las ya existentes.
 
-Input: 
+Input:
     Recibe como parametro un string con el usuario de instagram
 
 Returns:
@@ -29,9 +29,9 @@ def actualizar_publicaciones(iniciativa):
 
 """
 Resumen Función:
-    La funcion actualiza la foto de perfil de la pagina que se le entregue dentro de los archivos de iconos, y su biografia. 
+    La funcion actualiza la foto de perfil de la pagina que se le entregue dentro de los archivos de iconos, y su biografia.
 
-Input: 
+Input:
     Recibe como parametro un string con el usuario de instagram
 
 Returns:
@@ -52,13 +52,13 @@ def actualizar_perfil(iniciativa):
 """
 Resumen Función:
     La funcion revisa dentro del archivo json que contiene la informacion de un post de instagram
-    del que se desea extraer la descripcion. 
+    del que se desea extraer la descripcion.
 
-Input: 
+Input:
     Recibe como parametro la ruta del archivo json.
 
 Returns:
-    retorna un string que contiene la descripcion del post si es que existe, sino retorna un string vacio 
+    retorna un string que contiene la descripcion del post si es que existe, sino retorna un string vacio
 
 """
 def leer_archivo_json(ruta_archivo):
@@ -73,7 +73,7 @@ def leer_archivo_json(ruta_archivo):
 
 
 """
-Input: 
+Input:
     Recibe como parametro un string con el usuario de instagram
 
 #Retorna una lista de hasta 20 publicaciones (como máximo) de la página especificada.
@@ -126,7 +126,7 @@ def contenido(iniciativa):
 Resumen Función:
     La funcion recorre todas las publicaciones de todas las iniciativas y las ordena por fecha.
 
-Input: 
+Input:
     No recibe parametros
 
 Returns:
@@ -169,3 +169,50 @@ def recientes():
 
     # Devolver la lista de nuevas publicaciones
     return publicaciones_recientes
+
+"""
+Resumen Función:
+    Limpia las iniciativas que ya no esten en iniciativas.py y borra las publicaciones más antiguas
+    si supera el limite de publicaciones (MAX_PUBLICACIONES).
+"""
+def cleanup():
+    # Obtener lista de carpetas en iniciativas
+    carpetas = os.listdir(os.path.dirname("__file__") + "static/iniciativas")
+
+    # Remueve las carpetas que no son iniciativas
+    carpetas.remove("biografias.json")
+    carpetas.remove("icons")
+
+    # Loop principal de borrado
+    for carpeta in carpetas:
+        # Obtener los archivos de la carpeta
+        archivos = os.listdir(os.path.dirname("__file__") + f"static/iniciativas/{carpeta}")
+
+        # Remueve las iniciativas que ya no se encuentren en iniciativas.py
+        if carpeta not in INICIATIVAS.keys():
+            for archivo in archivos:
+                os.remove(os.path.dirname("__file__") + f"static/iniciativas/{carpeta}/{archivo}")
+
+            os.rmdir(os.path.dirname("__file__") + f"static/iniciativas/{carpeta}")
+            continue
+
+        # Reorganizar archivos para mantener los más recientes
+        archivos.sort()
+        archivos.reverse()
+
+        exclude = "$"
+        cont = 0
+        for archivo in archivos:
+            # Ignorar las primeras MAX_PUBLICACIONES de cada iniciativa
+            if cont >= MAX_PUBLICACIONES:
+                if exclude not in archivo:
+                    os.remove(os.path.dirname("__file__") + f"static/iniciativas/{carpeta}/{archivo}")
+                continue
+
+            # Actualizar contador de publicaciones a ignorar
+            if ".json" in archivo:
+                cont += 1
+
+                # Ignorar los archivos relacionados con la ultima publicacion más reciente
+                if cont == MAX_PUBLICACIONES:
+                    exclude = archivo[:-5]
