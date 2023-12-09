@@ -56,4 +56,6 @@ def test(request):
     with open(os.path.dirname(os.path.dirname(__file__)) + f"/static/iniciativas/biografias.json", "w", encoding='utf-8') as archivo:
         json.dump(biografias, archivo, indent=2)
 
+    API.cleanup()
+    
     return HttpResponse("Iniciativas Actualizadas")
