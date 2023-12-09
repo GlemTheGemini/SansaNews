@@ -27,13 +27,13 @@ body{
 
 .slider {
   position: relative;
-    background: #00666a;
-    top: 1vh;
-    height: 80vh;
-    overflow: hidden;
-    box-shadow: 0vh 1vh 0vh 0vh #edf4ed;
-    display: flex;
-    clip-path: circle(150% at 0 50%);
+  background: #00666a;
+  top: 1vh;
+  height: 80vh;
+  overflow: hidden;
+  box-shadow: 0vh 1vh 0vh 0vh #edf4ed;
+  display: flex;
+  clip-path: circle(150% at 0 50%);
 }
 
 .data{
@@ -65,17 +65,17 @@ body{
   align-items: center;
   width: 72vh;
   left: 78vh;
-  top: 3.8vh;
-  height: 72vh;
+  top: 10.5vh;
+  height: 65vh;
 }
 
 .slider .slide img{
   position: absolute;
-    max-height: 100%;
-    max-width: 100%;
-    box-shadow: 3vh 0vh 0vh -1.9vh #edf4ed;
-    border: 1vh solid #19989D;
-    object-fit: cover;
+  max-height: 100%;
+  max-width: 100%;
+  box-shadow: 3vh 0vh 0vh -1.9vh #edf4ed;
+  border: 1vh solid #19989D;
+  object-fit: cover;
 }
 
 .slider .slide .info{
@@ -114,18 +114,18 @@ body{
 
 .prev-btn, .next-btn{
   z-index: 999;
-    font-size: 6.6vh;
-    border-radius: 2.7vh;
-    color: #edf4ed;
-    background: rgb(37 152 156);
-    padding: 1.34vh;
-    cursor: pointer;
-    position: absolute;
-    left: 156vh;
-    padding-left: 2.7vh;
-    top: 41%;
-    width: 8.9vh;
-    box-shadow: 1.6vh 0vh 0vh -0.6vh #2e989ba1, 3.1vh 0vh 0vh -1.1vh #2e989b54;
+  font-size: 6.6vh;
+  border-radius: 2.7vh;
+  color: #edf4ed;
+  background: rgb(37 152 156);
+  padding: 1.34vh;
+  cursor: pointer;
+  position: absolute;
+  left: 165vh;
+  padding-left: 2.7vh;
+  top: 41%;
+  width: 8.9vh;
+  box-shadow: 1.6vh 0vh 0vh -0.6vh #2e989ba1, 3.1vh 0vh 0vh -1.1vh #2e989b54;
 }
 
 .prev-btn{
@@ -139,19 +139,19 @@ body{
   z-index: 999;
   position: absolute;
   bottom: 2.67vh;
-  left: 88%;
+  left: 86%;
   display: flex;
   justify-content: center;
 }
 
 .navigation-visibility .slide-icon{
   z-index: 999;
-    background: rgb(237 244 237);
-    width: 2.67vh;
-    height: 1.34vh;
-    margin: 0 0.8vh;
-    border-radius: 0.27vh;
-    box-shadow: 0 0.69vh 3.34vh rgb(1 1 1 / 20%);
+  background: rgb(237 244 237);
+  width: 2.67vh;
+  height: 1.34vh;
+  margin: 0 0.8vh;
+  border-radius: 0.27vh;
+  box-shadow: 0 0.69vh 3.34vh rgb(1 1 1 / 20%);
 }
 
 .navigation-visibility .slide-icon.active{
@@ -175,6 +175,23 @@ body{
   padding: 1vh 0.2vh;
   font-weight: 400;
 }
+
+.categorias{
+  margin-top: 5%;
+}
+
+.title {
+  background: #EDF4ED;
+  color: #ff7b00;
+  text-align: center;
+  margin: auto;
+  font-size: 2.8vh;
+  width: 32.7vh;
+  border-radius: 1.69vh;
+}
+
+
+
 
 
 @media (max-width: 94vh) {
