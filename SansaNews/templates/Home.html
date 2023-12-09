@@ -4,85 +4,55 @@
 {% load static %}
 
 {% block base %}
-
-<br />
-<br />
-<section id="hero">
-  <h1 class="fuente"><b>Noticias más recientes de la semana</b></h1>
-</section>
-<br>
-<div id="wowslider-container1">
-  <div class="ws_images">
-    <ul>
-      {% for x in key %}
-      <li class="image-container">
-        <img
-          src="{% static x.imagen %}"
-          class="image-item"
-          alt="pagina"
-          title="@{{ x.pagina }}"
-          id="{{ x.id }}"
-        />{{ x.descripcion }}
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-  <div class="ws_bullets">
-    <div>
-      <a href="#" title="pagina"><span>1</span></a>
-      <a href="#" title="pagina"><span>2</span></a>
-      <a href="#" title="pagina"><span>3</span></a>
-      <a href="#" title="pagina"><span>4</span></a>
-    </div>
-  </div>
-  <div class="ws_shadow"></div>
-</div>
-
-<script
-  type="text/javascript"
-  src="{% static 'engine1/wowslider.js' %}"
-></script>
-<script
-  type="text/javascript"
-  src="{% static 'engine1/script.js' %}"
-></script>
-
-<br />
-<br />
-<center>
-  <section>
-    <section id="Iniciativas-Estudiantiles">
-      <h2 class="fuente"><b>Iniciativas Estudiantiles</b></h2>
-      <div class="fotos">
-        <div class="row"></div>
+<div class ="home-a">
+  <div class="slider">
+    {% for x in primera %}
+    <div class="slide active">
+      <div class="imagen">
+        <img src="{% static x.imagen %}" alt="">
       </div>
-    </section>
-  </section>
-</center>
-<div>
-  <center>
-    <div class="columns">
-      {% for usuario, nombre in iniciativas.items %}
-        <div class="item">
-          <div class="carta">
-            <h3>{{nombre}}</h3>
-            <background>
-              <center>
-                <img
-                  src="{% static "iniciativas/icons/"|add:usuario|add:".jpg" %}"
-                  width="250px"
-                  height="250px"
-                />
-              </center>
-            </background>
-            <a href="../{{usuario}}">
-              <button>Más Informacion</button>
+      <div class = "data">
+          <div class="info">
+            <a href="../{{x.id}}">
+              <div class="button">
+                <h2>@{{ x.pagina }}</h2>
+              </div>
             </a>
+            <p id="descripcion">{{ x.descripcion }}</p>
           </div>
-        </div>
-      {% endfor %}
+      </div>
     </div>
-  </center>
+    {% endfor %}
+    {% for x in publicaciones %}
+    <div class="slide">
+      <div class="imagen">
+        <img src="{% static x.imagen %}" alt="">
+      </div>
+      <div class = "data">
+          <div class="info">
+            <a href="../{{x.id}}">
+              <div class="button">
+                <h2>@{{ x.pagina }}</h2>
+              </div>
+            </a>
+            <p id="descripcion">{{ x.descripcion }}</p>
+          </div>
+      </div>
+    </div>
+    {% endfor %}
+  
+    <div class="navigation">
+      <i class="fas fa-chevron-right next-btn"></i>
+    </div>
+    <div class="navigation-visibility">
+      <div class="slide-icon active"></div>
+      <div class="slide-icon"></div>
+      <div class="slide-icon"></div>
+      <div class="slide-icon"></div>
+    </div>
+  </div>
 </div>
+<script type="text/javascript" src="{% static 'slider/script.js' %}"></script>
+
 
 {% endblock base %}

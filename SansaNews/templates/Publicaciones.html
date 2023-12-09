@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block base %}
+
+    <!-- Agregar un botón para actualizar la fecha de ingreso en localStorage y enviarla al backend -->
+    <div class="informacion">
+        <div class="text"><p>Tu ultima fecha registrada es: {{ fecha }}</p></div>
+        <div class="btn"><a id="actualizarFechaBtn"><p>Actualizar Fecha de Ingreso</p></a></div>
+    </div>
+    {% for x in lista_30 %}
+        <p>{{x}}</p>
+    {% endfor %}
+
+    <script type="text/javascript" src="{% static 'publicaciones/script.js' %}"></script>
+
+
+{% endblock base %}

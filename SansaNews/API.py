@@ -132,38 +132,80 @@ Input:
 Returns:
     retorna una lista con las 4 publicaciones mas recientes de todas las iniciativas de la pagina
 """
-def recientes():
+def recientes(cantidad):
     # Diccionario para almacenar la información de las publicaciones
     iniciativas = {}
     for iniciativa in INICIATIVAS:
         # Agregar información de primera y última publicación al diccionario
-        iniciativas[iniciativa] = [contenido(iniciativa)[0][0], contenido(iniciativa)[0][-1]]
+        lista_aux = contenido(iniciativa)
+        iniciativas[iniciativa] = [lista_aux[0][0], lista_aux[0][-1]]
     # Lista de fechas y descripciones de publicaciones
     fechas = []
     for iniciativa in iniciativas:
         # Agregar fecha y descripción de cada publicación a la lista
-        fecha = [iniciativas[iniciativa][0].split("/")[-1], iniciativas[iniciativa][-1][:150] + "..."]
+        fecha = [iniciativas[iniciativa][0].split("/")[-1], iniciativas[iniciativa][-1]]
         fechas.append([fecha, iniciativa])
 
     # Ordenar la lista por fecha, de más reciente a menos reciente
     fechas.sort(reverse=True)
 
-    # Seleccionar las últimas 4 publicaciones de la lista
-    fechas = fechas[:4]
+    # Seleccionar las últimas publicaciones de la lista segun la cantidad que se indique
+    fechas = fechas[:cantidad]
 
-    # Variables para generar el ID de cada publicación
+    # Directorio de enlace
     directorio = "\\{}\\{}"
-    id = "wows1_{}"
 
     # Lista para almacenar la información de las nuevas publicaciones
     publicaciones_recientes = []
     for index, (fecha, iniciativa) in enumerate(fechas):
         # Agregar la información de la publicación a la lista, incluyendo el ID generado
         publicacion = {
-            "pagina": iniciativa,
+            "id": iniciativa,
+            "pagina": iniciativa.upper(),
             "imagen": directorio.format(f"iniciativas/{iniciativa}", fecha[0]),
-            "descripcion": fecha[-1],
-            "id": id.format(index)
+            "descripcion": fecha[-1]
+        }
+        publicaciones_recientes.append(publicacion)
+
+    # Devolver la lista de nuevas publicaciones
+    return publicaciones_recientes
+
+
+def recientes_publicaciones(fecha_limite):
+    # Diccionario para almacenar la información de las publicaciones
+    iniciativas = {}
+    for iniciativa in INICIATIVAS:
+        # Agregar información de primera y última publicación al diccionario
+        lista_aux = contenido(iniciativa)
+        iniciativas[iniciativa] = [lista_aux[0][0], lista_aux[0][-1]]
+
+    # Lista de fechas y descripciones de publicaciones
+    fechas = []
+    for iniciativa in iniciativas:
+        # Agregar fecha y descripción de cada publicación a la lista
+        fecha = [iniciativas[iniciativa][0].split("/")[-1], iniciativas[iniciativa][-1]]
+        fechas.append([fecha, iniciativa])
+
+    # Ordenar la lista por fecha, de más reciente a menos reciente
+    fechas.sort(reverse=True)
+
+    # Selecciona las publicaciones que cumplan con la fecha indicada
+    fechas_filtradas = []
+    for date, dato in fechas:
+        if date[0] >= fecha_limite:
+            fechas_filtradas.append([date,dato])
+    # Directorio de enlace
+    directorio = "\\{}\\{}"
+
+    # Lista para almacenar la información de las nuevas publicaciones
+    publicaciones_recientes = []
+    for index, (fecha, iniciativa) in enumerate(fechas_filtradas):
+        # Agregar la información de la publicación a la lista, incluyendo el ID generado
+        publicacion = {
+            "id": iniciativa,
+            "pagina": iniciativa.upper(),
+            "imagen": directorio.format(f"iniciativas/{iniciativa}", fecha[0]),
+            "descripcion": fecha[-1]
         }
         publicaciones_recientes.append(publicacion)
 
