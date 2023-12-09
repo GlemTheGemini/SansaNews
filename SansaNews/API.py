@@ -211,3 +211,50 @@ def recientes_publicaciones(fecha_limite):
 
     # Devolver la lista de nuevas publicaciones
     return publicaciones_recientes
+
+"""
+Resumen Función:
+    Limpia las iniciativas que ya no esten en iniciativas.py y borra las publicaciones más antiguas
+    si supera el limite de publicaciones (MAX_PUBLICACIONES).
+"""
+def cleanup():
+    # Obtener lista de carpetas en iniciativas
+    carpetas = os.listdir(os.path.dirname("__file__") + "static/iniciativas")
+
+    # Remueve las carpetas que no son iniciativas
+    carpetas.remove("biografias.json")
+    carpetas.remove("icons")
+
+    # Loop principal de borrado
+    for carpeta in carpetas:
+        # Obtener los archivos de la carpeta
+        archivos = os.listdir(os.path.dirname("__file__") + f"static/iniciativas/{carpeta}")
+
+        # Remueve las iniciativas que ya no se encuentren en iniciativas.py
+        if carpeta not in INICIATIVAS.keys():
+            for archivo in archivos:
+                os.remove(os.path.dirname("__file__") + f"static/iniciativas/{carpeta}/{archivo}")
+
+            os.rmdir(os.path.dirname("__file__") + f"static/iniciativas/{carpeta}")
+            continue
+
+        # Reorganizar archivos para mantener los más recientes
+        archivos.sort()
+        archivos.reverse()
+
+        exclude = "$"
+        cont = 0
+        for archivo in archivos:
+            # Ignorar las primeras MAX_PUBLICACIONES de cada iniciativa
+            if cont >= MAX_PUBLICACIONES:
+                if exclude not in archivo:
+                    os.remove(os.path.dirname("__file__") + f"static/iniciativas/{carpeta}/{archivo}")
+                continue
+
+            # Actualizar contador de publicaciones a ignorar
+            if ".json" in archivo:
+                cont += 1
+
+                # Ignorar los archivos relacionados con la ultima publicacion más reciente
+                if cont == MAX_PUBLICACIONES:
+                    exclude = archivo[:-5]
