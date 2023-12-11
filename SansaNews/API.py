@@ -1,10 +1,10 @@
-from instaloader import Instaloader, Profile
+from instaloader import Instaloader, Profile, instaloader
 from .iniciativas import SLIDER, PAGINAS
 import os
 import json
 
 MAX_PUBLICACIONES = 20
-
+L = instaloader.Instaloader()
 
 """
 Resumen Función:
@@ -20,7 +20,6 @@ Returns:
 """
 def actualizar_publicaciones(iniciativa):
     LOADER = Instaloader(post_metadata_txt_pattern="", compress_json=False, dirname_pattern=(os.path.dirname(os.path.dirname(__file__)) + f"/static/iniciativas/{iniciativa}"))
-
     #Descargamos los archivos necesarios de los usuarios que se encuentran en el archivo señalado
     perfil = Profile.from_username(LOADER.context, iniciativa)
     publicaciones = perfil.get_posts()
@@ -41,7 +40,6 @@ Returns:
 def actualizar_perfil(iniciativa):
     LOADER = Instaloader(post_metadata_txt_pattern="", compress_json=False, dirname_pattern=(os.path.dirname(os.path.dirname(__file__)) + f"/static/iniciativas/icons"))
     perfil = Profile.from_username(LOADER.context, iniciativa)
-
     # Descargar foto de perfil de iniciativa
     LOADER.context.get_and_write_raw(perfil.profile_pic_url, f"static/iniciativas/icons/{iniciativa}.jpg")
 

@@ -16,7 +16,8 @@ SLIDER = {
     "rocketscience_usm": "Rocket Science USM",
     "usm.cubesat.team": "CUBESAT TEAM",
     "xumbra_utfsm": "XUMBRA UTFSM",
-    "yotecuidousm": "Yo Te Cuido"
+    "yotecuidousm": "Yo Te Cuido",
+    "santamariasharks": "Santa Maria Sharks"
 }
 
 DEPORTES = {
@@ -25,7 +26,6 @@ DEPORTES = {
     "boxeo.usm": "Boxeo USM",
     "cheer.usm": "Cheer USM",
     "balonmano_usm_stgo" : "Balón Mano STGO",
-    "taekwondo.usm" : "Taekwondo",
     "tdm_usm" : "Tenis de Mesa",
     "spinning_usm_sanjoaquin" : "Spinning",
     "voleibolusm_fem": "Voleibol Femenino",
@@ -57,8 +57,6 @@ CENTROS = {
     "caamec_usm": "CAAMEC",
     "ceeli_usm": "CEELI",
     "ceetel.sj": "CEETEL",
-    "ceeiqasj": "CEEIQA",
-    "ceic_usm": "CEIC"
 }
 
 REDES_OFICIALES = {
@@ -77,7 +75,6 @@ PAGINAS = {
     "boxeo.usm": "Boxeo USM",
     "cheer.usm": "Cheer USM",
     "balonmano_usm_stgo" : "Balón Mano STGO",
-    "taekwondo.usm" : "Taekwondo",
     "tdm_usm" : "Tenis de Mesa",
     "spinning_usm_sanjoaquin" : "Spinning",
     "voleibolusm_fem": "Voleibol Femenino",
@@ -103,8 +100,6 @@ PAGINAS = {
     "caamec_usm": "CAAMEC",
     "ceeli_usm": "CEELI",
     "ceetel.sj": "CEETEL",
-    "ceeiqasj": "CEEIQA",
-    "ceic_usm": "CEIC",
     "usmsanjoaquin" : "Campus SJ",
     "rreeusm_sanjoaquin" : "Relaciones Estudiantiles",
     "piea.usm" : "Programa de Iniciativas Estudiantiles",
