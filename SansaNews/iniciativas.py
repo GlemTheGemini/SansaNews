@@ -66,22 +66,9 @@ REDES_OFICIALES = {
     "rreeusm_sanjoaquin" : "Relaciones Estudiantiles",
     "piea.usm" : "Programa de Iniciativas Estudiantiles",
     "bibliotecausmcsj" : "Biblioteca",
-    "infoludoteca" : "Infoludoteca",
     "informaticausm" : "Departamento Informatica",
-    "idpusm" : "Departamento IDP",
-    "electricausm": "Departamento Electrica",
-    "arquitectura.usm" : "Departamento Arquitectura",
-    "telematicausm" : "Departamento Telematica",
-    "fisicautfsm" : "Departamento Fisica",
     "defider_usm" : "DEFIDER",
-    "pae.usm" : "PAE USM",
-    "cetamusm" : "CETAM USM",
-    "aero.lab.usm" : "AEROLAB USM",
-    "paceusm.santiago" : "PACE USM",
-    "usm.internacional" : "USM Internacional",
-    "vinculacionusm" : "Vinculación",
-    "cbdal_usm" : "Centro de Biotecnología",
-    "agrobiotecnologiateamusm" : "AGROBIOTEC USM"
+    "pae.usm" : "PAE USM"
 }
 
 PAGINAS = {
@@ -122,20 +109,7 @@ PAGINAS = {
     "rreeusm_sanjoaquin" : "Relaciones Estudiantiles",
     "piea.usm" : "Programa de Iniciativas Estudiantiles",
     "biblioteca.usm" : "Biblioteca",
-    "infoludoteca" : "Infoludoteca",
     "informaticausm" : "Departamento Informatica",
-    "idpusm" : "Departamento IDP",
-    "electricausm": "Departamento Electrica",
-    "arquitectura.usm" : "Departamento Arquitectura",
-    "telematicausm" : "Departamento Telematica",
-    "fisicautfsm" : "Departamento Fisica",
     "defider_usm" : "DEFIDER",
-    "pae.usm" : "PAE USM",
-    "cetamusm" : "CETAM USM",
-    "aero.lab.usm" : "AEROLAB USM",
-    "paceusm.santiago" : "PACE USM",
-    "usm.internacional" : "USM Internacional",
-    "vinculacionusm" : "Vinculación",
-    "cbdal_usm" : "Centro de Biotecnología",
-    "agrobiotecnologiateamusm" : "AGROBIOTEC USM"
+    "pae.usm" : "PAE USM"
 }
