@@ -1,3 +1,40 @@
+
+$(document).ready(function() {
+  var $cell = $('.card');
+
+  //open and close card when clicked on card
+  $cell.find('.js-expander').click(function () {
+    
+    var $thisCell = $(this).closest('.card');
+
+    if ($thisCell.hasClass('is-collapsed')) {
+      $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
+      $thisCell.removeClass('is-collapsed').addClass('is-expanded');
+
+      if ($cell.not($thisCell).hasClass('is-inactive')) {
+        //do nothing
+      } else {
+        $cell.not($thisCell).addClass('is-inactive');
+      }
+
+    } else {
+      $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+      $cell.not($thisCell).removeClass('is-inactive');
+    }
+  });
+
+  //close card when click on cross
+  $cell.find('.js-collapser').click(function () {
+
+    var $thisCell = $(this).closest('.card');
+
+    $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+    $cell.not($thisCell).removeClass('is-inactive');
+
+  });
+});
+
+
 const slider = document.querySelector(".slider");
 const nextBtn = document.querySelector(".next-btn");
 const prevBtn = document.querySelector(".prev-btn");
@@ -25,7 +62,10 @@ nextBtn.addEventListener("click", () => {
   slides[slideNumber].classList.add("active");
   slideIcons[slideNumber].classList.add("active");
 });
-//image slider previous button
+
+
+//image slider previous button (no utilizado)
+/*
 prevBtn.addEventListener("click", () => {
   slides.forEach((slide) => {
     slide.classList.remove("active");
@@ -40,6 +80,8 @@ prevBtn.addEventListener("click", () => {
   slides[slideNumber].classList.add("active");
   slideIcons[slideNumber].classList.add("active");
 });
+*/
+
 function separateParagraphs() {
   const descripciones = document.querySelectorAll('#descripcion');
 
@@ -69,7 +111,8 @@ function formatSpecialChars() {
 }
 
 
-//image slider autoplay
+//image slider autoplay (no se utiliza)
+/*
 var repeater = () => {
   playSlider = setInterval(function(){
     slides.forEach((slide) => {
@@ -88,11 +131,4 @@ var repeater = () => {
 }
 repeater();
 
-//stop the image slider autoplay on mouseover
-slider.addEventListener("mouseover", () => {
-  clearInterval(playSlider);
-});
-//start the image slider autoplay again on mouseout
-slider.addEventListener("mouseout", () => {
-  repeater();
-});
+*/
