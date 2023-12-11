@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from . import API
-from .iniciativas import INICIATIVAS
+from .iniciativas import PAGINAS, SLIDER
 from . import forms
 from . import models
 import os
@@ -14,7 +14,7 @@ import datetime
 
 def home(request):
     recientes = API.recientes(4)
-    return render(request,"Home.html",{"primera": [recientes[0]],"publicaciones": recientes[1:], "iniciativas": INICIATIVAS})
+    return render(request,"Home.html",{"primera": [recientes[0]],"publicaciones": recientes[1:], "iniciativas": SLIDER})
 
 def iniciativa(request, usuario):
     with open(os.path.dirname(os.path.dirname(__file__)) + f"/static/iniciativas/biografias.json", "r", encoding='utf-8') as archivo:
@@ -25,10 +25,10 @@ def iniciativa(request, usuario):
 
     return render(request, "Molde.html", {
         "usuario": usuario,
-        "nombre": INICIATIVAS[usuario],
+        "nombre": PAGINAS[usuario],
         "biografia": biografia,
         "key": publicaciones,
-        "iniciativas": INICIATIVAS
+        "iniciativas": PAGINAS
     })
 
 def about(request):
@@ -37,7 +37,7 @@ def about(request):
 def avisos(request):
     lista = models.imagenes_avisos.objects.all().order_by("id").reverse()
     lista.reverse()
-    return render(request,"Avisos.html",{"key": lista, "iniciativas": INICIATIVAS})
+    return render(request,"Avisos.html",{"key": lista, "iniciativas": SLIDER})
 
 def subir_avisos(request, id=None):
     imagen = forms.avisos_forms(request.POST, request.FILES)
@@ -46,13 +46,13 @@ def subir_avisos(request, id=None):
         if imagen.is_valid():
             imagen.save()
             return redirect(avisos)
-    context = {"imagen": imagen, "iniciativas": INICIATIVAS}
+    context = {"imagen": imagen, "iniciativas": SLIDER}
     return render(request, 'Subir_Avisos.html', context)
 
 def test(request):
     biografias = {}
 
-    for iniciativa in INICIATIVAS:
+    for iniciativa in PAGINAS:
         biografias[iniciativa] = API.actualizar_perfil(iniciativa)
         API.actualizar_publicaciones(iniciativa)
 
@@ -96,4 +96,4 @@ def publicaciones(request):
     else:
         lista_custom = []
 
-    return render(request, 'Publicaciones.html', {"fecha": fecha_limite, "lista_30": lista_30, "lista_custom": lista_custom, "iniciativas": INICIATIVAS})
+    return render(request, 'Publicaciones.html', {"fecha": fecha_limite, "lista_30": lista_30, "lista_custom": lista_custom, "iniciativas": PAGINAS})

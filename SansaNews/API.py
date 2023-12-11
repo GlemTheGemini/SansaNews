@@ -1,5 +1,5 @@
 from instaloader import Instaloader, Profile
-from .iniciativas import INICIATIVAS
+from .iniciativas import SLIDER, PAGINAS
 import os
 import json
 
@@ -135,7 +135,7 @@ Returns:
 def recientes(cantidad):
     # Diccionario para almacenar la información de las publicaciones
     iniciativas = {}
-    for iniciativa in INICIATIVAS:
+    for iniciativa in SLIDER:
         # Agregar información de primera y última publicación al diccionario
         lista_aux = contenido(iniciativa)
         iniciativas[iniciativa] = [lista_aux[0][0], lista_aux[0][-1]]
@@ -174,7 +174,7 @@ def recientes(cantidad):
 def recientes_publicaciones(fecha_limite):
     # Diccionario para almacenar la información de las publicaciones
     iniciativas = {}
-    for iniciativa in INICIATIVAS:
+    for iniciativa in SLIDER:
         # Agregar información de primera y última publicación al diccionario
         lista_aux = contenido(iniciativa)
         iniciativas[iniciativa] = [lista_aux[0][0], lista_aux[0][-1]]
@@ -231,7 +231,7 @@ def cleanup():
         archivos = os.listdir(os.path.dirname("__file__") + f"static/iniciativas/{carpeta}")
 
         # Remueve las iniciativas que ya no se encuentren en iniciativas.py
-        if carpeta not in INICIATIVAS.keys():
+        if carpeta not in PAGINAS.keys():
             for archivo in archivos:
                 os.remove(os.path.dirname("__file__") + f"static/iniciativas/{carpeta}/{archivo}")
 
