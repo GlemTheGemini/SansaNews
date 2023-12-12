@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from . import API
-from .iniciativas import PAGINAS, SLIDER
+from .iniciativas import PAGINAS, SLIDER, DEPORTES, RECREACION, CENTROS, REDES_OFICIALES
 from . import forms
 from . import models
 import os
@@ -14,7 +14,13 @@ import datetime
 
 def home(request):
     recientes = API.recientes(4)
-    return render(request,"Home.html",{"primera": [recientes[0]],"publicaciones": recientes[1:], "iniciativas": SLIDER})
+    return render(request,"Home.html",{"primera": [recientes[0]],
+                                       "publicaciones": recientes[1:],
+                                       "deportes" : DEPORTES,
+                                       "recreacion" : RECREACION,
+                                       "centros" : CENTROS,
+                                       "redes" : REDES_OFICIALES
+                                       })
 
 def iniciativa(request, usuario):
     with open(os.path.dirname(os.path.dirname(__file__)) + f"/static/iniciativas/biografias.json", "r", encoding='utf-8') as archivo:
