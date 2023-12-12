@@ -70,6 +70,8 @@ REDES_OFICIALES = {
 }
 
 PAGINAS = {
+    "sansanews": "SansaNews",
+    "ergon_usm": "Ergon",
     "defider_usm": "DEFIDER",
     "prestigeleagueusm": "Prestige League USM",
     "boxeo.usm": "Boxeo USM",
