@@ -46,7 +46,7 @@ RECREACION = {
     "gbu_usm": "GBU USM",
     "rock_usm": "Rock USM",
     "comunidad.minecraft.usm": "Comunidad de Minecraft",
-    "debateusm" : "Comunidad de Debate USM"
+    "debateusm" : "Sociedad de Debate"
 }
 
 CENTROS = {
@@ -63,7 +63,7 @@ REDES_OFICIALES = {
     "usmsanjoaquin" : "Campus SJ",
     "rreeusm_sanjoaquin" : "Relaciones Estudiantiles",
     "piea.usm" : "Programa de Iniciativas Estudiantiles",
-    "bibliotecausmcsj" : "Biblioteca",
+    "biblioteca.usm" : "Biblioteca",
     "informaticausm" : "Departamento Informatica",
     "defider_usm" : "DEFIDER",
     "pae.usm" : "PAE USM"

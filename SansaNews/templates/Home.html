@@ -65,19 +65,13 @@
           <span>Centros de Estudiantes</span>
         </div>
         <div class="card__expander">
-          <div class="a-box">
-            <div class="img-container">
-              <div class="img-inner">
-                <div class="inner-skew">
-                  
-                </div>
-              </div>
+          <div class="grid-container">
+            {% for usuario, nombre in centros.items %}
+            <div class="grid-item">
+              <img src="{% static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}"/>
+              <h3>{{nombre}}</h3>
             </div>
-            <div class="text-container">
-              <h3>A blue bird</h3>
-              <div>
-                This a demo experiment to skew image container. It looks good.
-            </div>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -87,7 +81,14 @@
           <span>Deportes</span>
         </div>
         <div class="card__expander">
-          Expander
+          <div class="grid-container">
+            {% for usuario, nombre in deportes.items %}
+            <div class="grid-item">
+              <img src="{% static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}"/>
+              <h3>{{nombre}}</h3>
+            </div>
+            {% endfor %}
+          </div>
         </div>
       </div>
   
@@ -96,17 +97,30 @@
           <span>Recreación</span>
         </div>
         <div class="card__expander">
-          Expander
+          <div class="grid-container">
+            {% for usuario, nombre in recreacion.items %}
+            <div class="grid-item">
+              <img src="{% static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}"/>
+              <h3>{{nombre}}</h3>
+            </div>
+            {% endfor %}
+          </div>
         </div>
       </div>
   
       <div class=" card [ is-collapsed ] ">
         <div class="card__inner [ js-expander ]">
           <span>Redes Oficiales</span>
-
         </div>
         <div class="card__expander">      
-          Expander
+          <div class="grid-container">
+            {% for usuario, nombre in redes.items %}
+            <div class="grid-item">
+              <img src="{% static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}"/>
+              <h3>{{nombre}}</h3>
+            </div>
+            {% endfor %}
+          </div>
         </div>
       </div>
     
