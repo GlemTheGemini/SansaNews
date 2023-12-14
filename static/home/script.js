@@ -64,53 +64,23 @@ nextBtn.addEventListener("click", () => {
 });
 
 
-slideIcons[0].addEventListener("click", () =>{
-  slides.forEach((slide) => {
-    slide.classList.remove("active");
-  });
-  slideIcons.forEach((slideIcon) => {
-    slideIcon.classList.remove("active");
-  });
+slideIcons.forEach((slideIcon, index) => {
+  slideIcon.addEventListener("click", () => {
+    
+    slides.forEach((slide) => {
+      slide.classList.remove("active");
+    });
 
-  slides[0].classList.add("active");
-  slideIcons[0].classList.add("active");
+    slideIcons.forEach((icon) => {
+      icon.classList.remove("active");
+    });
+
+    slides[index].classList.add("active");
+    slideIcons[index].classList.add("active");
+    slideNumber = index;
+  });
 });
 
-slideIcons[1].addEventListener("click", () =>{
-  slides.forEach((slide) => {
-    slide.classList.remove("active");
-  });
-  slideIcons.forEach((slideIcon) => {
-    slideIcon.classList.remove("active");
-  });
-
-  slides[1].classList.add("active");
-  slideIcons[1].classList.add("active");
-});
-
-slideIcons[2].addEventListener("click", () =>{
-  slides.forEach((slide) => {
-    slide.classList.remove("active");
-  });
-  slideIcons.forEach((slideIcon) => {
-    slideIcon.classList.remove("active");
-  });
-
-  slides[2].classList.add("active");
-  slideIcons[2].classList.add("active");
-});
-
-slideIcons[3].addEventListener("click", () =>{
-  slides.forEach((slide) => {
-    slide.classList.remove("active");
-  });
-  slideIcons.forEach((slideIcon) => {
-    slideIcon.classList.remove("active");
-  });
-
-  slides[3].classList.add("active");
-  slideIcons[3].classList.add("active");
-});
 
 
 

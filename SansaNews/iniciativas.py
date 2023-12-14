@@ -66,7 +66,6 @@ REDES_OFICIALES = {
     "piea.usm" : "Programa de Iniciativas Estudiantiles",
     "biblioteca.usm" : "Biblioteca",
     "informaticausm" : "Departamento Informatica",
-    "defider_usm" : "DEFIDER",
     "pae.usm" : "PAE USM"
 }
 
