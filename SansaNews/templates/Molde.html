@@ -3,36 +3,30 @@
 {% block base %}
 
 {% load static %}
-
-
-<br>
-<br>
-<center>
-  <div
-    class="card text-white mb-3"
-    style="max-width: 30rem; max-height: 30rem; background: #002d40"
-  >
-    <div class="card-header">
-      <center>
-          <img src="{%static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}"width="300" height="300">
-      </center>
-      <div class="card-body" style="color: #d2d7da">
-        <h4 class="card-title"><a href="https://www.instagram.com/{{ usuario }}/" target="_blank">{{ nombre }}</a></h4>
-        <p class="card-text">{{ biografia }}</p>
-      </div>
-    </div>
-    {% block content %} {% endblock content %}
+  
+  <div class="iniciativa-img">
+    <img src="{%static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}">
   </div>
-</center>
-<br />
-<br />
+  <div class="iniciativa-title">
+    <h4><a href="https://www.instagram.com/{{ usuario }}/" target="_blank">@{{ nombre }}</a></h4>
+  </div>
+  <div class="iniciativa-descripcion">
+    <p>{{ biografia }}</p>
+  </div>
 
+  <div class="recientes">
+    <h2>Publicaciones más recientes</h2>
+  </div>
+
+
+
+  <!--
 <main>
   <div class="d-flex flex-wrap justify-content-around">
     {% for publicaciones in key %}
-    <center>
+
       <div class="card mb-3 m-2" style="width: 650px">
-        <center>
+
           <div class="card mb-3">
             <h3
               class="card-header"
@@ -40,12 +34,11 @@
             >
               Publicación
             </h3>
-        </center>
+    
         <div
           id="a{{ forloop.counter }}"
           class="carousel slide"
-          data-bs-ride="false"
-        >
+          data-bs-ride="false">
           <div class="carousel-inner">
             {% for publicacion in publicaciones %} {% if forloop.first %}
             <div class="carousel-item active">
@@ -62,8 +55,7 @@
             type="button"
             data-bs-target="#a{{ forloop.parentloop.counter }}"
             data-bs-slide="prev"
-            style="background-color: black"
-          >
+            style="background-color: black">
             <span
               class="carousel-control-prev-icon"
               aria-hidden="true"
@@ -75,8 +67,7 @@
             type="button"
             data-bs-target="#a{{ forloop.parentloop.counter }}"
             data-bs-slide="next"
-            style="background-color: black"
-          >
+            style="background-color: black"        >
             <span
               class="carousel-control-next-icon"
               aria-hidden="true"
@@ -84,16 +75,14 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-        <center>
           <div class="card-body" style="background: rgba(0, 0, 0, 0.5)">
             <button>{{ publicacion }}</button>
           </div>
-        </center>
         {% endif %} {% endfor %}
       </div>
-    </center>
     {% endfor %}
     <script src="{% static 'molde/js/slider.js' %}"></script>
   </div>
 </main>
+-->
 {% endblock base %}

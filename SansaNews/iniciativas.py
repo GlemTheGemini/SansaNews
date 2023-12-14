@@ -46,6 +46,7 @@ RECREACION = {
     "gbu_usm": "GBU USM",
     "rock_usm": "Rock USM",
     "comunidad.minecraft.usm": "Comunidad de Minecraft",
+    "ergon_usm": "Ergon",
     "debateusm" : "Sociedad de Debate"
 }
 

@@ -24,6 +24,7 @@ body{
   position: absolute;
   display: block;
   width: -webkit-fill-available;
+  max-height: 240vh;
 }
 
 .slider {
@@ -154,6 +155,7 @@ body{
   margin: 0 0.8vh;
   border-radius: 0.27vh;
   box-shadow: 0 0.69vh 3.34vh rgb(1 1 1 / 20%);
+  cursor: pointer;
 }
 
 .navigation-visibility .slide-icon.active{
@@ -387,4 +389,9 @@ body{
   width: 10vh;
   height: 10vh;
   border-radius: 2vh;
+}
+
+.grid-container a:-webkit-any-link{
+  color:#071013;
+  text-decoration: none;
 }

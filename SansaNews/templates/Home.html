@@ -53,12 +53,11 @@
   </div>
 
 
-  <div class="wrapper">
 
+  <div class="wrapper">
     <div class="header">
       <h1 class="header__title">Categorías</h1>
     </div>
-  
     <div class="cards">
       <div class=" card [ is-collapsed ] ">
         <div class="card__inner [ js-expander ]">
@@ -67,10 +66,12 @@
         <div class="card__expander">
           <div class="grid-container">
             {% for usuario, nombre in centros.items %}
-            <div class="grid-item">
-              <img src="{% static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}"/>
-              <h3>{{nombre}}</h3>
-            </div>
+            <a href="../{{usuario}}">
+              <div class="grid-item">
+                <img src="{% static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}"/>
+                <h3>{{nombre}}</h3>
+              </div>
+            </a>
             {% endfor %}
           </div>
         </div>
@@ -83,10 +84,12 @@
         <div class="card__expander">
           <div class="grid-container">
             {% for usuario, nombre in deportes.items %}
-            <div class="grid-item">
-              <img src="{% static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}"/>
-              <h3>{{nombre}}</h3>
-            </div>
+            <a href="../{{usuario}}">
+              <div class="grid-item">
+                <img src="{% static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}"/>
+                <h3>{{nombre}}</h3>
+              </div>
+            </a>
             {% endfor %}
           </div>
         </div>
@@ -99,10 +102,12 @@
         <div class="card__expander">
           <div class="grid-container">
             {% for usuario, nombre in recreacion.items %}
-            <div class="grid-item">
-              <img src="{% static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}"/>
-              <h3>{{nombre}}</h3>
-            </div>
+            <a href="../{{usuario}}">
+              <div class="grid-item">
+                <img src="{% static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}"/>
+                <h3>{{nombre}}</h3>
+              </div>
+            </a>
             {% endfor %}
           </div>
         </div>
@@ -115,10 +120,12 @@
         <div class="card__expander">      
           <div class="grid-container">
             {% for usuario, nombre in redes.items %}
-            <div class="grid-item">
-              <img src="{% static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}"/>
-              <h3>{{nombre}}</h3>
-            </div>
+            <a href="../{{usuario}}">
+              <div class="grid-item">
+                <img src="{% static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}"/>
+                <h3>{{nombre}}</h3>
+              </div>
+            </a>
             {% endfor %}
           </div>
         </div>
