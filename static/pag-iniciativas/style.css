@@ -2,7 +2,7 @@
 
 
 .iniciativa-img img{
-    margin-left: -95vh;
+    margin-left: -93vh;
     margin-top: -25vh;
     width: 33vh;
     height: 33vh;
@@ -36,16 +36,16 @@
     border-radius: 0.69vh;
     text-align: center;
     margin-top: -23vh;
+    font-size: 2.3vh;
 }
-
 
 .recientes{
     background-color: #44D1D5;
     color: #fff;
     position: absolute;
     width: 70vh;
-    margin-left: -120vh;
-    margin-top: 33vh;
+    margin-left: -117vh;
+    margin-top: 25vh;
     border-radius: 1.1vh;
     text-align: center;
     font-size: 2.6vh;
