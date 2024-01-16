@@ -10,10 +10,10 @@ class TipoIniciativa(Enum):
     '''
     Enum para clasificar las iniciativas según su tipo
     '''
-    CENTRO_DE_ESTUDIANTES = "Centro de Estudiantes"
-    DEPORTES = "Deportes"
+    CENTRO = "Centro de Estudiantes"
+    DEPORTE = "Deportes"
     RECREACION = "Recreación"
-    OFICIAL = "Redes Oficiales"
+    RED = "Redes Oficiales"
 
 def escanear_iniciativas() -> dict:
     '''
@@ -250,7 +250,7 @@ def limpiar_posts(iniciativa: dict, max_posts: int = MAX_POSTS) -> dict:
     return iniciativa
 
 
-def actualizar_iniciativa(client: Client, usuario: str):
+def actualizar_iniciativa(client: Client, usuario: str) -> dict:
     '''
     Actualiza los posts de la iniciativa dada, descargando los más nuevos
     e eliminando los más viejos si se llegara a sobrepasar el limite de posts
@@ -258,6 +258,9 @@ def actualizar_iniciativa(client: Client, usuario: str):
     Args:
         client (Client): cliente de instragrapi
         usuario: usuario de instagram de la iniciativa
+
+    Returns:
+        dict: iniciativa actualizada
     '''
     print(f"[API]: Verificando si {usuario} posee nuevos posts...")
     iniciativa: dict = cargar_iniciativa(usuario)
@@ -266,7 +269,7 @@ def actualizar_iniciativa(client: Client, usuario: str):
         raw_posts: list = client.user_medias(iniciativa["id"], MAX_POSTS)
     except:
         print(f"[ERROR]: No se pudo obtener la información de {usuario}")
-        return
+        return iniciativa
 
     # Determinar si hay posts nuevos mediante la fecha de subida
     posts: dict = iniciativa["posts"]
@@ -278,7 +281,7 @@ def actualizar_iniciativa(client: Client, usuario: str):
     last_update = int(raw_posts[0].model_dump()["taken_at"].timestamp())
     if last_update <= current_update:
         print(f"[API]: {usuario} no posee nuevos posts")
-        return
+        return iniciativa
 
     # Contar cantidad de posts nuevos para posterior descarga
     cantidad = 0
@@ -295,4 +298,5 @@ def actualizar_iniciativa(client: Client, usuario: str):
     iniciativa: dict = limpiar_posts(iniciativa)
     guardar_iniciativa(iniciativa)
     print(f"[API]: Iniciativa {usuario} actualizada con exito")
+    return iniciativa
 

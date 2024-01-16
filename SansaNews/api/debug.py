@@ -4,24 +4,30 @@ from . import api
 from instagrapi import Client
 
 
-def redescargar_posts(client: Client, usuario: str):
+def redescargar_posts(client: Client, usuario: str) -> dict:
     '''
     Fuerza la redescarga de los posts del usuario dado, borrando todos los
     posts previamente descargados y descargandolos de nuevo
     
     Args:
+        client: cliente de instagrapi
         usuario: usuario de instagram al que redescargar los posts
+
+    Returns:
+        dict: diccionario con la información de la iniciativa
     '''
     print(f"[DEBUG]: Redescargando posts de {usuario}")
 
     iniciativa: dict = api.cargar_iniciativa(usuario)
     api.limpiar_posts(iniciativa, 99999)
-    api.actualizar_iniciativa(client, usuario)
+    iniciativa = api.actualizar_iniciativa(client, usuario)
 
     print(f"[DEBUG]: Posts de {usuario} redescargados con exito")
+    return iniciativa
 
 
-def actualizar_perfil(client: Client, usuario: str):
+
+def actualizar_perfil(client: Client, usuario: str) -> dict:
     '''
     Actualiza la foto de perfil y la descripción del usuario dado mediante una
     llamada a la API
@@ -29,6 +35,9 @@ def actualizar_perfil(client: Client, usuario: str):
     Args:
         client (Client): cliente de instagrapi
         usuario (str): usuario al que actualizar su perfil
+
+    Returns:
+        dict: diccionario con la información de la iniciativa
     '''
     iniciativa: dict = api.cargar_iniciativa(usuario)
 
@@ -38,7 +47,7 @@ def actualizar_perfil(client: Client, usuario: str):
         iniciativa_data: dict = client.user_info_by_username(usuario).model_dump()
     except:
         print(f"[ERROR]: No se pudo obtener la información de {usuario}")
-        return
+        return iniciativa
 
     iniciativa["id"] = iniciativa_data["pk"]
     iniciativa["biografia"] = iniciativa_data["biography"]
@@ -53,6 +62,7 @@ def actualizar_perfil(client: Client, usuario: str):
 
     api.guardar_iniciativa(iniciativa)
     print(f"[DEBUG]: Perfil de {usuario} actualizado con exito")
+    return iniciativa
 
 
 def eliminar_iniciativa(usuario: str):
