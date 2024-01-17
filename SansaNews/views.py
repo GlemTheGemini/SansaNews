@@ -1,58 +1,105 @@
-from django.http import HttpResponse
-from django.http import JsonResponse, HttpResponseRedirect
-from django.urls import reverse
+import os, json, datetime
+from django.http import JsonResponse #, HttpResponseRedirect
+# from django.urls import reverse
 from django.shortcuts import render, redirect
-from django.views.decorators.csrf import csrf_exempt
+# from django.views.decorators.csrf import csrf_exempt
 from . import API
-from .iniciativas import PAGINAS, SLIDER, DEPORTES, RECREACION, CENTROS, REDES_OFICIALES
+from .api import api, debug
 from . import forms
 from . import models
-import os
-import json
-import datetime
+from instagrapi import Client
+
+SRC = os.path.dirname(os.path.dirname(__file__))
+api.DIRECTORIO = os.path.join(SRC, "/static/iniciativas")
+
+INSTAGRAM = Client()
+INSTAGRAM.delay_range = [1, 3]
+
+iniciativas = []
+slider = []
+recientes = []
+agrupaciones = {
+    "deportes": [],
+    "recreacion": [],
+    "centros": [],
+    "redes": [],
+}
 
 
 def home(request):
     recientes = API.recientes(4)
-    return render(request,"Home.html",{"primera": [recientes[0]],
-                                       "publicaciones": recientes[1:],
-                                       "deportes" : DEPORTES,
-                                       "recreacion" : RECREACION,
-                                       "centros" : CENTROS,
-                                       "redes" : REDES_OFICIALES
-                                       })
+    iniciativas = api.escanear_iniciativas()
+
+    for usuario, data in iniciativas.keys():
+        if data["slider"]:
+            slider.append(usuario)
+
+        match data["tipo"]:
+            case api.TipoIniciativa.DEPORTE:
+                agrupaciones["deportes"].append(usuario)
+            case api.TipoIniciativa.RECREACION:
+                agrupaciones["recreacion"].append(usuario)
+            case api.TipoIniciativa.CENTRO:
+                agrupaciones["centros"].append(usuario)
+            case api.TipoIniciativa.RED:
+                agrupaciones["redes"].append(usuario)
+
+    return render(request,"Home.html",{
+        "primera": [recientes[0]],
+        "publicaciones": recientes[1:],
+        "deportes" : agrupaciones["deportes"],
+        "recreacion" : agrupaciones["recreacion"],
+        "centros" : agrupaciones["centros"],
+        "redes" : agrupaciones["redes"]
+    })
+
+
 
 def iniciativa(request, usuario):
-    with open(os.path.dirname(os.path.dirname(__file__)) + f"/static/iniciativas/biografias.json", "r", encoding='utf-8') as archivo:
-        biografias = json.load(archivo)
-        biografia = biografias[usuario]
-
-    publicaciones= API.contenido(usuario)
-
+    iniciativa: dict = api.cargar_iniciativa(usuario)
     return render(request, "Molde.html", {
         "usuario": usuario,
-        "nombre": PAGINAS[usuario],
-        "biografia": biografia,
-        "key": publicaciones,
-        "iniciativas": PAGINAS
+        "nombre": iniciativa["nombre"],
+        "biografia": iniciativa["biografia"],
+        "publicaciones": iniciativa["posts"],
+        "iniciativas": iniciativas
     })
+
+
+def actualizar_posts(request, usuario):
+    api.actualizar_iniciativa(INSTAGRAM, usuario)
+    return iniciativa(request, usuario)
+
+
+def actualizar_perfil(request, usuario: str):
+    debug.actualizar_perfil(INSTAGRAM, usuario)
+    return iniciativa(request, usuario)
+
+
+def redescargar_posts(request, usuario: str):
+    debug.redescargar_posts(INSTAGRAM, usuario)
+    return iniciativa(request, usuario)
+
 
 def about(request):
     return render(request,"about.html")
 
+
 def avisos(request):
     lista = models.imagenes_avisos.objects.all().order_by("id").reverse()
     lista.reverse()
-    return render(request,"Avisos.html",{"key": lista, "iniciativas": SLIDER})
+    return render(request,"Avisos.html",{"key": lista, "iniciativas": slider})
 
-def subir_avisos(request, id=None):
+
+
+def subir_avisos(request, iniciativas=None):
     imagen = forms.avisos_forms(request.POST, request.FILES)
 
     if request.method == "POST":
         if imagen.is_valid():
             imagen.save()
             return redirect(avisos)
-    context = {"imagen": imagen, "iniciativas": SLIDER}
+    context = {"imagen": imagen, "iniciativas": slider}
     return render(request, 'Subir_Avisos.html', context)
 
 def test(request):
@@ -79,6 +126,7 @@ def redireccion(request):
     else:
         return render(request, 'Redireccion.html')
 
+
 def publicaciones(request):
     #Se deben otener siempre las ultimas publicaciones del mes.
 
@@ -102,4 +150,10 @@ def publicaciones(request):
     else:
         lista_custom = []
 
-    return render(request, 'Publicaciones.html', {"fecha": fecha_limite, "lista_30": lista_30, "lista_custom": lista_custom, "iniciativas": PAGINAS})
+    return render(request, 'Publicaciones.html', {
+        "fecha": fecha_limite, 
+        "lista_30": lista_30, 
+        "lista_custom": lista_custom, 
+        "iniciativas": iniciativas
+    })
+
