@@ -166,32 +166,31 @@ def descargar_posts(iniciativa: dict, posts: list, cantidad: int) -> dict:
 
         # En caso de haber una sola imagen
         if len(post_data["resources"]) == 0:
-            # Añadir media al post
-            media_name = f"{datetime}_0"
-            post["media"].append(media_name)
-            iniciativa["posts"][str(datetime)] = post
+            media_path: str = os.path.join(post_folder, f"{datetime}_0.jpg")
+            media_url = str(post_data['thumbnail_url'])
 
             # Descargar imagen
-            media_path: str = os.path.join(post_folder, f"{media_name}.jpg")
-            media_url = str(post_data['thumbnail_url'])
             print(f"[API]: Descargando media {media_url}...")
             request.urlretrieve(media_url, media_path)
+
+            # Añadir media al post
+            post["media"].append(media_path)
+            iniciativa["posts"][str(datetime)] = post
             continue
 
         # En caso de haber multiples imagenes
         index = 0
         for media in post_data["resources"]:
-            # Añadir media al post
-            media_name = f"{datetime}_{index}"
-            post["media"].append(media_name)
-            iniciativa["posts"][str(datetime)] = post
-            index += 1
+            media_path: str = os.path.join(post_folder, f"{datetime}_{index}.jpg")
+            media_url = str(media['thumbnail_url'])
 
             # Descargar imagen
-            media_path: str = os.path.join(post_folder, f"{media_name}.jpg")
-            media_url = str(media['thumbnail_url'])
             print(f"[API]: Descargando media {media_url}...")
             request.urlretrieve(media_url, media_path)
+
+            # Añadir media al post
+            post["media"].append(media_path)
+            index += 1
 
         # Añadir post al diccionario de la iniciativa
         iniciativa["posts"][str(datetime)] = post
