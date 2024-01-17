@@ -23,7 +23,7 @@
   <!--
 <main>
   <div class="d-flex flex-wrap justify-content-around">
-    {% for publicaciones in key %}
+    {% for publicacion in publicaciones %}
 
       <div class="card mb-3 m-2" style="width: 650px">
 
@@ -40,13 +40,13 @@
           class="carousel slide"
           data-bs-ride="false">
           <div class="carousel-inner">
-            {% for publicacion in publicaciones %} {% if forloop.first %}
+            {% for media in publicacion %} {% if forloop.first %}
             <div class="carousel-item active">
-              <img src="{% static publicacion %}" height="400" />
+              <img src="{% static media %}" height="400" />
             </div>
             {% elif ".jpg" in publicacion %}
             <div class="carousel-item">
-              <img src="{% static publicacion %}" height="400" />
+              <img src="{% static media %}" height="400" />
             </div>
             {% else %}
           </div>
@@ -76,7 +76,7 @@
           </button>
         </div>
           <div class="card-body" style="background: rgba(0, 0, 0, 0.5)">
-            <button>{{ publicacion }}</button>
+            <button>{{ media }}</button>
           </div>
         {% endif %} {% endfor %}
       </div>
