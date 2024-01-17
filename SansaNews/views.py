@@ -54,6 +54,29 @@ def home(request):
     })
 
 
+def actualizar_iniciativas(request):
+    iniciativas: dict = api.escanear_iniciativas()
+    carpetas: list = os.listdir(api.DIRECTORIO)
+
+    for usuario, data in iniciativas.items():
+        if usuario not in carpetas:
+            api.crear_iniciativa(INSTAGRAM, usuario, data["nombre"],
+                                data["tipo"], data["slider"])
+
+    return home(request)
+
+
+def limpiar_iniciativas(request):
+    iniciativas: dict = api.escanear_iniciativas()
+    usuarios: list = list(iniciativas.keys())
+    carpetas: list = os.listdir(api.DIRECTORIO)
+
+    for carpeta in carpetas:
+        if carpeta not in usuarios:
+            debug.eliminar_iniciativa(carpeta)
+
+    return home(request)
+
 
 def iniciativa(request, usuario):
     iniciativa: dict = api.cargar_iniciativa(usuario)
@@ -102,19 +125,7 @@ def subir_avisos(request, iniciativas=None):
     context = {"imagen": imagen, "iniciativas": slider}
     return render(request, 'Subir_Avisos.html', context)
 
-def test(request):
-    biografias = {}
 
-    for iniciativa in PAGINAS:
-        biografias[iniciativa] = API.actualizar_perfil(iniciativa)
-        API.actualizar_publicaciones(iniciativa)
-
-    with open(os.path.dirname(os.path.dirname(__file__)) + f"/static/iniciativas/biografias.json", "w", encoding='utf-8') as archivo:
-        json.dump(biografias, archivo, indent=2)
-
-    API.cleanup()
-    
-    return HttpResponse("Iniciativas Actualizadas")
 
 
 def redireccion(request):
