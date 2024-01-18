@@ -1,9 +1,12 @@
+"""Modulo encargado del manejo de posts, descarga, redescarga, limpieza, etc."""
+# pylint: disable=E0401
+
 import os
 from urllib import request
 from instagrapi import Client
 from . import iniciativa as api_iniciativa
 
-def descargar(iniciativa: dict, posts: list, cantidad: int, 
+def descargar(iniciativa: dict, posts: list, cantidad: int,
                     directorio: str) -> dict:
     '''
     Descarga los posts más recientes de una iniciativa
@@ -33,8 +36,8 @@ def descargar(iniciativa: dict, posts: list, cantidad: int,
         post_folder: str = os.path.join(iniciativa_path, datetime)
         try:
             os.mkdir(post_folder)
-        except:
-            print(f"[ERROR]: No se pudo crear la carpeta del post {datetime}")
+        except (FileExistsError, FileNotFoundError):
+            print(f"[ERROR]: No se pudo crear la carpeta {post_folder}")
             continue
 
         post = {
@@ -75,7 +78,7 @@ def descargar(iniciativa: dict, posts: list, cantidad: int,
     return iniciativa
 
 
-def redescargar(client: Client, usuario: str, max_posts: int, 
+def redescargar(client: Client, usuario: str, max_posts: int,
                 directorio: str) -> dict:
     '''
     Fuerza la redescarga de los posts del usuario dado, borrando todos los
@@ -94,7 +97,7 @@ def redescargar(client: Client, usuario: str, max_posts: int,
 
     iniciativa: dict = api_iniciativa.cargar(usuario, directorio)
     limpiar(iniciativa, 99999, directorio)
-    iniciativa = api_iniciativa.actualizar(client, usuario, max_posts, 
+    iniciativa = api_iniciativa.actualizar(client, usuario, max_posts,
                                            directorio)
 
     print(f"[DEBUG]: Posts de {usuario} redescargados con exito")

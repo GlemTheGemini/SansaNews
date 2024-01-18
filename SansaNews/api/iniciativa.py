@@ -1,4 +1,11 @@
-import json, os
+"""
+Modulo encargado de manejar las iniciativas, crear los json respectivos,
+guardarlos cargar la información, actualizar las iniciativas, etc.
+"""
+#pylint: disable=E0401, W0702
+
+import json
+import os
 from urllib import request
 from enum import Enum
 from instagrapi import Client
@@ -72,9 +79,7 @@ def cargar(usuario: str, directorio: str) -> dict:
     return iniciativa
 
 
-
-def crear(client: Client, usuario: str, nombre: str, tipo: TipoIniciativa, 
-          slider: bool, directorio: str) -> dict:
+def crear(client: Client, usuario: str, data: dict, directorio: str) -> dict:
     '''
     Inicializa una nueva iniciativa en el sistema, creando su carpeta,
     descargando su foto de perfil y obteniendo los datos necesarios para luego
@@ -83,9 +88,8 @@ def crear(client: Client, usuario: str, nombre: str, tipo: TipoIniciativa,
     Args:
         client (Client): cliente de instagrapi
         usuario (str): nombre de usuario de la iniciativa
-        nombre (str): nombre a mostrar en la página
-        tipo (TipoIniciativa): tipo de iniciativa
-        slider (bool): si la iniciativa aparecera en el slider
+        data (dict): diccionario que contenga el nombre, el tipo y si es parte
+            del slider de la iniciativa
         directorio (str): directorio de iniciativas
 
     Returns:
@@ -95,9 +99,9 @@ def crear(client: Client, usuario: str, nombre: str, tipo: TipoIniciativa,
         "usuario": usuario,
         "id": 0,
         "biografia": "",
-        "nombre": nombre,
-        "tipo": tipo,
-        "slider": slider,
+        "nombre": data["nombre"],
+        "tipo": data["tipo"],
+        "slider": data["slider"],
         "posts": {},
     }
 
@@ -116,7 +120,7 @@ def crear(client: Client, usuario: str, nombre: str, tipo: TipoIniciativa,
     iniciativa_path: str = os.path.join(directorio, usuario)
     try:
         os.mkdir(iniciativa_path)
-    except:
+    except (FileExistsError, FileNotFoundError):
         print(f"[Error]: No se pudo crear la carpeta {iniciativa_path}")
         return iniciativa
 
@@ -177,7 +181,7 @@ def actualizar(client: Client, usuario: str, max_posts: int,
         cantidad += 1
 
     print(f"[API]: {usuario} tiene {cantidad} nuevos posts")
-    iniciativa: dict = api_posts.descargar(iniciativa, raw_posts, cantidad, 
+    iniciativa: dict = api_posts.descargar(iniciativa, raw_posts, cantidad,
                                            directorio)
 
     iniciativa: dict = api_posts.limpiar(iniciativa, max_posts, directorio)
@@ -241,4 +245,3 @@ def eliminar(usuario: str, directorio: str):
     os.remove(os.path.join(iniciativa_path, f"{usuario}.json"))
     os.remove(os.path.join(iniciativa_path, f"{usuario}.jpg"))
     print(f"[DEBUG]: Iniciativa {usuario} eliminada")
-
