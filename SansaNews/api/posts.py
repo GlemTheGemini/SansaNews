@@ -5,6 +5,7 @@ import os
 from urllib import request
 from instagrapi import Client
 from . import iniciativa as api_iniciativa
+from . import recientes as api_recientes
 
 def descargar(iniciativa: dict, posts: list, cantidad: int,
                     directorio: str) -> dict:
@@ -21,6 +22,7 @@ def descargar(iniciativa: dict, posts: list, cantidad: int,
         dict: diccionario actualizado con la información de la iniciativa
     '''
     iniciativa_path: str = os.path.join(directorio, iniciativa["usuario"])
+    recientes: dict = api_recientes.cargar(directorio)
 
     count = 0
     for post in posts:
@@ -69,9 +71,18 @@ def descargar(iniciativa: dict, posts: list, cantidad: int,
                 post["media"].append(media_path)
                 index += 1
 
+        # Añadir post a lista de posts
+        recientes[datetime] = {
+            "descripcion": post["descripcion"],
+            "usuario": iniciativa["usuario"],
+            "slider": iniciativa["slider"]
+        }
+
         # Añadir post al diccionario de la iniciativa
         iniciativa["posts"][str(datetime)] = post
         count += 1
+
+    api_recientes.guardar(recientes, directorio)
 
     usuario: str = iniciativa["usuario"]
     print(f"[API]: Descarga de posts de la iniciativa {usuario} finalizada")
@@ -129,6 +140,8 @@ def limpiar(iniciativa: dict, max_posts: int, directorio: str) -> dict:
     posts.remove(f"{usuario}.jpg")
     posts.sort(reverse = True)
 
+    recientes: dict = api_recientes.cargar(directorio)
+
     # Eliminar posts
     print(f"[API]: Eliminando posts antiguos de {usuario}...")
     for post in posts:
@@ -147,7 +160,10 @@ def limpiar(iniciativa: dict, max_posts: int, directorio: str) -> dict:
         os.rmdir(post_path)
 
         iniciativa["posts"].pop(post)
+        recientes.pop(post)
         posts.remove(post)
+
+    api_recientes.guardar(recientes, directorio)
 
     print(f"[API]: Posts de {usuario} limpiados con exito")
     return iniciativa

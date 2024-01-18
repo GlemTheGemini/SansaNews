@@ -1,40 +1,37 @@
-import os, json, datetime
-from django.http import JsonResponse #, HttpResponseRedirect
-# from django.urls import reverse
+# pylint: disable=C0114, C0116, E0401
+
+import os
+import json
+import datetime
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
-# from django.views.decorators.csrf import csrf_exempt
-from . import API
-from . import forms
-from . import models
 from instagrapi import Client
-import api.iniciativa, api.posts
+import api.iniciativa
+import api.posts
+import api.recientes
 from api.iniciativa import TipoIniciativa
+from . import forms, models
 
 SRC = os.path.dirname(os.path.dirname(__file__))
 DIRECTORIO = os.path.join(SRC, "/static/iniciativas")
 MAX_POSTS = 5
+MAX_SLIDER_POSTS = 4
 
 INSTAGRAM = Client()
 INSTAGRAM.delay_range = [1, 3]
 
-iniciativas = []
-slider = []
-recientes = []
-agrupaciones = {
-    "deportes": [],
-    "recreacion": [],
-    "centros": [],
-    "redes": [],
-}
-
 def home(request):
-    # recientes = api..obtener_recientes(4)
     iniciativas = api.iniciativa.escanear(DIRECTORIO)
+    slider = api.recientes.slider(MAX_SLIDER_POSTS, DIRECTORIO)
+
+    agrupaciones = {
+        "deportes": [],
+        "recreacion": [],
+        "centros": [],
+        "redes": [],
+    }
 
     for usuario, data in iniciativas.keys():
-        if data["slider"]:
-            slider.append(usuario)
-
         match data["tipo"]:
             case TipoIniciativa.DEPORTE:
                 agrupaciones["deportes"].append(usuario)
@@ -46,8 +43,8 @@ def home(request):
                 agrupaciones["redes"].append(usuario)
 
     return render(request,"Home.html",{
-        "primera": [recientes[0]],
-        "publicaciones": recientes[1:],
+        "primera": [slider[0]],
+        "publicaciones": slider[1:],
         "deportes" : agrupaciones["deportes"],
         "recreacion" : agrupaciones["recreacion"],
         "centros" : agrupaciones["centros"],
@@ -56,20 +53,19 @@ def home(request):
 
 
 def actualizar_iniciativas(request):
-    iniciativas: dict = api.iniciativa.escanear(DIRECTORIO)
+    lista_iniciativas: dict = api.iniciativa.escanear(DIRECTORIO)
     carpetas: list = os.listdir(DIRECTORIO)
 
-    for usuario, data in iniciativas.items():
+    for usuario, data in lista_iniciativas.items():
         if usuario not in carpetas:
-            api.iniciativa.crear(INSTAGRAM, usuario, data["nombre"],
-                                data["tipo"], data["slider"], DIRECTORIO)
+            api.iniciativa.crear(INSTAGRAM, usuario, data, DIRECTORIO)
 
     return home(request)
 
 
 def limpiar_iniciativas(request):
-    iniciativas: dict = api.iniciativa.escanear(DIRECTORIO)
-    usuarios: list = list(iniciativas.keys())
+    lista_iniciativas: dict = api.iniciativa.escanear(DIRECTORIO)
+    usuarios: list = list(lista_iniciativas.keys())
     carpetas: list = os.listdir(DIRECTORIO)
 
     for carpeta in carpetas:
@@ -80,12 +76,14 @@ def limpiar_iniciativas(request):
 
 
 def iniciativa(request, usuario):
-    iniciativa: dict = api.iniciativa.cargar(usuario, DIRECTORIO)
+    data: dict = api.iniciativa.cargar(usuario, DIRECTORIO)
+    iniciativas: dict = api.iniciativa.escanear(DIRECTORIO)
+
     return render(request, "Molde.html", {
         "usuario": usuario,
-        "nombre": iniciativa["nombre"],
-        "biografia": iniciativa["biografia"],
-        "publicaciones": iniciativa["posts"],
+        "nombre": data["nombre"],
+        "biografia": data["biografia"],
+        "publicaciones": data["posts"],
         "iniciativas": iniciativas
     })
 
@@ -112,12 +110,14 @@ def about(request):
 def avisos(request):
     lista = models.imagenes_avisos.objects.all().order_by("id").reverse()
     lista.reverse()
+    slider = api.recientes.slider(MAX_SLIDER_POSTS, DIRECTORIO)
     return render(request,"Avisos.html",{"key": lista, "iniciativas": slider})
 
 
 
 def subir_avisos(request, iniciativas=None):
     imagen = forms.avisos_forms(request.POST, request.FILES)
+    slider = api.recientes.slider(MAX_SLIDER_POSTS, DIRECTORIO)
 
     if request.method == "POST":
         if imagen.is_valid():
@@ -129,12 +129,12 @@ def subir_avisos(request, iniciativas=None):
 
 def redireccion(request):
     if request.method == 'POST':
-        data = json.loads(request.body) 
+        data = json.loads(request.body)
         fecha_limite = data.get('fechaFormateada')
         request.session['fecha_limite'] = fecha_limite
         return JsonResponse({'success': True})
-    else:
-        return render(request, 'Redireccion.html')
+
+    return render(request, 'Redireccion.html')
 
 
 def publicaciones(request):
@@ -145,20 +145,20 @@ def publicaciones(request):
 
     # Calcular la fecha hace 30 días atrás
     fecha_hace_30_dias = fecha_actual - datetime.timedelta(days=30)
-
-    # Formatear la fecha como una cadena personalizada
-    formato_fecha = fecha_hace_30_dias.strftime('%Y-%m-%d_%H-%M-%S')
+    fecha_hace_30_dias = int(fecha_hace_30_dias.timestamp())
 
     # Obtener las publicaciones que se han hecho desde hace 30 días
-    lista_30 = API.recientes_publicaciones(formato_fecha)
+    lista_30 = api.recientes.ultimos(fecha_hace_30_dias, DIRECTORIO)
 
     # Verificar si se ha proporcionado una fecha límite
     fecha_limite = request.session.get('fecha_limite')
     request.session.pop('fecha_limite', None)
     if fecha_limite is not None:
-        lista_custom = API.recientes_publicaciones(fecha_limite)
+        lista_custom = api.recientes.ultimos(fecha_limite, DIRECTORIO)
     else:
         lista_custom = []
+
+    iniciativas = api.iniciativa.escanear(DIRECTORIO)
 
     return render(request, 'Publicaciones.html', {
         "fecha": fecha_limite, 
@@ -166,4 +166,3 @@ def publicaciones(request):
         "lista_custom": lista_custom, 
         "iniciativas": iniciativas
     })
-
