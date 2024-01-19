@@ -1,143 +1,92 @@
-
 {% extends 'base.html' %}
 
 {% load static %}
 
 {% block base %}
 <div class ="home-a">
-  <div class="slider">
-    {% for x in primera %}
-    <div class="slide active">
-      <div class="imagen">
-        <img src="{% static x.imagen %}" alt="">
-      </div>
-      <div class = "data">
-          <div class="info">
-            <a href="../{{x.id}}">
-              <div class="button">
-                <h2>@{{ x.pagina }}</h2>
-              </div>
-            </a>
-            <p id="descripcion">{{ x.descripcion }}</p>
-          </div>
-      </div>
-    </div>
-    {% endfor %}
-    {% for x in publicaciones %}
-    <div class="slide">
-      <div class="imagen">
-        <img src="{% static x.imagen %}" alt="">
-      </div>
-      <div class = "data">
-          <div class="info">
-            <a href="../{{x.id}}">
-              <div class="button">
-                <h2>@{{ x.pagina }}</h2>
-              </div>
-            </a>
-            <p id="descripcion">{{ x.descripcion }}</p>
-          </div>
-      </div>
-    </div>
-    {% endfor %}
-  
-    <div class="navigation">
-      <i class="fas fa-chevron-right next-btn"></i>
-    </div>
-    <div class="navigation-visibility">
-      <div class="slide-icon active"></div>
-      <div class="slide-icon"></div>
-      <div class="slide-icon"></div>
-      <div class="slide-icon"></div>
-    </div>
-  </div>
+	<div class="slider">
+		{% for x in primera %}
+		<div class="slide active">
+			<div class="imagen">
+				<img src="{% static x.imagen %}" alt="">
+			</div>
+			<div class = "data">
+				<div class="info">
+					<a href="../{{x.id}}">
+						<div class="button">
+							<h2>@{{ x.pagina }}</h2>
+						</div>
+					</a>
+					<p id="descripcion">{{ x.descripcion }}</p>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+		{% for x in publicaciones %}
+		<div class="slide">
+			<div class="imagen">
+				<img src="{% static x.imagen %}" alt="">
+			</div>
+			<div class = "data">
+				<div class="info">
+					<a href="../{{x.id}}">
+						<div class="button">
+							<h2>@{{ x.pagina }}</h2>
+						</div>
+					</a>
+					<p id="descripcion">{{ x.descripcion }}</p>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+
+		<div class="navigation">
+			<i class="fas fa-chevron-right next-btn"></i>
+		</div>
+		<div class="navigation-visibility">
+			<div class="slide-icon active"></div>
+			<div class="slide-icon"></div>
+			<div class="slide-icon"></div>
+			<div class="slide-icon"></div>
+		</div>
+	</div>
 
 
 
-  <div class="wrapper">
-    <div class="header">
-      <h1 class="header__title">Organizaciones Estudiantiles</h1>
-    </div>
-    <div class="cards">
-      <div class=" card [ is-collapsed ] ">
-        <div class="card__inner [ js-expander ]">
-          <span>Centros de Estudiantes</span>
-        </div>
-        <div class="card__expander">
-          <div class="grid-container">
-            {% for usuario, nombre in centros.items %}
-            <a href="../{{usuario}}">
-              <div class="grid-item">
-                <img src="{% static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}"/>
-                <h3>{{nombre}}</h3>
-              </div>
-            </a>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-  
-      <div class=" card [ is-collapsed ] ">
-        <div class="card__inner [ js-expander ]">
-          <span>Deportes</span>
-        </div>
-        <div class="card__expander">
-          <div class="grid-container">
-            {% for usuario, nombre in deportes.items %}
-            <a href="../{{usuario}}">
-              <div class="grid-item">
-                <img src="{% static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}"/>
-                <h3>{{nombre}}</h3>
-              </div>
-            </a>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-  
-      <div class=" card [ is-collapsed ] ">
-        <div class="card__inner [ js-expander ]">
-          <span>Recreación</span>
-        </div>
-        <div class="card__expander">
-          <div class="grid-container">
-            {% for usuario, nombre in recreacion.items %}
-            <a href="../{{usuario}}">
-              <div class="grid-item">
-                <img src="{% static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}"/>
-                <h3>{{nombre}}</h3>
-              </div>
-            </a>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-  
-      <div class=" card [ is-collapsed ] ">
-        <div class="card__inner [ js-expander ]">
-          <span>Redes Oficiales</span>
-        </div>
-        <div class="card__expander">      
-          <div class="grid-container">
-            {% for usuario, nombre in redes.items %}
-            <a href="../{{usuario}}">
-              <div class="grid-item">
-                <img src="{% static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}"/>
-                <h3>{{nombre}}</h3>
-              </div>
-            </a>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-    
+	<div class="wrapper">
+		<div class="header">
+			<h1 class="header__title">Organizaciones Estudiantiles</h1>
+		</div>
+		<div class="cards">
+			{% for agrupacion, iniciativas in agrupaciones.items %}
+			<div class=" card [ is-collapsed ] ">
+				<div class="card__inner [ js-expander ]">
+					<span>{{ agrupacion }}</span>
+				</div>
+				<div class="card__expander">
+					<div class="grid-container">
+						{% for usuario, data in iniciativas.items %}
+						<a href="../{{ usuario }}">
+							<div class="grid-item">
+								<img src="{% static 'iniciativas/'|add:usuario|add:'/'|add:usuario|add:'.jpg' %}"/>
+								<h3>{{ data.nombre }}</h3>
+							</div>
+						</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
 
-    </div>
-  </div>
-
-  <div class="footer">
-    <p> SansaNews es un proyecto sin fines de lucro y con la intencion de potenciar la divulgacion de las iniciativas estudiantiles pertenecientes a la UTFSM </p>
-  </div>
+	<div class="footer">
+		<p> 
+			SansaNews es un proyecto sin fines de lucro y con la intencion de 
+			potenciar la divulgacion de las iniciativas
+			estudiantiles pertenecientes a la UTFSM
+		</p>
+	</div>
 </div>
 <script type="text/javascript" src="{% static 'home/script.js' %}"></script>
 

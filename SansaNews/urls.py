@@ -11,6 +11,7 @@ urlpatterns = [
     path("Subir-Avisos/", views.subir_avisos,name="subir-avisos"),
     path("debug/actualizar/", views.actualizar_iniciativas),
     path("debug/limpiar/", views.limpiar_iniciativas),
+    path("debug/inicializar/", views.inicializar_iniciativas),
     path("<str:usuario>/", views.iniciativa),
     path("<str:usuario>/debug/actualizar", views.actualizar_posts),
     path("<str:usuario>/debug/perfil", views.actualizar_perfil),

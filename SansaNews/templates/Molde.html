@@ -3,86 +3,86 @@
 {% block base %}
 
 {% load static %}
-  
-  <div class="iniciativa-img">
-    <img src="{%static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}">
-  </div>
-  <div class="iniciativa-title">
-    <h4><a href="https://www.instagram.com/{{ usuario }}/" target="_blank">@{{ usuario }}</a></h4>
-  </div>
-  <div class="iniciativa-descripcion">
-    <p>{{ biografia }}</p>
-  </div>
 
-  <div class="recientes">
-    <h2>Publicaciones más recientes</h2>
-  </div>
-
-
-
-  <!--
 <main>
-  <div class="d-flex flex-wrap justify-content-around">
-    {% for publicacion in publicaciones %}
+	<div class="iniciativa-img">
+		<img src="{%static 'iniciativas/icons/'|add:usuario|add:'.jpg' %}">
+	</div>
+	<div class="iniciativa-title">
+		<h4><a href="https://www.instagram.com/{{ usuario }}/" target="_blank">@{{ usuario }}</a></h4>
+	</div>
+	<div class="iniciativa-descripcion">
+		<p>{{ biografia }}</p>
+	</div>
 
-      <div class="card mb-3 m-2" style="width: 650px">
+	<div class="recientes">
+		<h2>Publicaciones más recientes</h2>
+	</div>
+	<div class="d-flex flex-wrap justify-content-around">
+		{% for publicacion in publicaciones %}
 
-          <div class="card mb-3">
-            <h3
-              class="card-header"
-              style="background: rgba(0, 0, 0, 0.5); color: #d2d7da"
-            >
-              Publicación
-            </h3>
-    
-        <div
-          id="a{{ forloop.counter }}"
-          class="carousel slide"
-          data-bs-ride="false">
-          <div class="carousel-inner">
-            {% for media in publicacion %} {% if forloop.first %}
-            <div class="carousel-item active">
-              <img src="{% static media %}" height="400" />
-            </div>
-            {% elif ".jpg" in publicacion %}
-            <div class="carousel-item">
-              <img src="{% static media %}" height="400" />
-            </div>
-            {% else %}
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#a{{ forloop.parentloop.counter }}"
-            data-bs-slide="prev"
-            style="background-color: black">
-            <span
-              class="carousel-control-prev-icon"
-              aria-hidden="true"
-            ></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#a{{ forloop.parentloop.counter }}"
-            data-bs-slide="next"
-            style="background-color: black"        >
-            <span
-              class="carousel-control-next-icon"
-              aria-hidden="true"
-            ></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-          <div class="card-body" style="background: rgba(0, 0, 0, 0.5)">
-            <button>{{ media }}</button>
-          </div>
-        {% endif %} {% endfor %}
-      </div>
-    {% endfor %}
-    <script src="{% static 'molde/js/slider.js' %}"></script>
-  </div>
+		<div class="card mb-3 m-2" style="width: 650px">
+
+			<div class="card mb-3">
+				<h3
+					class="card-header"
+					style="background: rgba(0, 0, 0, 0.5); color: #d2d7da"
+					>
+					Publicación
+				</h3>
+
+					<div
+						id="a{{ forloop.counter }}"
+						class="carousel slide"
+						data-bs-ride="false">
+						<div class="carousel-inner">
+							{% for media in publicacion %} {% if forloop.first %}
+							<div class="carousel-item active">
+								<img src="{% static media %}" height="400" />
+							</div>
+							{% elif ".jpg" in publicacion %}
+							<div class="carousel-item">
+								<img src="{% static media %}" height="400" />
+							</div>
+							{% else %}
+						</div>
+						<button
+							class="carousel-control-prev"
+							type="button"
+							data-bs-target="#a{{ forloop.parentloop.counter }}"
+							data-bs-slide="prev"
+							style="background-color: black">
+							<span
+								class="carousel-control-prev-icon"
+								aria-hidden="true"
+								></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button
+							class="carousel-control-next"
+							type="button"
+							data-bs-target="#a{{ forloop.parentloop.counter }}"
+							data-bs-slide="next"
+							style="background-color: black"        >
+							<span
+								class="carousel-control-next-icon"
+								aria-hidden="true"
+								></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+					<div class="card-body" style="background: rgba(0, 0, 0, 0.5)">
+						<button>{{ media }}</button>
+					</div>
+					{% endif %}
+					{% endfor %}
+			</div>
+		</div>
+
+		{% endfor %}
+
+		<script src="{% static 'molde/js/slider.js' %}"></script>
+	</div>
 </main>
--->
+
 {% endblock base %}

@@ -35,7 +35,7 @@ def escanear(directorio: str) -> dict:
     json_path: str = os.path.join(directorio, "iniciativas.json")
 
     with open(json_path, "r", encoding="utf8") as iniciativas_json:
-        print(f"Cargando lista de iniciativas desde {json_path}")
+        print(f"[API]: Cargando lista de iniciativas desde {json_path}")
         iniciativas: dict = json.load(iniciativas_json)
         return iniciativas
 
@@ -106,12 +106,10 @@ def crear(client: Client, usuario: str, data: dict, directorio: str) -> dict:
     }
 
     # Guardar información de la iniciativa
-    try:
-        print(f"[API]: Adquiriendo información de {usuario}...")
-        iniciativa_data: dict = client.user_info_by_username(usuario).model_dump()
-    except:
-        print(f"[ERROR]: No se pudo obtener la información de {usuario}")
-        return iniciativa
+    print(f"[API]: Adquiriendo información de {usuario}...")
+    iniciativa_data: dict = client.user_info_by_username(usuario).model_dump()
+    # print(f"[ERROR]: No se pudo obtener la información de {usuario}")
+    # return iniciativa
 
     iniciativa["id"] = iniciativa_data["pk"]
     iniciativa["biografia"] = iniciativa_data["biography"]

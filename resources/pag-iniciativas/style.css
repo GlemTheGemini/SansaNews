@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+.iniciativa-img img{
+    margin-left: -93vh;
+    margin-top: -25vh;
+    width: 33vh;
+    height: 33vh;
+    border-radius: 6vh;
+}
+
+.iniciativa-title{
+    background-color: #44D1D5;
+    position: absolute;
+    color: #071013;
+    width: 100vh;
+    margin-top: -51vh;
+    border-radius: 5vh;
+    text-align: center;
+    font-size: 5vh;
+    cursor: pointer;
+}
+
+.iniciativa-title a:-webkit-any-link{
+    color:#fff;
+    text-decoration: none;
+}
+
+.iniciativa-descripcion{
+    background-color: #00666a;
+    color: #fff;
+    box-shadow: 1vh 1vh 0vh 0vh #fff;
+    position: absolute;
+    width: 100vh;
+    padding: 3vh;
+    border-radius: 0.69vh;
+    text-align: center;
+    margin-top: -23vh;
+    font-size: 2.3vh;
+}
+
+.recientes{
+    background-color: #44D1D5;
+    color: #fff;
+    position: absolute;
+    width: 70vh;
+    margin-left: -117vh;
+    margin-top: 25vh;
+    border-radius: 1.1vh;
+    text-align: center;
+    font-size: 2.6vh;
+    cursor: pointer;
+}

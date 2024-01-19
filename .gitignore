@@ -163,5 +163,8 @@ cython_debug/
 
 
 # Archivo de iniciativas
-
-static/iniciativas/
+static/
+resources/iniciativas
+resources/iniciativas/!iniciativas.json
+SansaNews/api/session.json
+SansaNews/migrations/__pycache__
