@@ -1,0 +1,27 @@
+{
+	"sansanews": {
+		"nombre": "SansaNews",
+		"tipo": "Centro de Estudiantes",
+		"slider": true
+	},
+	"fablab_utfsm": {
+		"nombre": "FabLab",
+		"tipo": "Recreación",
+		"slider": true
+	},
+	"movimiento.0": {
+		"nombre": "Movimiento 0",
+		"tipo": "Recreación",
+		"slider": true
+	},
+	"defider_usm": {
+		"nombre": "DEFIDER",
+		"tipo": "Deportes",
+		"slider": false
+	},
+	"geekusm": {
+		"nombre": "Geek USM",
+		"tipo": "Recreación",
+		"slider": false
+	}
+}
