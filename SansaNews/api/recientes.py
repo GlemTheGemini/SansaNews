@@ -65,7 +65,7 @@ def ultimos(fecha_limite: int, directorio: str) -> list:
 
 def cargar(directorio: str) -> dict:
     '''
-    Carga las publicaciones más recientes desde "directorio/recientes.json"
+    Carga las publicaciones más recientes desde "directorio/posts.json"
 
     Args:
         directorio (str): directorio de iniciativas
@@ -73,7 +73,7 @@ def cargar(directorio: str) -> dict:
     Returns:
         dict: diccionario con los posts ordenados por los más recientes
     '''
-    recientes_path = os.path.join(directorio, "recientes.json")
+    recientes_path = os.path.join(directorio, "posts.json")
 
     print(f"[API]: Cargando {recientes_path}...")
     with open(recientes_path, "r", encoding="utf8") as recientes_json:
@@ -84,12 +84,12 @@ def cargar(directorio: str) -> dict:
 
 def guardar(recientes: dict, directorio: str):
     '''
-    Guarda las publicaciones más recientes a "directorio/recientes.json"
+    Guarda las publicaciones más recientes a "directorio/posts.json"
 
     Args:
         directorio (str): directorio de iniciativas
     '''
-    recientes_path = os.path.join(directorio, "recientes.json")
+    recientes_path = os.path.join(directorio, "posts.json")
 
     print(f"[API]: Guardando recientes en {recientes_path}...")
     with open(recientes_path, "w", encoding="utf8") as recientes_json:
