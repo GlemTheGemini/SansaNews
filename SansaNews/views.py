@@ -1,4 +1,4 @@
-# pylint: disable=C0114, C0116, E0401, W0702
+# pylint: disable=C0114, C0116, E0401, W0702, W0613
 
 import os
 import json
@@ -48,8 +48,6 @@ def home(request):
     for usuario, data in iniciativas.items():
         agrupaciones[data["tipo"]][usuario] = data
 
-    print(agrupaciones)
-
     return render(request,"Home.html",{
         "primera": [slider[0]],
         "publicaciones": slider[1:],
@@ -57,7 +55,7 @@ def home(request):
     })
 
 
-def actualizar_iniciativas(request):
+def inicializar_iniciativas(request):
     lista_iniciativas: dict = api_iniciativa.escanear(DIRECTORIO)
     carpetas: list = os.listdir(DIRECTORIO)
 
@@ -65,7 +63,7 @@ def actualizar_iniciativas(request):
         if usuario not in carpetas:
             api_iniciativa.crear(INSTAGRAM, usuario, data, DIRECTORIO)
 
-    return home(request)
+    return redirect("") 
 
 
 def limpiar_iniciativas(request):
@@ -77,16 +75,7 @@ def limpiar_iniciativas(request):
         if carpeta not in usuarios:
             api_iniciativa.eliminar(carpeta, DIRECTORIO)
 
-    return home(request)
-
-def inicializar_iniciativas(request):
-    print(DIRECTORIO)
-    lista_iniciativas: dict = api_iniciativa.escanear(DIRECTORIO)
-
-    for usuario, data in lista_iniciativas.items():
-        api_iniciativa.crear(INSTAGRAM, usuario, data, DIRECTORIO)
-
-    return home(request)
+    return redirect("")
 
 
 def iniciativa(request, usuario):
@@ -104,17 +93,17 @@ def iniciativa(request, usuario):
 
 def actualizar_posts(request, usuario):
     api_iniciativa.actualizar(INSTAGRAM, usuario, MAX_POSTS, DIRECTORIO)
-    return iniciativa(request, usuario)
+    return redirect(f"{usuario}")
 
 
 def actualizar_perfil(request, usuario: str):
     api_iniciativa.perfil(INSTAGRAM, usuario, DIRECTORIO)
-    return iniciativa(request, usuario)
+    return redirect(f"{usuario}")
 
 
 def redescargar_posts(request, usuario: str):
     api_posts.redescargar(INSTAGRAM, usuario, MAX_POSTS, DIRECTORIO)
-    return iniciativa(request, usuario)
+    return redirect(f"{usuario}")
 
 
 def about(request):

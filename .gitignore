@@ -164,6 +164,6 @@ cython_debug/
 
 # Archivo de iniciativas
 static/
-resources/iniciativas/**/
+resources/iniciativas
 SansaNews/api/session.json
 SansaNews/migrations/__pycache__/**
