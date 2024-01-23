@@ -1,6 +1,5 @@
 # pylint: disable=C0114, C0116, E0401, W0702, W0613
 
-from pprint import pprint
 import os
 import json
 import datetime
@@ -10,7 +9,6 @@ from django.shortcuts import render, redirect
 from instagrapi import Client
 from . import forms, models
 from .api import iniciativa as api_iniciativa
-from .api import recientes as api_recientes
 from .api import posts as api_posts
 from .api.iniciativa import TipoIniciativa
 
@@ -36,7 +34,7 @@ INSTAGRAM.delay_range = [1, 3]
 
 def home(request):
     iniciativas = api_iniciativa.escanear(DIRECTORIO)
-    slider = api_recientes.slider(MAX_SLIDER_POSTS, DIRECTORIO)
+    slider = api_posts.ultimos(MAX_SLIDER_POSTS, DIRECTORIO, slider=True)
 
     agrupaciones = {
         TipoIniciativa.DEPORTE.value: {},
@@ -92,17 +90,17 @@ def iniciativa(request, usuario):
 
 def actualizar_posts(request, usuario):
     api_iniciativa.actualizar(INSTAGRAM, usuario, MAX_POSTS, DIRECTORIO)
-    return redirect(f"{usuario}")
+    return redirect(f"/{usuario}")
 
 
 def actualizar_perfil(request, usuario: str):
     api_iniciativa.perfil(INSTAGRAM, usuario, DIRECTORIO)
-    return redirect(f"{usuario}")
+    return redirect(f"/{usuario}")
 
 
 def redescargar_posts(request, usuario: str):
     api_posts.redescargar(INSTAGRAM, usuario, MAX_POSTS, DIRECTORIO)
-    return redirect(f"{usuario}")
+    return redirect(f"/{usuario}")
 
 
 def about(request):
@@ -112,14 +110,14 @@ def about(request):
 def avisos(request):
     lista = models.imagenes_avisos.objects.all().order_by("id").reverse()
     lista.reverse()
-    slider = api_recientes.slider(MAX_SLIDER_POSTS, DIRECTORIO)
+    slider = api_posts.ultimos(MAX_SLIDER_POSTS, DIRECTORIO, slider=True)
     return render(request,"Avisos.html",{"key": lista, "iniciativas": slider})
 
 
 
 def subir_avisos(request, iniciativas=None):
     imagen = forms.avisos_forms(request.POST, request.FILES)
-    slider = api_recientes.slider(MAX_SLIDER_POSTS, DIRECTORIO)
+    slider = api_posts.ultimos(MAX_SLIDER_POSTS, DIRECTORIO, slider=True)
 
     if request.method == "POST":
         if imagen.is_valid():
@@ -150,13 +148,13 @@ def publicaciones(request):
     fecha_hace_30_dias = int(fecha_hace_30_dias.timestamp())
 
     # Obtener las publicaciones que se han hecho desde hace 30 días
-    lista_30 = api_recientes.ultimos(fecha_hace_30_dias, DIRECTORIO)
+    lista_30 = api_posts.ultimos(MAX_POSTS, DIRECTORIO, fecha_limite=fecha_hace_30_dias)
 
     # Verificar si se ha proporcionado una fecha límite
     fecha_limite = request.session.get('fecha_limite')
     request.session.pop('fecha_limite', None)
     if fecha_limite is not None:
-        lista_custom = api_recientes.ultimos(fecha_limite, DIRECTORIO)
+        lista_custom = api_posts.ultimos(fecha_limite, DIRECTORIO)
     else:
         lista_custom = []
 

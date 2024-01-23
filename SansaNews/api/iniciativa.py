@@ -133,8 +133,8 @@ def crear(client: Client, usuario: str, data: dict, directorio: str) -> dict:
     return iniciativa
 
 
-def actualizar(client: Client, usuario: str, max_posts: int,
-                          directorio: str) -> dict:
+def actualizar(client: Client, usuario: str, max_posts: int, 
+               directorio: str) -> dict:
     '''
     Actualiza los posts de la iniciativa dada, descargando los más nuevos
     e eliminando los más viejos si se llegara a sobrepasar el limite de posts

@@ -2,10 +2,43 @@
 # pylint: disable=E0401
 
 import os
+import json
 from urllib import request
 from instagrapi import Client
 from . import iniciativa as api_iniciativa
-from . import recientes as api_recientes
+
+def cargar(directorio: str) -> dict:
+    '''
+    Carga las publicaciones más recientes desde "directorio/posts.json"
+
+    Args:
+        directorio (str): directorio de iniciativas
+
+    Returns:
+        dict: diccionario con los posts ordenados por los más recientes
+    '''
+    recientes_path = os.path.join(directorio, "posts.json")
+
+    print(f"[API]: Cargando {recientes_path}...")
+    with open(recientes_path, "r", encoding="utf8") as recientes_json:
+        recientes = json.load(recientes_json)
+
+    return recientes
+
+
+def guardar(recientes: dict, directorio: str):
+    '''
+    Guarda las publicaciones más recientes a "directorio/posts.json"
+
+    Args:
+        directorio (str): directorio de iniciativas
+    '''
+    recientes_path = os.path.join(directorio, "posts.json")
+
+    print(f"[API]: Guardando recientes en {recientes_path}...")
+    with open(recientes_path, "w", encoding="utf8") as recientes_json:
+        json.dump(recientes, recientes_json, ensure_ascii=False, indent="\t", sort_keys=True)
+
 
 def descargar(iniciativa: dict, posts: list, cantidad: int,
                     directorio: str) -> dict:
@@ -22,7 +55,7 @@ def descargar(iniciativa: dict, posts: list, cantidad: int,
         dict: diccionario actualizado con la información de la iniciativa
     '''
     iniciativa_path: str = os.path.join(directorio, iniciativa["usuario"])
-    recientes: dict = api_recientes.cargar(directorio)
+    posts_json: dict = cargar(directorio)
 
     count = 0
     for post in posts:
@@ -56,7 +89,7 @@ def descargar(iniciativa: dict, posts: list, cantidad: int,
             print(f"[API]: Descargando media {media_url}...")
             request.urlretrieve(media_url, media_path)
 
-            post["media"].append(f"/iniciativas/{iniciativa['usuario']}/{datetime}_0.jpg")
+            post["media"].append(f"/iniciativas/{iniciativa['usuario']}/{datetime}/{datetime}_0.jpg")
 
         # En caso de haber multiples imagenes
         else:
@@ -70,11 +103,11 @@ def descargar(iniciativa: dict, posts: list, cantidad: int,
                 request.urlretrieve(media_url, media_path)
 
                 # Añadir media al post
-                post["media"].append(f"/iniciativas/{iniciativa['usuario']}/{datetime}_{index}.jpg")
+                post["media"].append(f"/iniciativas/{iniciativa['usuario']}/{datetime}/{datetime}_{index}.jpg")
                 index += 1
 
         # Añadir post a lista de posts
-        recientes[datetime] = {
+        posts_json[datetime] = {
             "descripcion": post["descripcion"],
             "usuario": iniciativa["usuario"],
             "slider": iniciativa["slider"]
@@ -84,7 +117,7 @@ def descargar(iniciativa: dict, posts: list, cantidad: int,
         iniciativa["posts"][str(datetime)] = post
         count += 1
 
-    api_recientes.guardar(recientes, directorio)
+    guardar(posts_json, directorio)
 
     usuario: str = iniciativa["usuario"]
     print(f"[API]: Descarga de posts de la iniciativa {usuario} finalizada")
@@ -142,7 +175,7 @@ def limpiar(iniciativa: dict, max_posts: int, directorio: str) -> dict:
     posts.remove(f"{usuario}.jpg")
     posts.sort(reverse = True)
 
-    recientes: dict = api_recientes.cargar(directorio)
+    posts_json: dict = cargar(directorio)
 
     # Eliminar posts
     print(f"[API]: Eliminando posts antiguos de {usuario}...")
@@ -162,10 +195,45 @@ def limpiar(iniciativa: dict, max_posts: int, directorio: str) -> dict:
         os.rmdir(post_path)
 
         iniciativa["posts"].pop(post)
-        recientes.pop(post)
+        posts_json.pop(post)
         posts.remove(post)
 
-    api_recientes.guardar(recientes, directorio)
+    guardar(posts_json, directorio)
 
     print(f"[API]: Posts de {usuario} limpiados con exito")
     return iniciativa
+
+
+def ultimos(cantidad: int, directorio: str, fecha_limite: int = 0,
+            slider: bool = False) -> dict:
+    '''
+    Obtiene todos los posts más recientes, filtrandolos según los parametros
+    indicados
+
+    Args:
+        cantidad (int): cantidad máxima de posts
+        directorio (str): directorio donde se encuentran las publicaciones
+            recientes
+        fecha_limite (int): fecha limite máxima de un posts
+        slider (bool): si los posts deben de estar en el slider
+
+    Returns:
+        list: lista con los posts publicados despues de la fecha dada
+    '''
+    posts = cargar(directorio)
+
+    print("[API]: Cargando los posts más recientes...")
+    posts_filtrados = {}
+    count = 0
+    for fecha, data in posts.items():
+        if count >= cantidad or int(fecha) < fecha_limite:
+            break
+        if slider and not data["slider"]:
+            continue
+
+        print(f"[API]: Cargando post {fecha} de {data['usuario']}")
+        posts_filtrados[fecha] = data
+        count += 1
+
+    print(f"[API]: Los {count} posts más recientes han sido cargados")
+    return posts_filtrados
