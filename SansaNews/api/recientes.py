@@ -3,7 +3,7 @@
 import os
 import json
 
-def slider(cantidad: int, directorio: str) -> list:
+def slider(cantidad: int, directorio: str) -> dict:
     '''
     Devuelve los posts más recientes de las iniciativas que están en el slider
 
@@ -17,23 +17,22 @@ def slider(cantidad: int, directorio: str) -> list:
     '''
     print(f"[API]: Cargando las {cantidad} más recientes...")
     recientes = cargar(directorio)
-    fechas = list(recientes.keys())
-    fechas.sort()
 
-    slider_posts = []
-    for fecha in fechas:
+    slider_posts = {}
+    count = 0
+    for fecha, data in recientes.items():
         if cantidad <= 0:
             break
 
-        data = recientes[fecha]
         if not data["slider"]:
             continue
 
         print(f"[API]: Cargando post {fecha} de {data['usuario']}")
-        slider_posts.append(data)
+        slider_posts[fecha] = data
         cantidad -= 1
+        count += 1
 
-    print(f"[API]: Los {cantidad} posts más recientes han sido cargados")
+    print(f"[API]: Los {count} posts más recientes han sido cargados")
     return slider_posts
 
 
@@ -93,4 +92,4 @@ def guardar(recientes: dict, directorio: str):
 
     print(f"[API]: Guardando recientes en {recientes_path}...")
     with open(recientes_path, "w", encoding="utf8") as recientes_json:
-        json.dump(recientes, recientes_json, ensure_ascii=False, indent="\t")
+        json.dump(recientes, recientes_json, ensure_ascii=False, indent="\t", sort_keys=True)

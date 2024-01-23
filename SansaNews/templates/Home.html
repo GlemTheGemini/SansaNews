@@ -5,36 +5,23 @@
 {% block base %}
 <div class ="home-a">
 	<div class="slider">
-		{% for x in primera %}
+		{% for publicacion, data in recientes.items %}
+		{% if forloop.first %}
 		<div class="slide active">
-			<div class="imagen">
-				<img src="{% static x.imagen %}" alt="">
-			</div>
-			<div class = "data">
-				<div class="info">
-					<a href="../{{x.id}}">
-						<div class="button">
-							<h2>@{{ x.pagina }}</h2>
-						</div>
-					</a>
-					<p id="descripcion">{{ x.descripcion }}</p>
-				</div>
-			</div>
-		</div>
-		{% endfor %}
-		{% for x in publicaciones %}
+		{% else %}
 		<div class="slide">
+		{% endif %}
 			<div class="imagen">
-				<img src="{% static x.imagen %}" alt="">
+				<img src="{% static 'iniciativas/'|add:data.usuario|add:'/'|add:publicacion|add:'/'|add:publicacion|add:'_0.jpg' %}" alt="">
 			</div>
 			<div class = "data">
 				<div class="info">
-					<a href="../{{x.id}}">
+					<a href="../{{ data.usuario }}">
 						<div class="button">
-							<h2>@{{ x.pagina }}</h2>
+							<h2>@{{ data.usuario }}</h2>
 						</div>
 					</a>
-					<p id="descripcion">{{ x.descripcion }}</p>
+					<p id="descripcion">{{ data.descripcion }}</p>
 				</div>
 			</div>
 		</div>
@@ -50,8 +37,6 @@
 			<div class="slide-icon"></div>
 		</div>
 	</div>
-
-
 
 	<div class="wrapper">
 		<div class="header">

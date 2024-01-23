@@ -1,5 +1,6 @@
 # pylint: disable=C0114, C0116, E0401, W0702, W0613
 
+from pprint import pprint
 import os
 import json
 import datetime
@@ -35,8 +36,7 @@ INSTAGRAM.delay_range = [1, 3]
 
 def home(request):
     iniciativas = api_iniciativa.escanear(DIRECTORIO)
-    # slider = api_recientes.slider(MAX_SLIDER_POSTS, DIRECTORIO)
-    slider = ["wa", "test"]
+    slider = api_recientes.slider(MAX_SLIDER_POSTS, DIRECTORIO)
 
     agrupaciones = {
         TipoIniciativa.DEPORTE.value: {},
@@ -49,8 +49,7 @@ def home(request):
         agrupaciones[data["tipo"]][usuario] = data
 
     return render(request,"Home.html",{
-        "primera": [slider[0]],
-        "publicaciones": slider[1:],
+        "recientes": slider,
         "agrupaciones": agrupaciones,
     })
 
