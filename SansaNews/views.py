@@ -13,7 +13,7 @@ from .api import posts as api_posts
 from .api.iniciativa import TipoIniciativa
 
 BASE = os.path.dirname(os.path.dirname(__file__))
-DIRECTORIO = os.path.join(BASE, "resources/iniciativas")
+DIRECTORIO = os.path.join(BASE, "static/iniciativas")
 SESSION_PATH = Path(os.path.join(BASE, "SansaNews/api/session.json"))
 MAX_POSTS = 5
 MAX_SLIDER_POSTS = 4
