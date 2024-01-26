@@ -10,10 +10,13 @@ Aquí una pequeña guía de como inicializar el proyecto, y de los principales a
   - [Configurando Python](#configurando-python)
   - [Paquetes](#paquetes)
   - [Iniciar Server](#iniciar-server)
+  - [Login a la cuenta de Instagram](#login-a-la-cuenta-de-instagram)
 - [Archivos Importantes](#archivos-importantes)
   - [Archivos Frontend](#archivos-frontend)
   - [Archivos Backend](#archivos-backend)
-- [Importante](#importante)
+- [Links de Debug](#links-de-debug)
+  - [En el home](#en-el-home)
+  - [En las páginas de iniciativas](#en-las-paginas-de-iniciativas)
 
 
 ## Pre-requisitos
