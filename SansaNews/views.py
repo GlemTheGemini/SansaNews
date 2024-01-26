@@ -76,22 +76,50 @@ def limpiar_iniciativas(request):
 
 
 def iniciativa(request, usuario):
-    iniciativa: dict = api_iniciativa.cargar(usuario, DIRECTORIO)
+    iniciativa_data: dict = api_iniciativa.cargar(usuario, DIRECTORIO)
     iniciativas: dict = api_iniciativa.escanear(DIRECTORIO)
 
     return render(request, "Molde.html", {
-        "iniciativa": iniciativa,
+        "iniciativa": iniciativa_data,
         "iniciativas": iniciativas
     })
 
 
-def actualizar_posts(request, usuario):
-    api_iniciativa.actualizar(INSTAGRAM, usuario, MAX_POSTS, DIRECTORIO)
+def perfil_actualizar(request, usuario):
+    '''
+    Actualiza el perfil de la iniciativa sin descargar posts, obtiene la
+    biografia, los datos básicos y descarga la foto de perfil.
+
+    Una vez actualizado el perfil vuelve a la página normal de la iniciativa.
+
+    ! LLAMA A LA API 1 VEZ, no sobreusar.
+
+    Args:
+        request: http request
+        usuario: usuario de instagram de la iniciativa
+    '''
+    api_iniciativa.perfil(INSTAGRAM, usuario, DIRECTORIO)
     return redirect(f"/{usuario}")
 
 
-def actualizar_perfil(request, usuario: str):
-    api_iniciativa.perfil(INSTAGRAM, usuario, DIRECTORIO)
+def perfil_borrar(request, usuario):
+    '''
+    Borra los datos básicos y la foto de perfil de la iniciativa, no borra los
+    posts.
+
+    Una vez borrado el perfil vuelve a la página normal de la iniciativa.
+
+    Args:
+        request: http request
+        usuario: usuario de instagram de la iniciativa
+    '''
+    os.remove(os.path.join(DIRECTORIO, f"{usuario}/{usuario}.json"))
+    os.remove(os.path.join(DIRECTORIO, f"{usuario}/{usuario}.jpg"))
+    return redirect(f"/{usuario}")
+
+
+def actualizar_posts(request, usuario):
+    api_iniciativa.actualizar(INSTAGRAM, usuario, MAX_POSTS, DIRECTORIO)
     return redirect(f"/{usuario}")
 
 
