@@ -60,7 +60,7 @@ def inicializar_iniciativas(request):
         if usuario not in carpetas:
             api_iniciativa.crear(INSTAGRAM, usuario, data, DIRECTORIO)
 
-    return redirect("") 
+    return redirect("")
 
 
 def limpiar_iniciativas(request):
@@ -76,14 +76,11 @@ def limpiar_iniciativas(request):
 
 
 def iniciativa(request, usuario):
-    data: dict = api_iniciativa.cargar(usuario, DIRECTORIO)
+    iniciativa: dict = api_iniciativa.cargar(usuario, DIRECTORIO)
     iniciativas: dict = api_iniciativa.escanear(DIRECTORIO)
 
     return render(request, "Molde.html", {
-        "usuario": usuario,
-        "nombre": data["nombre"],
-        "biografia": data["biografia"],
-        "publicaciones": data["posts"],
+        "iniciativa": iniciativa,
         "iniciativas": iniciativas
     })
 

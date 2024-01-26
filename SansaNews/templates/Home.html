@@ -5,14 +5,15 @@
 {% block base %}
 <div class ="home-a">
 	<div class="slider">
-		{% for publicacion, data in recientes.items %}
-		{% if forloop.first %}
+{% for publicacion, data in recientes.items %}
+	{% with media_path='iniciativas/'|add:data.usuario|add:'/'|add:publicacion|add:'/'|add:publicacion|add:'_0.jpg' %}
+	{% if forloop.first %}
 		<div class="slide active">
-		{% else %}
+	{% else %}
 		<div class="slide">
-		{% endif %}
+	{% endif %}
 			<div class="imagen">
-				<img src="{% static 'iniciativas/'|add:data.usuario|add:'/'|add:publicacion|add:'/'|add:publicacion|add:'_0.jpg' %}" alt="">
+				<img src="{% static media_path %}" alt="">
 			</div>
 			<div class = "data">
 				<div class="info">
@@ -25,7 +26,8 @@
 				</div>
 			</div>
 		</div>
-		{% endfor %}
+	{% endwith %}
+{% endfor %}
 
 		<div class="navigation">
 			<i class="fas fa-chevron-right next-btn"></i>
@@ -43,25 +45,27 @@
 			<h1 class="header__title">Organizaciones Estudiantiles</h1>
 		</div>
 		<div class="cards">
-			{% for agrupacion, iniciativas in agrupaciones.items %}
+{% for agrupacion, iniciativas in agrupaciones.items %}
 			<div class=" card [ is-collapsed ] ">
 				<div class="card__inner [ js-expander ]">
 					<span>{{ agrupacion }}</span>
 				</div>
 				<div class="card__expander">
 					<div class="grid-container">
-						{% for usuario, data in iniciativas.items %}
+	{% for usuario, data in iniciativas.items %}
+		{% with iniciativa_pic='iniciativas/'|add:usuario|add:'/'|add:usuario|add:'.jpg' %}
 						<a href="../{{ usuario }}">
 							<div class="grid-item">
-								<img src="{% static 'iniciativas/'|add:usuario|add:'/'|add:usuario|add:'.jpg' %}"/>
+								<img src="{% static iniciativa_pic %}"/>
 								<h3>{{ data.nombre }}</h3>
 							</div>
 						</a>
-						{% endfor %}
+		{% endwith %}
+	{% endfor %}
 					</div>
 				</div>
 			</div>
-			{% endfor %}
+{% endfor %}
 		</div>
 	</div>
 

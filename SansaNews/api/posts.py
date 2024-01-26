@@ -89,7 +89,7 @@ def descargar(iniciativa: dict, posts: list, cantidad: int,
             print(f"[API]: Descargando media {media_url}...")
             request.urlretrieve(media_url, media_path)
 
-            post["media"].append(f"/iniciativas/{iniciativa['usuario']}/{datetime}/{datetime}_0.jpg")
+            post["media"].append(f"{datetime}_0.jpg")
 
         # En caso de haber multiples imagenes
         else:
@@ -103,7 +103,7 @@ def descargar(iniciativa: dict, posts: list, cantidad: int,
                 request.urlretrieve(media_url, media_path)
 
                 # Añadir media al post
-                post["media"].append(f"/iniciativas/{iniciativa['usuario']}/{datetime}/{datetime}_{index}.jpg")
+                post["media"].append(f"{datetime}_{index}.jpg")
                 index += 1
 
         # Añadir post a lista de posts
