@@ -9,11 +9,21 @@ urlpatterns = [
     path("about-us", views.about,name="about-us"),
     path("Avisos", views.avisos,name="avisos"),
     path("Subir-Avisos", views.subir_avisos,name="subir-avisos"),
-    path("debug/limpiar", views.limpiar_iniciativas),
-    path("debug/inicializar", views.inicializar_iniciativas),
+
+    # Debug de iniciativas
+    path("iniciativas/inicializar", views.iniciativas_inicializar),
+    path("iniciativas/actualizar", views.iniciativas_actualizar),
+    path("iniciativas/limpiar", views.iniciativas_limpiar),
+
+    # Páginas de Iniciativas
     path("<str:usuario>", views.iniciativa),
+
+    ## Debug de perfiles
     path("<str:usuario>/perfil/actualizar", views.perfil_actualizar),
     path("<str:usuario>/perfil/borrar", views.perfil_borrar),
-    path("<str:usuario>/debug/actualizar", views.actualizar_posts),
-    path("<str:usuario>/debug/redescargar", views.redescargar_posts),
+
+    ## Debug de posts
+    path("<str:usuario>/posts/actualizar", views.posts_actualizar),
+    path("<str:usuario>/posts/redescargar", views.posts_redescargar),
+    path("<str:usuario>/posts/borrar/<str:post_id>", views.posts_borrar),
 ]

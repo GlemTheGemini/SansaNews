@@ -52,7 +52,12 @@ def home(request):
     })
 
 
-def inicializar_iniciativas(request):
+def iniciativas_inicializar(request):
+    '''
+    Inicializa las iniciativas a las que le falta crear su carpeta específica
+    con su json y su foto de perfil, toma los datos de "iniciativas.json" en el
+    directorio.
+    '''
     lista_iniciativas: dict = api_iniciativa.escanear(DIRECTORIO)
     carpetas: list = os.listdir(DIRECTORIO)
 
@@ -63,7 +68,11 @@ def inicializar_iniciativas(request):
     return redirect("")
 
 
-def limpiar_iniciativas(request):
+def iniciativas_limpiar(request):
+    '''
+    Elimina aquellas carpetas de iniciativas que ya no se encuentren en el
+    "iniciativas.json" junto con todo su contenido.
+    '''
     lista_iniciativas: dict = api_iniciativa.escanear(DIRECTORIO)
     usuarios: list = list(lista_iniciativas.keys())
     carpetas: list = os.listdir(DIRECTORIO)
@@ -71,6 +80,20 @@ def limpiar_iniciativas(request):
     for carpeta in carpetas:
         if carpeta not in usuarios:
             api_iniciativa.eliminar(carpeta, DIRECTORIO)
+
+    return redirect("")
+
+
+def iniciativas_actualizar(request):
+    '''
+    ! LLAMA A LA API UNA VEZ POR CADA INICIATIVA, no sobreusar.
+
+    Actualiza los posts de todas las iniciativas disponibles.
+    '''
+    iniciativas: dict = api_iniciativa.escanear(DIRECTORIO)
+
+    for usuario in iniciativas.keys():
+        api_iniciativa.actualizar(INSTAGRAM, usuario, MAX_POSTS, DIRECTORIO)
 
     return redirect("")
 
@@ -87,12 +110,12 @@ def iniciativa(request, usuario):
 
 def perfil_actualizar(request, usuario):
     '''
+    ! LLAMA A LA API 1 VEZ, no sobreusar.
+
     Actualiza el perfil de la iniciativa sin descargar posts, obtiene la
     biografia, los datos básicos y descarga la foto de perfil.
 
     Una vez actualizado el perfil vuelve a la página normal de la iniciativa.
-
-    ! LLAMA A LA API 1 VEZ, no sobreusar.
 
     Args:
         request: http request
@@ -113,18 +136,60 @@ def perfil_borrar(request, usuario):
         request: http request
         usuario: usuario de instagram de la iniciativa
     '''
+    print(f"[API]: Removiendo {DIRECTORIO}/{usuario}/{usuario}.json")
     os.remove(os.path.join(DIRECTORIO, f"{usuario}/{usuario}.json"))
+    print(f"[API]: Removiendo {DIRECTORIO}/{usuario}/{usuario}.jpg")
     os.remove(os.path.join(DIRECTORIO, f"{usuario}/{usuario}.jpg"))
+    print(f"[API]: Borrado de perfil {usuario} completado")
     return redirect(f"/{usuario}")
 
 
-def actualizar_posts(request, usuario):
+def posts_actualizar(request, usuario):
+    '''
+    ! LLAMA A LA API 1 VEZ, no sobreusar.
+
+    Descarga los últimos posts del usuario dado, borrando los posts más viejos
+    si se llega a sobrepasar el límite de posts máximos por iniciativa.
+
+    Una vez actualizado los posts vuelve a la página normal de la iniciativa.
+
+    Args:
+        request: http request
+        usuario: usuario de instagram de la iniciativa
+    '''
     api_iniciativa.actualizar(INSTAGRAM, usuario, MAX_POSTS, DIRECTORIO)
     return redirect(f"/{usuario}")
 
 
-def redescargar_posts(request, usuario: str):
+def posts_redescargar(request, usuario: str):
+    '''
+    ! LLAMA A LA API 1 VEZ, no sobreusar.
+
+    Redescarga los últimos posts del usuario dado, borrando todos los posts
+    primero, y luego volviendolos a descargar.
+
+    Una vez redescargados los posts vuelve a la página normal de la iniciativa.
+
+    Args:
+        request: http request
+        usuario: usuario de instagram de la iniciativa
+    '''
     api_posts.redescargar(INSTAGRAM, usuario, MAX_POSTS, DIRECTORIO)
+    return redirect(f"/{usuario}")
+
+
+def posts_borrar(request, usuario: str, post_id: str):
+    '''
+    Borra todos los posts descargados de la iniciativa.
+
+    Una vez borrados los posts vuelve a la página normal de la iniciativa.
+
+    Args:
+        request: http request
+        usuario (str): usuario de instagram de la iniciativa
+        post_id (str): id del post a borrar, "todos" si se quieren borrar todos
+    '''
+    api_posts.borrar(usuario, post_id, DIRECTORIO)
     return redirect(f"/{usuario}")
 
 

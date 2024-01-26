@@ -150,6 +150,52 @@ def redescargar(client: Client, usuario: str, max_posts: int,
     return iniciativa
 
 
+def borrar(usuario: str, post_id: str, directorio: str):
+    '''
+    Borra los posts indicados de la iniciativa dada
+
+    Args:
+        usuario (str): usuario al que borrar posts
+        directorio (str): directorio de iniciativas
+        post (int): id del post que se quiere borrar, 0 si son todos
+    '''
+
+    iniciativa: dict = api_iniciativa.cargar(usuario, directorio)
+    iniciativa_folder: str = os.path.join(directorio, usuario)
+    posts = cargar(directorio)
+
+    # Borrar post espécificado
+    if post_id != "todos":
+        if not post_id in iniciativa["posts"][post_id]["media"]:
+            print(f"[ERROR]: {post_id} no es una id valida")
+            return
+
+        post_folder: str = os.path.join(iniciativa_folder, post_id)
+
+        for media in iniciativa["posts"][post_id]["media"]:
+            os.remove(os.path.join(post_folder, media))
+
+        posts.pop(post_id)
+        iniciativa["posts"].pop(post_id)
+        os.rmdir(post_folder)
+
+    # Borrar todos los posts
+    else:
+        for post_id, data in iniciativa["posts"].items():
+            post_folder: str = os.path.join(iniciativa_folder, post_id)
+
+            for media in data["media"]:
+                os.remove(os.path.join(post_folder, media))
+
+            posts.pop(post_id)
+            os.rmdir(post_folder)
+
+        iniciativa["posts"] = {}
+
+    api_iniciativa.guardar(usuario, iniciativa, directorio)
+    guardar(posts, directorio)
+
+
 def limpiar(iniciativa: dict, max_posts: int, directorio: str) -> dict:
     '''
     Elimina los posts de una iniciativa en caso de que la iniciativa supere
