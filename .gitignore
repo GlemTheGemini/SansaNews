@@ -1,7 +1,7 @@
 .vscode/
 
 # Byte-compiled / optimized / DLL files
-__pycache__/
+**/__pycache__/
 *.py[cod]
 *$py.class
 
@@ -162,6 +162,8 @@ cython_debug/
 #.idea/
 
 
-#Archivo de iniciativas
-
-static/iniciativas/
+# Archivo de iniciativas
+static/
+resources/iniciativas
+SansaNews/api/session.json
+SansaNews/migrations/__pycache__/**
